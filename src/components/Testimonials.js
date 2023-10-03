@@ -26,6 +26,7 @@ const Testimonials = () => {
   return (
     <div className="testimonials">
       <h2>Testimonials</h2>
+      <h3>See what our clients says about us</h3>
       <Carousel
         responsive={responsive}
         infinite={false}

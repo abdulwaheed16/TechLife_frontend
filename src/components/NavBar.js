@@ -6,6 +6,7 @@ import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
 import Link from "next/link";
+import { siteConfig } from "@/config/siteConfig";
 // import { HashLink } from 'react-router-hash-link';
 
 export const NavBar = () => {
@@ -35,55 +36,28 @@ export const NavBar = () => {
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="/">
-            <Image
-              src={logo}
-              alt="Logo"
-              // className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-            {/* <Image src={logo} alt="Logo" /> */}
+            <Image src={logo} alt="Logo" width={100} height={24} priority />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto mx-auto">
-              <Link
-                href="/"
-                className={`nav-link ${
-                  activeLink === "home" ? "active navbar-link" : "navbar-link"
-                }`}
-                onClick={() => onUpdateActiveLink("home")}
-              >
-                Home
-              </Link>
-              <Link
-                href="/services"
-                className={`nav-link ${
-                  activeLink === "home" ? "active navbar-link" : "navbar-link"
-                }`}
-                onClick={() => onUpdateActiveLink("home")}
-              >
-                Services
-              </Link>  <Link
-                href="/blog"
-                className={`nav-link ${
-                  activeLink === "home" ? "active navbar-link" : "navbar-link"
-                }`}
-                onClick={() => onUpdateActiveLink("home")}
-              >
-                Blog
-              </Link>
-             
+              {siteConfig.headerLinks?.map((link, index) => (
+                <Link
+                  href={link.path}
+                  className={`nav-link ${
+                    activeLink === link.label
+                      ? "active navbar-link"
+                      : "navbar-link"
+                  }`}
+                  onClick={() => onUpdateActiveLink(link.label)}
+                >
+                  {link.label}
+                </Link>
+              ))}
             </Nav>
             <span className="navbar-text">
-              {/* <div className="social-icon">
-                <Link href="#"><Image src={navIcon1} alt="" /></Link>
-                <Link href="#"><Image src={navIcon2} alt="" /></Link>
-                <Link href="#"><Image src={navIcon3} alt="" /></Link>
-              </div> */}
               {/* <HashLink to='#connect'> */}
               <button className="rounded-pill overflow-hidden">
                 <span>Let’s Connect</span>

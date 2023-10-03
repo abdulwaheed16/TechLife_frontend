@@ -2,32 +2,14 @@ import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import "animate.css";
-import Select from "react-select";
+// import Select from "react-select";
+import AsyncSelect from "react-select/async";
 import makeAnimated from "react-select/animated";
 import TrackVisibility from "react-on-screen";
 import Image from "next/image";
-
+import { loadOptions, colorStyles } from "./SelectServicesSettings";
+import { servicesOptions as defualtServicesOptions } from "@/mock/mock-data";
 export const Contact = () => {
-  const options = [
-    { value: "web development", label: "Web Development" },
-    {
-      value: "mobile development",
-      label: "Mobile Development",
-    },
-    {
-      value: "graphic design",
-      label: "Graphic Design",
-    },
-    {
-      value: "seo",
-      label: "SEO",
-    },
-    {
-      value: "digital marketing",
-      label: "Digital Marketing",
-    },
-  ];
-
   const animatedComponent = makeAnimated();
 
   const formInitialDetails = {
@@ -59,26 +41,13 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    // let response = await fetch("http://localhost:5000/contact", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json;charset=utf-8",
-    //   },
-    //   body: JSON.stringify(formDetails),
-    // });
-    // setButtonText("Send");
-    // let result = await response.json();
     console.log("Contact Info", formDetails);
     setButtonText("Send");
     setFormDetails(formInitialDetails);
-    // if (result.code == 200) {
-    //   setStatus({ succes: true, message: "Message sent successfully" });
-    // } else {
-    //   setStatus({
-    //     succes: false,
-    //     message: "Something went wrong, please try again later.",
-    //   });
-    // }
+  };
+
+  const handleSelectChange = (selectedOption) => {
+    console.log("Selected Option: ", selectedOption);
   };
 
   return (
@@ -149,10 +118,13 @@ export const Contact = () => {
                         />
                       </Col>
                       <Col size={12} sm={12} className="px-1 py-4">
-                        <Select
-                          options={options}
+                        <AsyncSelect
+                          loadOptions={loadOptions}
+                          defaultOptions={defualtServicesOptions}
+                          styles={colorStyles}
+                          onChange={handleSelectChange}
                           isMulti
-                          closeMenuOnSelect={true}
+                          // closeMenuOnSelect={true}
                           components={animatedComponent}
                         />
                       </Col>
