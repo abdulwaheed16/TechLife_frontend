@@ -24,9 +24,33 @@ export const siteConfig = {
     },
     {
       label: "About",
-      path: "/about-us",
+      path: "//#about",
+      // path: "/about-us",
     },
   ],
 
   footerLinks: [],
+
+  socialLinks: [
+    {
+      name: "Github",
+      link: "https://github.com/abdulwaheed",
+      icon: "fab fa-github",
+    },
+    {
+      name: "LinkedIn",
+      link: "https://linkedin.com/in/abdulwaheed",
+      icon: "fab fa-linkedin",
+    },
+    {
+      name: "Twitter",
+      link: "https://twitter.com/abdulwaheed",
+      icon: "fab fa-twitter",
+    },
+    {
+      name: "Facebook",
+      link: "https://facebook.com/abdulwaheed",
+      icon: "fab fa-facebook",
+    },
+  ],
 };

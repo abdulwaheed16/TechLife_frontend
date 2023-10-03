@@ -67,9 +67,7 @@ export const Projects = () => {
                     {" "}
                     and sLorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of typecrambled it to make a type
-                    specimen book.
+                    standard dummy text ever since the 1500s.
                   </p>
                   <Row className="mt-4">
                     {projects.map((project, index) => {

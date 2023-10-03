@@ -1,6 +1,25 @@
-import '@/styles/globals.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "@/styles/globals.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
+import { NavBar } from "@/components/NavBar";
+import { Footer } from "@/components/Footer";
+import { Router } from "next/router";
+import Loader from "@/components/Loader";
 
 export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  const [loading, setLoading] = useState(false);
+  Router.events.on("routeChangeStart", (url) => {
+    setLoading(true);
+  });
+  Router.events.on("routeChangeComplete", (url) => {
+    setLoading(false);
+  });
+  return (
+    <>
+      {loading && <Loader />}
+      <NavBar />
+      <Component {...pageProps} />
+      <Footer />
+    </>
+  );
 }

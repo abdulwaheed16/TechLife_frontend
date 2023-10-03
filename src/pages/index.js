@@ -6,10 +6,10 @@ import { NavBar } from "@/components/NavBar";
 import { Banner } from "@/components/Banner";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { OurServices } from "@/components/OurServices";
-import AboutUs from "@/components/AboutUs";
+import { Services } from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Blog from "@/components/Blog";
+import AboutUs from "@/components/AboutUs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,12 +25,13 @@ export default function Home() {
       <main className={`App`}>
         <NavBar />
         <Banner />
-        <OurServices />
-        {/* <AboutUs /> */}
+        <Services />
+        <div id="about">
+          <AboutUs />
+        </div>
         <Portfolio />
         <Blog />
         <Contact />
-        <Footer />
       </main>
     </>
   );

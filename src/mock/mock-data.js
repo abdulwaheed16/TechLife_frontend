@@ -79,6 +79,82 @@ export const blogs = [
   },
 ];
 
+// Services Information
+
+export const services = [
+  {
+    id: 1,
+    title: "Web Design & Development",
+    description: "Crafting beautiful and functional websites.",
+    benefits: [
+      "Responsive design",
+      "User-friendly interfaces",
+      "High-performance websites",
+    ],
+    price: "$XXXX",
+  },
+  {
+    id: 2,
+    title: "E-commerce Solutions",
+    description: "Creating online stores for your products.",
+    benefits: [
+      "Secure payment gateways",
+      "Inventory management",
+      "Shopping cart functionality",
+    ],
+    price: "Custom Quote",
+  },
+  {
+    id: 3,
+    title: "App Development",
+    description: "Building mobile and web applications.",
+    benefits: [
+      "Cross-platform compatibility",
+      "Custom features",
+      "Scalable solutions",
+    ],
+    price: "Starting at $XXXX",
+  },
+];
+
+// Projects
+
+export const projects = [
+  {
+    id: 1,
+    title: "Web Design & Development",
+    description: "Crafting beautiful and functional websites.",
+    benefits: [
+      "Responsive design",
+      "User-friendly interfaces",
+      "High-performance websites",
+    ],
+    price: "$XXXX",
+  },
+  {
+    id: 2,
+    title: "E-commerce Solutions",
+    description: "Creating online stores for your products.",
+    benefits: [
+      "Secure payment gateways",
+      "Inventory management",
+      "Shopping cart functionality",
+    ],
+    price: "Custom Quote",
+  },
+  {
+    id: 3,
+    title: "App Development",
+    description: "Building mobile and web applications.",
+    benefits: [
+      "Cross-platform compatibility",
+      "Custom features",
+      "Scalable solutions",
+    ],
+    price: "Starting at $XXXX",
+  },
+];
+
 // Contact Information
 
 export const contactInfo = {
@@ -89,37 +165,14 @@ export const contactInfo = {
 
 //Quic Links
 
-export const quickLinks = [
-  {
-    name: "Privacy Policy",
-    link: "/privacy-policy",
-  },
-  {
-    name: "Terms and Conditions",
-    link: "/terms-and-conditions",
-  },
-];
+// export const quickLinks = [
+//   {
+//     name: "Privacy Policy",
+//     link: "/privacy-policy",
+//   },
+//   {
+//     name: "Terms and Conditions",
+//     link: "/terms-and-conditions",
+//   },
+// ];
 // Social Links
-
-export const socialLinks = [
-  {
-    name: "Github",
-    link: "https://github.com/abdulwaheed",
-    icon: "fab fa-github",
-  },
-  {
-    name: "LinkedIn",
-    link: "https://linkedin.com/in/abdulwaheed",
-    icon: "fab fa-linkedin",
-  },
-  {
-    name: "Twitter",
-    link: "https://twitter.com/abdulwaheed",
-    icon: "fab fa-twitter",
-  },
-  {
-    name: "Facebook",
-    link: "https://facebook.com/abdulwaheed",
-    icon: "fab fa-facebook",
-  },
-];

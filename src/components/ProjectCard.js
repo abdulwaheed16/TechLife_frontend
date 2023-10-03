@@ -11,7 +11,7 @@ export const ProjectCard = ({ title, description, imgUrl, projectUrl }) => {
           <h4>{title}</h4>
           <span>{description}</span>
           <div className="block py-4">
-            <Link href={projectUrl} className="btn btn-primary">
+            <Link href={`/portfolio/${1}`} className="btn btn-primary">
               View Project
             </Link>
           </div>

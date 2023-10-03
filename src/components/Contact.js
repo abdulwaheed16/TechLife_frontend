@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import "animate.css";
@@ -11,6 +11,7 @@ import { loadOptions, colorStyles } from "./SelectServicesSettings";
 import { servicesOptions as defualtServicesOptions } from "@/mock/mock-data";
 export const Contact = () => {
   const animatedComponent = makeAnimated();
+  const asyncSelectRef = useRef();
 
   const formInitialDetails = {
     firstName: "",
@@ -19,6 +20,7 @@ export const Contact = () => {
     phone: "",
     message: "",
   };
+  const [selectedOptions, setSelectedOptions] = useState([]);
   const [formDetails, setFormDetails] = useState(formInitialDetails);
   const [buttonText, setButtonText] = useState("Send");
   const [status, setStatus] = useState({});
@@ -41,13 +43,17 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    console.log("Contact Info", formDetails);
+    const selected_options = selectedOptions.map((option) => option.label);
+    const contact_details = { ...formDetails, selected_options };
+    console.log("Contact Info", contact_details);
     setButtonText("Send");
     setFormDetails(formInitialDetails);
+    asyncSelectRef.current.clearValue();
   };
 
   const handleSelectChange = (selectedOption) => {
     console.log("Selected Option: ", selectedOption);
+    setSelectedOptions(selectedOption);
   };
 
   return (
@@ -126,6 +132,7 @@ export const Contact = () => {
                           isMulti
                           // closeMenuOnSelect={true}
                           components={animatedComponent}
+                          ref={asyncSelectRef}
                         />
                       </Col>
 

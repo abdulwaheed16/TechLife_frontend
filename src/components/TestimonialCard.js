@@ -10,11 +10,11 @@ const TestimonialCard = () => {
       company: "XYZ",
       image: "",
       description:
-        "I've had the privilege of collaborating with Company on multiple projects, and they consistently deliver outstanding results. Their team's creativity and attention to detail are second to none. They are not just service providers but true partners in our success. I can't recommend [Your Company Name}  enough.",
+        "I've had the privilege of collaborating with Company on multiple projects, and they consistently deliver outstanding results. Their team's creativity and attention to detail are second to none.",
     },
   ];
   return (
-    <>
+    <div className="">
       <div className="text-center mx-3 position-relative">
         <div className="mt-n3">
           <Image
@@ -25,15 +25,17 @@ const TestimonialCard = () => {
           />
         </div>
         <div className="content">
-          <div className="p-4">
-            <p className="text-start py-4">{testimonials[0].description}</p>
+          <div className="pt-3 px-2 px-lg-1">
+            <p className="text-start py-4 desc">
+              {testimonials[0].description}
+            </p>
             <p className="mt-auto">
               <span className="designation">Designation at </span>CompanyName
             </p>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

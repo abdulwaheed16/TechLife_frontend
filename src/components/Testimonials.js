@@ -1,7 +1,8 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-
+import styles from "../styles/Home.module.css";
 import TestimonialCard from "./TestimonialCard";
+import Devider from "./Devider";
 
 const Testimonials = () => {
   const responsive = {
@@ -12,7 +13,7 @@ const Testimonials = () => {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 2,
+      items: 3,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -25,20 +26,23 @@ const Testimonials = () => {
   };
   return (
     <div className="testimonials">
-      <h2>Testimonials</h2>
-      <h3>See what our clients says about us</h3>
-      <Carousel
-        responsive={responsive}
-        infinite={false}
-        className="owl-carousel"
-      >
-        <TestimonialCard />
-        <TestimonialCard />
-        <TestimonialCard />
-        <TestimonialCard />
-        <TestimonialCard />
-        <TestimonialCard />
-      </Carousel>
+      <div className="inner_section">
+        <h2>Testimonials</h2>
+        <h3>See what our clients says about us</h3>
+        <Carousel
+          responsive={responsive}
+          infinite={false}
+          className="owl-carousel"
+        >
+          <TestimonialCard />
+          <TestimonialCard />
+          <TestimonialCard />
+          <TestimonialCard />
+          <TestimonialCard />
+          <TestimonialCard />
+        </Carousel>
+        <Devider />
+      </div>
     </div>
   );
 };

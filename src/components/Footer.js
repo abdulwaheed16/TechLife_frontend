@@ -22,6 +22,7 @@ export const Footer = () => {
           <Col className="">
             <div className="contact-footer">
               <h2>Contact</h2>
+              <div className="color-line"></div>
               <ul className="contact-info">
                 <li className="phone">
                   {/* <MdOutlinePhoneIphone /> */}
@@ -35,6 +36,7 @@ export const Footer = () => {
           <Col className="">
             <div className="sitemap">
               <h2>SiteMap</h2>
+              <div className="color-line"></div>
               {siteConfig.headerLinks?.map((link, index) => (
                 <Link
                   href={link.path}
@@ -53,6 +55,7 @@ export const Footer = () => {
           <Col className="">
             <div className="follow-us">
               <h2 className="">Follow Us</h2>
+              <div className="color-line"></div>
               <div className="social-icon">
                 <Link href="#">
                   <Image src={navIcon1} alt="Icon" />
