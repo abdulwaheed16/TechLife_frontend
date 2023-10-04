@@ -5,6 +5,7 @@ import { NavBar } from "@/components/NavBar";
 import { Footer } from "@/components/Footer";
 import { Router } from "next/router";
 import Loader from "@/components/Loader";
+import { Toaster } from "react-hot-toast";
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }) {
     <>
       {loading && <Loader />}
       <NavBar />
+      <Toaster />
       <Component {...pageProps} />
       <Footer />
     </>

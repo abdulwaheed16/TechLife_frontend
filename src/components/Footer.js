@@ -1,7 +1,5 @@
 import { Container, Row, Col } from "react-bootstrap";
-import { MailchimpForm } from "./MailchimpForm";
 import { useState } from "react";
-import logo from "../assets/img/logo.svg";
 import { siteConfig } from "@/config/siteConfig";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
@@ -9,7 +7,6 @@ import navIcon3 from "../assets/img/nav-icon3.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { contactInfo, quickLinks } from "@/mock/mock-data";
-import MdOutlinePhoneIphone from "react-icons/md";
 
 export const Footer = () => {
   const { address, phone, email } = contactInfo;
@@ -73,11 +70,6 @@ export const Footer = () => {
 
         <Row className="footer-end">
           <Col size={12} sm={4} className="">
-            <p className="copy-right">
-              Copyright {new Date().getFullYear()}. All Rights Reserved
-            </p>
-          </Col>
-          <Col size={12} sm={4} className="">
             <div className="quick-links">
               <Link href={"/privacy-policy"} className="quick-link">
                 Privacy Policy
@@ -85,6 +77,16 @@ export const Footer = () => {
               <Link href={"/terms-and-conditions"} className="quick-link">
                 Terms and Conditions
               </Link>
+            </div>
+          </Col>
+          <Col
+            size={12}
+            sm={4}
+            className=""
+            style={{ display: "flex", justifyContent: "center" }}
+          >
+            <div className="copy-right">
+              <p>Copyright {new Date().getFullYear()}. All Rights Reserved</p>
             </div>
           </Col>
         </Row>

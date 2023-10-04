@@ -13,15 +13,17 @@ export const BlogCard = () => {
   return (
     <div className="blog-card">
       <Card style={{ overflow: "hidden" }}>
-        <Image
-          src={blogImage1}
-          alt=""
-          width={287}
-          height={200}
-          layout="responsive"
-          objectFit="cover"
-          className="blog-card-img"
-        />
+        <div className="blog-card-img-wrapper">
+          <Image
+            src={blogImage1}
+            alt=""
+            width={287}
+            height={200}
+            layout="responsive"
+            objectFit="cover"
+            className="blog-card-img"
+          />
+        </div>
         {/* <Card.Img
       variant="top"
       src={blogImage1}

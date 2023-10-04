@@ -9,6 +9,8 @@ import TrackVisibility from "react-on-screen";
 import Image from "next/image";
 import { loadOptions, colorStyles } from "./SelectServicesSettings";
 import { servicesOptions as defualtServicesOptions } from "@/mock/mock-data";
+import toast from "react-hot-toast";
+
 export const Contact = () => {
   const animatedComponent = makeAnimated();
   const asyncSelectRef = useRef();
@@ -43,6 +45,7 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
+
     const selected_options = selectedOptions.map((option) => option.label);
     const contact_details = { ...formDetails, selected_options };
     console.log("Contact Info", contact_details);

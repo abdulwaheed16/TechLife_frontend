@@ -9,7 +9,7 @@ import Link from "next/link";
 // import { HashLink } from 'react-router-hash-link';
 
 export const NavBar = () => {
-  const [activeLink, setActiveLink] = useState("home");
+  const [activeLink, setActiveLink] = useState("");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -28,8 +28,8 @@ export const NavBar = () => {
 
   const onUpdateActiveLink = (link) => {
     setActiveLink(link.label);
-    // Router.push('')
   };
+
   const router = useRouter();
   const handleClick = () => {
     router.push("/contact-us");

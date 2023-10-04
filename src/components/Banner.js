@@ -65,7 +65,7 @@ export const Banner = () => {
                   }
                 >
                   {/* <span className="tagline">Welcome to my Portfolio</span> */}
-                  <h1 className="text-center text-md-start fs-4">
+                  <h1 className="text-center text-md-start">
                     {`AI Chatbot Wizard`}{" "}
                     <span
                       className="txt-rotate"
@@ -78,7 +78,7 @@ export const Banner = () => {
                   <p>
                     Lorem Ipsum is simply dummy text of the printing and
                     typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s.
+                    standard.
                   </p>
                   <button onClick={() => console.log("connect")}>
                     Let’s Connect <ArrowRightCircle size={25} />
