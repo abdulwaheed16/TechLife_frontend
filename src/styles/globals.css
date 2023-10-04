@@ -1128,8 +1128,8 @@ nav.navbar.scrolled {
 .contact-page,
 .project-details-page,
 .page_404 {
-  padding: 160px 0 100px;
-  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  padding: 160px 0 40px;
+  background: linear-gradient(90.21deg, #8d2664 -5.91%, #4a2fbd 111.58%);
   width: 100%;
   /* height: 100vh; */
 }
@@ -1146,17 +1146,56 @@ nav.navbar.scrolled {
 }
 
 .service-page > p {
-  max-width: 80%;
-  margin: 20px auto;
+  max-width: 50%;
+  text-align: center;
+
+  margin: 20px 20px 60px;
+  font-size: 18px;
+}
+.service-page-inner {
+  width: 95%;
 }
 
-.service-page .title {
+@media (width<=575) {
+  .service-page-inner {
+    width: 95%;
+  }
+}
+@media (width>1440) {
+  .service-page-inner {
+    width: 80%;
+  }
+}
+
+.service-header hr {
   width: 100%;
-  border-bottom: 2px solid #aaa;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
-  font-size: 28px;
+  border-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  margin-top: 10px;
+}
+.service-page h1 {
+  /* width: 100%; */
+  /* border-bottom: 2px solid #aaa; */
+  /* margin-bottom: 20px; */
+  /* padding-bottom: 10px; */
+  padding-top: 10px;
+  text-align: center;
+  font-size: 36px;
   font-weight: bold;
+}
+.service-page .description-main {
+  font-size: 18px;
+  color: #eeeeee;
+  margin: 20px 20px 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.service-page p {
+  width: 60%;
+  /* text-align: center; */
 }
 
 /* Service Content Styling */
@@ -1164,90 +1203,110 @@ nav.navbar.scrolled {
   background: transparent;
   padding: 20px;
   text-align: left;
+  letter-spacing: 1px;
 }
 
 .service-content h3 {
-  font-size: 24px;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin: 10px 0 20px;
+}
+.service-content .description {
+  font-size: 18px;
+  color: #eeeeee;
+}
+
+.service-content ul {
+  list-style-type: none;
+  font-size: 18px;
+  color: #eeeeee;
+  letter-spacing: 1px;
+}
+.service-content ul li {
+  margin-top: 10px;
+}
+.service-content .listItem-icon {
+  margin-right: 5px;
+  color: springgreen;
 }
 .service-img {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+  width: 350px;
+  height: auto;
 }
-
-/* .related-projects {
+.related-projects {
+  margin-bottom: 60px;
+}
+.related-projects .projects-wrapper {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  align-items: center;
+}
+.related-projects .projects {
+  display: flex;
+  justify-content: center;
   width: 90%;
   overflow-x: scroll;
-  white-space: nowrap;
-  padding: 20px 0;
-}
-
-.related-projects .projects {
-  display: flex;
-  gap: 20px; /* Add spacing between project cards */
-/* }  */
-
-/* Hide horizontal scrollbar for .related-projects */
-.related-projects .projects {
-  display: flex;
-
-  width: 90%;
-  overflow-x: hidden; /* Hide the scrollbar */
   white-space: nowrap;
   padding: 20px 0;
   position: relative; /* Add relative positioning for absolute navigation buttons */
 }
 
-/* Add navigation buttons for .related-projects
-.prev-button,
-.next-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  line-height: 30px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.prev-button {
-  left: 0;
-}
-
-.next-button {
-  right: 0;
-} */
-
 /* Pricing Styling */
 .pricing {
-  margin: 40px 0 80px;
+  /* margin: 40px 0 80px; */
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
 }
+@media (width<880) {
+  .service-header h2 {
+    font-size: 24px;
+    background-color: red;
+  }
+}
+
+@media (width<=425) {
+  .pricing {
+    /* margin: 40px 0 80px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+  }
+}
 
 .pricing h4 {
-  font-size: 18px; /* Slightly reduce font size for subheadings */
   margin: 0;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #8f2263, #32217c); /* padding: 2px 20px; */
+  color: #dddddd;
+  padding: 5px 50px 8px 20px;
+  margin-right: -15px;
+  border-radius: 0 20px 20px 0;
+  z-index: 999;
 }
 
 .pricing .price {
-  font-size: 36px;
+  font-size: 28px;
   font-weight: 500;
+  letter-spacing: 3px;
   margin-left: 10px;
   white-space: nowrap;
 }
 
 .pricing .only-text {
   font-size: 18px;
-  margin-left: 20px; /* Reduce margin between price and text */
+  margin-left: 0px; /* Reduce margin between price and text */
 }
 
 .pricing .button {
@@ -1263,11 +1322,29 @@ nav.navbar.scrolled {
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
+  white-space: nowrap;
 }
 
 .pricing .button:hover {
   background: linear-gradient(90deg, #4a2fbd, #aa367c);
   scale: 1.1;
+  z-index: 99999;
+}
+/* Related Projects Styling */
+
+.project-image-wrapper {
+  height: 300px;
+  width: 250px;
+  overflow: hidden;
+}
+
+.project-image {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+.service-img {
+  width: 350;
 }
 
 /* Responsive Styles */
@@ -1291,13 +1368,31 @@ nav.navbar.scrolled {
     justify-content: space-between;
   }
 }
-@media (width <=320px) {
+@media (width <=375px) {
+  .service-page h1 {
+    text-align: center;
+  }
+  .service-page p {
+    width: 100%;
+    margin-bottom: -10px;
+  }
+  .service-header .title {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 36px;
+  }
+  .pricing {
+    display: flex;
+    flex-direction: column;
+  }
   .pricing .button {
-    order: -1;
+    /* order: -1; */
+    margin-top: 10px;
     /* margin-top: 30px; */
   }
-  .pricing .h4 {
-    order: 1;
+  .service-img {
+    width: 300px;
+    height: auto;
   }
 }
 /* Blog Page */

@@ -153,6 +153,72 @@ export const projects = [
     ],
     price: "Starting at $XXXX",
   },
+  {
+    id: 3,
+    title: "App Development",
+    description: "Building mobile and web applications.",
+    benefits: [
+      "Cross-platform compatibility",
+      "Custom features",
+      "Scalable solutions",
+    ],
+    price: "Starting at $XXXX",
+  },
+  {
+    id: 3,
+    title: "App Development",
+    description: "Building mobile and web applications.",
+    benefits: [
+      "Cross-platform compatibility",
+      "Custom features",
+      "Scalable solutions",
+    ],
+    price: "Starting at $XXXX",
+  },
+  {
+    id: 3,
+    title: "App Development",
+    description: "Building mobile and web applications.",
+    benefits: [
+      "Cross-platform compatibility",
+      "Custom features",
+      "Scalable solutions",
+    ],
+    price: "Starting at $XXXX",
+  },
+  {
+    id: 4,
+    title: "App Development",
+    description: "Building mobile and web applications.",
+    benefits: [
+      "Cross-platform compatibility",
+      "Custom features",
+      "Scalable solutions",
+    ],
+    price: "Starting at $XXXX",
+  },
+  {
+    id: 5,
+    title: "App Development",
+    description: "Building mobile and web applications.",
+    benefits: [
+      "Cross-platform compatibility",
+      "Custom features",
+      "Scalable solutions",
+    ],
+    price: "Starting at $XXXX",
+  },
+  {
+    id: 6,
+    title: "App Development",
+    description: "Building mobile and web applications.",
+    benefits: [
+      "Cross-platform compatibility",
+      "Custom features",
+      "Scalable solutions",
+    ],
+    price: "Starting at $XXXX",
+  },
 ];
 
 // Contact Information

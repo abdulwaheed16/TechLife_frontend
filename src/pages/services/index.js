@@ -23,14 +23,18 @@ const ServiceDetail = ({}) => {
   console.log(service);
   return (
     <div className="service-page">
-      <h1>Services</h1>
-      <p>{service.description.substring(1, 120)}</p>
-      {/* all services available */}
-      {services.map((service, index) => (
-        <div key={index} id={service.id}>
-          <Service service={service} />
+      <div className="service-page-inner" style={{ width: "90%" }}>
+        <h1>Services</h1>
+        <div className="description-main">
+          <p>{service.description.substring(1, 120)}</p>
         </div>
-      ))}
+        {/* all services available */}
+        {services.map((service, index) => (
+          <div key={index} id={service.id}>
+            <Service service={service} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
