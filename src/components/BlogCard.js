@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import blogImage1 from "/public/blogImage1.jpeg";
+import blogImage1 from "/public/web-development.jpeg";
 import blogImage2 from "/public/blogImage2.jpeg";
 import Image from "next/image";
 import { useRouter } from "next/router";

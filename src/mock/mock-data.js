@@ -91,7 +91,7 @@ export const services = [
       "User-friendly interfaces",
       "High-performance websites",
     ],
-    price: "$XXXX",
+    price: "$120",
   },
   {
     id: 2,
@@ -113,7 +113,7 @@ export const services = [
       "Custom features",
       "Scalable solutions",
     ],
-    price: "Starting at $XXXX",
+    price: "Starting at $126",
   },
 ];
 
