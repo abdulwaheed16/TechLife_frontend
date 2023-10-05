@@ -1,22 +1,7 @@
-/* Our services */
-
-.ai_service_image::before {
-    content: "";
-    width: 42px;
-    height: 42px;
-    position: absolute;
-    background-color: #ffffff;
-    border-radius: 50%;
-    transform: scale(0);
-	transition: 0.3s ease-in-out;
-}
-.ai_service_image:hover::before {
-    transform: scale(1);
-}
-
-
-/* Testimonials */
-.testimonials{
-    padding: 500px 0;
-}
-
+/*---------- Banner -------------*/
+/* All Home module styling is in Global css file */
+/*---------- Banner -------------*/
+/*---------- Banner -------------*/
+/*---------- Banner -------------*/
+/*---------- Banner -------------*/
+/*---------- Banner -------------*/

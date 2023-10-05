@@ -1,17 +1,15 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import { NavBar } from "@/components/NavBar";
+// import { Banner } from "@/components/Banner";
 import { Banner } from "@/components/Banner";
 import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
 import { Services } from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Blog from "@/components/Blog";
 import AboutUs from "@/components/AboutUs";
+import Clients from "@/components/Clients";
+import ProfileBlob from "@/assets/img/Profile-Blob";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -27,9 +25,11 @@ export default function Home() {
         <Services />
         <Portfolio />
         <Blog />
-        <div id="about">
+        {/* <div id="about">
           <AboutUs />
-        </div>
+        </div> */}
+        {/* <ProfileBlob /> */}
+        <Clients />
         <Contact />
       </main>
     </>

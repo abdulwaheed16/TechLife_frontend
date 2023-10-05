@@ -1,0 +1,71 @@
+/* Clients.module.css */
+.clientsPage {
+  background: linear-gradient(90.21deg, #8d2664 -5.91%, #4a2fbd 111.58%);
+  padding: 40px 20px;
+  margin: 10px 0;
+}
+
+.title {
+  color: #fff;
+  text-align: center;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 5px 0;
+  letter-spacing: 1px;
+  background-color: black;
+}
+
+.client {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 10px;
+}
+
+.client_image_wrapper {
+  height: 60px;
+  width: 140px;
+  margin: 10px;
+}
+
+.client_image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+  .clientsPage {
+    padding: 20px 10px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .client_image_wrapper {
+    height: 60px;
+    width: 160px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .clientsPage {
+    padding: 10px 5px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .client_image_wrapper {
+    height: 50px;
+    width: 110px;
+    padding: 5px;
+  }
+}

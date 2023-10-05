@@ -5,6 +5,8 @@ import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import ConnectBtnBanner from "./ui/Connect-Btn-Banner";
+import styles from "../styles/Home.module.css";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -14,7 +16,6 @@ export const Banner = () => {
   const [index, setIndex] = useState(1);
   const toRotate = ["Transforming Ideas into", "Intelligent Conversation"];
   const period = 1000;
-
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
@@ -80,9 +81,7 @@ export const Banner = () => {
                     typesetting industry. Lorem Ipsum has been the industry's
                     standard.
                   </p>
-                  <button onClick={() => console.log("connect")}>
-                    Let’s Connect <ArrowRightCircle size={25} />
-                  </button>
+                  <ConnectBtnBanner />
                 </div>
               )}
             </TrackVisibility>

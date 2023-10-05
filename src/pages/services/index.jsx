@@ -7,31 +7,25 @@ import Image from "next/image";
 import Link from "next/link";
 import web_developmentImage from "/public/web-development.jpeg";
 import Service from "./Service";
+import Devider from "@/components/Devider";
 
 const ServiceDetail = ({}) => {
-  const service = {
-    title: "Web Design & Development",
-    description:
-      "Crafting beautiful and functional websites. Crafting beautiful and functional websites. Crafting beautiful and functional websites. Crafting beautiful and functional websites. Crafting beautiful and functional websites. Crafting beautiful and functional websites. Crafting beautiful and functional websites.Crafting beautiful and functional websites. ",
-    benefits: [
-      "Responsive design",
-      "User-friendly interfaces",
-      "High-performance websites",
-    ],
-    price: "$XXXX",
-  };
-  console.log(service);
   return (
     <div className="service-page">
       <div className="service-page-inner" style={{ width: "90%" }}>
         <h1>Services</h1>
         <div className="description-main">
-          <p>{service.description.substring(1, 120)}</p>
+          <p>
+            Experience the art of web development, where creativity meets
+            technology to bring your ideas to life
+          </p>
         </div>
         {/* all services available */}
         {services.map((service, index) => (
           <div key={index} id={service.id}>
             <Service service={service} />
+            {/* <div className="service-devider"></div> */}
+            {/* <Devider /> */}
           </div>
         ))}
       </div>

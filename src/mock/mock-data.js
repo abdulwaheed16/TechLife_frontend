@@ -1,5 +1,8 @@
 import blogImage1 from "/public/blogImage1.jpeg";
 import blogImage2 from "/public/blogImage2.jpeg";
+import clientName1 from "/public/microsoft-removebg-preview.png";
+import clientName2 from "/public/silicon-removebg-preview.png";
+import clientName3 from "/public/amazon-removebg-preview.png";
 
 const color = "#000";
 export const servicesOptions = [
@@ -85,7 +88,8 @@ export const services = [
   {
     id: 1,
     title: "Web Design & Development",
-    description: "Crafting beautiful and functional websites.",
+    description:
+      "Crafting digital experiences with precision, our web development services bring your vision to life. From responsive designs to robust functionality, we create websites that engage, convert, and inspire.",
     benefits: [
       "Responsive design",
       "User-friendly interfaces",
@@ -95,8 +99,9 @@ export const services = [
   },
   {
     id: 2,
-    title: "E-commerce Solutions",
-    description: "Creating online stores for your products.",
+    title: "Graphic Designing",
+    description:
+      "Transforming ideas into captivating visuals, our graphic designing services capture attention and convey your message effectively. We blend creativity with strategy to craft eye-catching designs for your brand.",
     benefits: [
       "Secure payment gateways",
       "Inventory management",
@@ -107,7 +112,8 @@ export const services = [
   {
     id: 3,
     title: "App Development",
-    description: "Building mobile and web applications.",
+    description:
+      "Building innovative mobile and web applications tailored to your business needs. Our app development services deliver seamless user experiences and cutting-edge features that elevate your digital presence",
     benefits: [
       "Cross-platform compatibility",
       "Custom features",
@@ -154,29 +160,7 @@ export const projects = [
     price: "Starting at $XXXX",
   },
   {
-    id: 3,
-    title: "App Development",
-    description: "Building mobile and web applications.",
-    benefits: [
-      "Cross-platform compatibility",
-      "Custom features",
-      "Scalable solutions",
-    ],
-    price: "Starting at $XXXX",
-  },
-  {
-    id: 3,
-    title: "App Development",
-    description: "Building mobile and web applications.",
-    benefits: [
-      "Cross-platform compatibility",
-      "Custom features",
-      "Scalable solutions",
-    ],
-    price: "Starting at $XXXX",
-  },
-  {
-    id: 3,
+    id: 4,
     title: "App Development",
     description: "Building mobile and web applications.",
     benefits: [
@@ -229,16 +213,37 @@ export const contactInfo = {
   email: "test123@gmail.com",
 };
 
-//Quic Links
+// Clients
 
-// export const quickLinks = [
-//   {
-//     name: "Privacy Policy",
-//     link: "/privacy-policy",
-//   },
-//   {
-//     name: "Terms and Conditions",
-//     link: "/terms-and-conditions",
-//   },
-// ];
-// Social Links
+export const clients = [
+  {
+    id: 1,
+    image: clientName1,
+    title: "Microsoft",
+  },
+  {
+    id: 2,
+    image: clientName3,
+    title: "Amazon",
+  },
+  {
+    id: 3,
+    image: clientName1,
+    title: "Silicon",
+  },
+  {
+    id: 1,
+    image: clientName3,
+    title: "Microsoft",
+  },
+  {
+    id: 2,
+    image: clientName2,
+    title: "Amazon",
+  },
+  {
+    id: 3,
+    image: clientName3,
+    title: "Silicon",
+  },
+];

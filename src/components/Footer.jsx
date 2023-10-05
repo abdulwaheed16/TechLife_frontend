@@ -6,7 +6,7 @@ import navIcon2 from "../assets/img/nav-icon2.svg";
 import navIcon3 from "../assets/img/nav-icon3.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { contactInfo, quickLinks } from "@/mock/mock-data";
+import { contactInfo } from "@/mock/mock-data";
 
 export const Footer = () => {
   const { address, phone, email } = contactInfo;
@@ -34,7 +34,7 @@ export const Footer = () => {
             <div className="sitemap">
               <h2>SiteMap</h2>
               <div className="color-line"></div>
-              {siteConfig.headerLinks?.map((link, index) => (
+              {siteConfig.footerLinks?.map((link, index) => (
                 <Link
                   href={link.path}
                   className={`nav-link ${

@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export const ProjectCard = ({ title, description, imgUrl, projectUrl }) => {
   return (
-    <Col size={12} sm={6} md={4}>
-      <div className="proj-imgbx">
-        <Image src={imgUrl} />
+    <Col size={12} sm={6} md={4} className="">
+      <div className="proj-imgbx project-card">
+        <Image src={imgUrl} className="project-img" />
         <div className="proj-txtx">
           <h4>{title}</h4>
           <span>{description}</span>

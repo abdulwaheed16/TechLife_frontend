@@ -1,6 +1,8 @@
 import Image from "next/image";
 import userImage from "../../public/userImage.jpeg";
 import React from "react";
+import backgroundImage from "../assets/img/Profile-Blob.jsx";
+import ProfileBlob from "../assets/img/Profile-Blob.jsx";
 
 const TestimonialCard = () => {
   const testimonials = [
@@ -16,7 +18,15 @@ const TestimonialCard = () => {
   return (
     <div className="">
       <div className="text-center mx-3 position-relative">
-        <div className="mt-n3">
+        <div
+          className="userImage_wrapper"
+          style={{
+            padding: "10px",
+          }}
+        >
+          {/* <div className="userImage_blob">
+            <ProfileBlob />
+          </div> */}
           <Image
             src={userImage}
             alt="client profile picture"

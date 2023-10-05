@@ -1,4 +1,3 @@
-// SelectServices Settings only. This file is used in contact Component.
 import { servicesOptions as options } from "@/mock/mock-data";
 export const loadOptions = (searchValue, callback) => {
   setTimeout(() => {

@@ -1,0 +1,90 @@
+/* Related projects Component :used on Service Page*/
+
+.related_projects {
+  margin: 20px 10px 80px;
+}
+
+.related_project_title {
+  font-size: 24px;
+}
+
+.project_card {
+  margin: 40px 20px;
+  width: 250px;
+  height: 350px;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.card_img_wrapper {
+  width: 250px;
+  height: 350px;
+  border-radius: 30px;
+}
+
+.card_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.card_content {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+  transition: 0.3s ease-in-out;
+}
+
+.project_card:hover .card_content {
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.card_title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #fff;
+}
+
+.card_info {
+  font-size: 14px;
+  color: #eeeeee;
+  letter-spacing: 1.2px;
+}
+
+.card_cta {
+  font-size: 14px;
+  color: #fff;
+  letter-spacing: 1.2px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: linear-gradient(90.21deg, #8a1b5d -5.91%, #2f1a8d 111.58%);
+  transition: all ease-in-out 0.3s;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+}
+
+.card_cta {
+  background-color: #4b0164;
+  color: #f0f0f0;
+}

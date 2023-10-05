@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
 import { NavBar } from "@/components/NavBar";
+import NavbarTest from "@/mock/Navbar";
 import { Footer } from "@/components/Footer";
 import { Router } from "next/router";
 import Loader from "@/components/Loader";
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps }) {
     <>
       {loading && <Loader />}
       <NavBar />
+      {/* <NavbarTest /> */}
       <Toaster />
       <Component {...pageProps} />
       <Footer />

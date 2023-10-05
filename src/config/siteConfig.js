@@ -19,7 +19,27 @@ export const siteConfig = {
       path: "/blog",
     },
     {
-      label: "Contact",
+      label: "About",
+      path: "//#about",
+      // path: "/about-us",
+    },
+  ],
+
+  footerLinks: [
+    {
+      label: "Home",
+      path: "/",
+    },
+    {
+      label: "Services",
+      path: "/services",
+    },
+    {
+      label: "Blog",
+      path: "/blog",
+    },
+    {
+      label: "Contact", //added
       path: "/contact-us",
     },
     {
@@ -28,8 +48,6 @@ export const siteConfig = {
       // path: "/about-us",
     },
   ],
-
-  footerLinks: [],
 
   socialLinks: [
     {

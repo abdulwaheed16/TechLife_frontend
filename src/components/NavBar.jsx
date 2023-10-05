@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import Image from "next/image";
 import logo from "../assets/img/logo.svg";
 import { siteConfig } from "@/config/siteConfig";
 import { Router, useRouter } from "next/router";
 import Link from "next/link";
+import ServicesMenu from "./Services-Menu";
+import ConnectBtnNavbar from "./ui/Connect-Btn-Navbar";
 
 // import { HashLink } from 'react-router-hash-link';
 
@@ -38,7 +40,7 @@ export const NavBar = () => {
   return (
     <div>
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-        <Container>
+        <Container className="navbar-container">
           <Link href="/" style={{ padding: "10px" }}>
             <Image src={logo} alt="Logo" width={100} height={24} priority />
           </Link>
@@ -47,28 +49,37 @@ export const NavBar = () => {
           </Navbar.Toggle>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto mx-auto">
-              {siteConfig.headerLinks?.map((link, index) => (
-                <Link
-                  href={link.path}
-                  className={`nav-link ${
-                    activeLink === link.label
-                      ? "active navbar-link"
-                      : "navbar-link"
-                  }`}
-                  onClick={() => onUpdateActiveLink(link)}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {siteConfig.headerLinks?.map((link, index) => {
+                if (link.label === "Services") {
+                  return (
+                    <ServicesMenu
+                      activeLink={activeLink}
+                      onUpdateActiveLink={onUpdateActiveLink}
+                    />
+                  );
+                } else {
+                  return (
+                    <Nav.Item key={index}>
+                      <Link
+                        href={link.path}
+                        className={`nav-link ${
+                          activeLink === link.label
+                            ? "active navbar-link"
+                            : "navbar-link"
+                        }`}
+                        onClick={() => onUpdateActiveLink(link)}
+                      >
+                        {link.label}
+                      </Link>
+                    </Nav.Item>
+                  );
+                }
+              })}
             </Nav>
             <span className="navbar-text">
               {/* <HashLink to='#connect'> */}
-              <button
-                className="rounded-pill overflow-hidden"
-                onClick={handleClick}
-              >
-                <span>Let’s Connect</span>
-              </button>
+              <ConnectBtnNavbar />
+
               {/* </HashLink> */}
             </span>
           </Navbar.Collapse>
