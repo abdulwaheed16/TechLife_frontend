@@ -24,7 +24,7 @@ const ServicesMenu = ({ activeLink, onUpdateActiveLink }) => {
         {services.map((service, index) => (
           <Link
             key={index}
-            href={`/services/#${service.id}`}
+            href={`/services`}
             className={`d-block ${styles.nav_link} ${
               activeLink === service.title
                 ? " active navbar-link"

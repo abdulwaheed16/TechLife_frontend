@@ -20,7 +20,7 @@ export const siteConfig = {
     },
     {
       label: "About",
-      path: "//#about",
+      path: "/#about",
       // path: "/about-us",
     },
   ],
@@ -44,7 +44,7 @@ export const siteConfig = {
     },
     {
       label: "About",
-      path: "//#about",
+      path: "/#about",
       // path: "/about-us",
     },
   ],

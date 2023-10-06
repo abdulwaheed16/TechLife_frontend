@@ -1,13 +1,12 @@
 import React from "react";
-
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
 import webImage from "/public/web_development.jpg";
 import { FiCheck } from "react-icons/fi";
 import { RelatedProjectCard } from "@/components/Related-Project-Card";
 import { projects } from "@/mock/mock-data";
-import styles from "../../styles/Portfolio.module.css";
+import styles from "../styles/Portfolio.module.css";
 import Carousel from "react-multi-carousel";
 
 const Service = ({ service }) => {
@@ -42,7 +41,7 @@ const Service = ({ service }) => {
               <span className="only-text">Starting at </span>{" "}
               <span className="price">{`$102`}</span>{" "}
             </h4>
-            <Link href={`//#connect`} className="button">
+            <Link href={`/`} className="button">
               Get Now
             </Link>
           </div>
@@ -99,7 +98,7 @@ const Service = ({ service }) => {
               <span className="only-text">Starting at </span>{" "}
               <span className="price">{`$102`}</span>{" "}
             </h4>
-            <Link href={`//#connect`} className="button">
+            <Link href={`/`} className="button">
               Get Now
             </Link>
           </div>

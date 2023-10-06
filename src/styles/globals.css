@@ -602,9 +602,6 @@ nav.navbar.scrolled {
   border-radius: 0 55px 55px 0;
 }
 
-.project-card .project-img {
-}
-
 @keyframes updown {
   0% {
     transform: translateY(-12px);
@@ -626,7 +623,7 @@ nav.navbar.scrolled {
   align-items: "center";
   border-bottom: 5px solid white;
   box-shadow: 5px 3px 3px white;
-  border-radius: 20% 40% 10% 30%;
+  /* border-radius: 20% 40% 10% 30%; */
   /* animation: updown 3s linear infinite; */
 }
 .proj-imgbx::before {

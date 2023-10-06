@@ -53,6 +53,7 @@ export const NavBar = () => {
                 if (link.label === "Services") {
                   return (
                     <ServicesMenu
+                      key={link.label}
                       activeLink={activeLink}
                       onUpdateActiveLink={onUpdateActiveLink}
                     />
@@ -61,6 +62,7 @@ export const NavBar = () => {
                   return (
                     <Nav.Item key={index}>
                       <Link
+                        key={link.label}
                         href={link.path}
                         className={`nav-link ${
                           activeLink === link.label

@@ -6,7 +6,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
 import web_developmentImage from "/public/web-development.jpeg";
-import Service from "./Service";
+import Service from "@/components/Service";
 import Devider from "@/components/Devider";
 
 const ServiceDetail = ({}) => {
