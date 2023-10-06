@@ -16,6 +16,7 @@ const ServicesMenu = ({ activeLink, onUpdateActiveLink }) => {
       show={showDropdown}
       onMouseEnter={() => setShowDropdown(true)}
       onMouseLeave={() => setShowDropdown(false)}
+      onClick={showDropdown}
       className={showDropdown ? styles.dropdownOpen : styles.dropdownClosed}
     >
       <div className={styles.dropdownMenu}>

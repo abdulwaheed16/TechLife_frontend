@@ -53,14 +53,14 @@ function BasicExample() {
               Home
             </Link>
             <Link
-              href={"//#about"}
+              href={"//@"}
               className={`nav-link navbar-link`}
               onClick={() => onUpdateActiveLink(link)}
             >
               About
             </Link>
             <Link
-              href={"/blog"}
+              href={"/blogs"}
               className={`nav-link navbar-link`}
               onClick={() => onUpdateActiveLink(link)}
             >
