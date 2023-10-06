@@ -29,10 +29,10 @@ export default function Home() {
           <AboutUs />
         </div> */}
         {/* <ProfileBlob /> */}
+        <Clients />
         <div id="connect">
-          <Clients />
+          <Contact />
         </div>
-        <Contact />
       </main>
     </>
   );

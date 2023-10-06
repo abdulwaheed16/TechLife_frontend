@@ -37,7 +37,8 @@ export const colorStyles = {
   multiValue: (styles, { data }) => {
     return {
       ...styles,
-      backgroundColor: "#00398E",
+      background: "linear-gradient(90.21deg, #971864 -5.91%, #2f1797 111.58%)",
+      scale: 1.1,
       color: "#fff",
       borderColor: "#fff",
     };

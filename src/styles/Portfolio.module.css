@@ -1,7 +1,7 @@
 /* Related projects Component :used on Service Page*/
 
 .related_projects {
-  margin: 20px 10px 80px;
+  margin: 20px 0px 80px;
 }
 
 .related_project_title {
@@ -9,8 +9,8 @@
 }
 
 .project_card {
-  margin: 40px 20px;
-  width: 250px;
+  margin: 40px auto;
+  width: 285px;
   height: 350px;
   border-radius: 30px;
   overflow: hidden;
@@ -20,7 +20,7 @@
 }
 
 .card_img_wrapper {
-  width: 250px;
+  width: 285px;
   height: 350px;
   border-radius: 30px;
 }
@@ -31,7 +31,9 @@
   object-fit: cover;
   object-position: left;
 }
-
+.card_content_wrapper {
+  width: 90%;
+}
 .card_content {
   position: absolute;
   top: -100%;
@@ -41,7 +43,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
+  padding: 20px;
   backdrop-filter: blur(3px);
   transition: 0.3s ease-in-out;
 }
@@ -51,7 +54,7 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   opacity: 1;
-  transition: 0.3s ease-in-out;
+  /* transition: 0.3s ease-in-out; */
   z-index: 1;
 }
 
@@ -61,12 +64,18 @@
   margin-bottom: 10px;
   text-align: center;
   color: #fff;
+
+  /* testing */
+  background-color: #2f1a8d;
 }
 
 .card_info {
   font-size: 14px;
   color: #eeeeee;
   letter-spacing: 1.2px;
+  margin: 10px 0 10px;
+  /* background-color: #2f1a8d; */
+  width: 100%;
 }
 
 .card_cta {
@@ -82,6 +91,7 @@
   text-decoration: none;
   font-weight: 600;
   text-align: center;
+  margin-top: auto;
 }
 
 .card_cta {
