@@ -29,7 +29,9 @@ export default function Home() {
           <AboutUs />
         </div> */}
         {/* <ProfileBlob /> */}
-        <Clients />
+        <div id="connect">
+          <Clients />
+        </div>
         <Contact />
       </main>
     </>
