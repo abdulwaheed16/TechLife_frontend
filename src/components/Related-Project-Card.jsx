@@ -7,7 +7,7 @@ import Carousel from "react-multi-carousel";
 import Devider from "./Devider";
 import styles from "../styles/Portfolio.module.css";
 
-export const RelatedProjectCard = ({ projects }) => {
+export const RelatedProjectCard = ({ project }) => {
   return (
     <div className={styles.project_card}>
       <div className={styles.card_img_wrapper}>

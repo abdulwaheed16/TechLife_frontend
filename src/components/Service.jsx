@@ -79,12 +79,11 @@ const Service = ({ service }) => {
             infinite={false}
             className="owl-carousel"
           >
-            <RelatedProjectCard projects={projects} />
-            <RelatedProjectCard projects={projects} />
-            <RelatedProjectCard projects={projects} />
-            <RelatedProjectCard projects={projects} />
-            <RelatedProjectCard projects={projects} />
-            <RelatedProjectCard projects={projects} />
+            {projects.map((project) => (
+              <div key={project.id}>
+                <RelatedProjectCard project={project} />
+              </div>
+            ))}
           </Carousel>
           {/* <Devider /> */}
         </div>
