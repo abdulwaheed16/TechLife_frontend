@@ -165,29 +165,26 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
   display: flex;
   align-items: center;
 }
-/* Style the dropdown menu */
 
-/* Style the dropdown toggle */
 .dropdown-toggle {
   color: white !important;
   border: none;
 }
 
-/* Style the active state of the dropdown toggle */
 .dropdown-toggle.active {
-  color: white !important; /* Set the text color for the active state */
+  color: white !important;
 }
 /* Style the dropdown menu title */
 .dropdown-title {
   display: flex;
   align-items: center;
-  color: #fff !important; /* Set the text color for the dropdown title */
+  color: #fff !important;
   text-decoration: none !important;
 }
 
 /* Style the dropdown icon */
 .dropdown-icon {
-  margin-left: 5px; /* Adjust the spacing between the text and icon */
+  margin-left: 5px;
 }
 
 span.navbar-text {
@@ -295,40 +292,34 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   margin: 5px 0;
 }
 /* Responsiveness NAVBAR */
-
-@media (max-width: 768px) {
-  nav.navbar {
-    padding: 12px 0;
+.navbar-mobile-bg {
+  background-color: #000000a2;
+  opacity: 0.9;
+}
+/* Styles for even smaller screens */
+@media (max-width: 767px) {
+  .navbar-nav {
+    display: flex;
+    align-items: start;
+    /* margin: 20px; */
+    padding: 10px 0;
   }
-
-  nav.navbar a.navbar-brand {
-    width: auto;
-  }
-
   nav.navbar .navbar-nav .nav-link.navbar-link {
     font-size: 16px;
-    padding: 0 15px;
+    padding: 5px;
   }
-
-  .navbar-text button {
-    font-size: 14px;
-    padding: 10px 20px;
-    margin-left: 12px;
-  }
-}
-
-/* Styles for even smaller screens */
-@media (max-width: 576px) {
-  nav.navbar .navbar-nav .nav-link.navbar-link {
-    font-size: 14px;
-    padding: 0 10px;
-  }
-
   .navbar-text button {
     font-size: 12px;
     padding: 8px 16px;
     margin-left: 8px;
   }
+  .dropdown-toggle {
+    padding: 0 20px;
+    /* background-color: red; */
+  }
+  /* .navbar-collapse .collapse .show{
+    
+  } */
 }
 
 /* Scrolled navbar background color */
@@ -622,7 +613,7 @@ nav.navbar.scrolled {
   justify-content: "center";
   align-items: "center";
   border-bottom: 5px solid white;
-  box-shadow: 5px 3px 3px white;
+  box-shadow: 5px 3px 0px white;
   /* border-radius: 20% 40% 10% 30%; */
   /* animation: updown 3s linear infinite; */
 }
@@ -928,7 +919,7 @@ nav.navbar.scrolled {
 
 .contact {
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
-  padding: 60px 0 200px 0;
+  padding: 40px 0 200px 0;
 }
 .contact img {
   width: 92%;
@@ -1004,6 +995,13 @@ nav.navbar.scrolled {
 }
 .contact form button:hover::before {
   width: 100%;
+}
+
+@media (width<=768px) {
+  .img-section {
+    order: 2;
+    /* background-color: red; */
+  }
 }
 
 /************ Footer Css ************/
@@ -1223,7 +1221,7 @@ nav.navbar.scrolled {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
+  align-items: center;
   /* padding: 20px; */
   text-align: start;
 }

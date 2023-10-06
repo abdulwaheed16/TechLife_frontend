@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import Image from "next/image";
 import logo from "../assets/img/logo.svg";
 import { siteConfig } from "@/config/siteConfig";
@@ -7,12 +7,12 @@ import { Router, useRouter } from "next/router";
 import Link from "next/link";
 import ServicesMenu from "./Services-Menu";
 import ConnectBtnNavbar from "./ui/Connect-Btn-Navbar";
-
-// import { HashLink } from 'react-router-hash-link';
+import { useMediaQuery } from "@react-hook/media-query"; // Import useMediaQuery
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("");
   const [scrolled, setScrolled] = useState(false);
+  const isMobile = useMediaQuery("(max-width: 767px)"); // Define a media query for mobile screens
 
   useEffect(() => {
     const onScroll = () => {
@@ -37,9 +37,16 @@ export const NavBar = () => {
     router.push("/contact-us");
   };
 
+  // Responsive Styling
+
+  const navbarClass = isMobile ? "navbar-mobile-bg" : "";
+
   return (
     <div>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+      <Navbar
+        expand="md"
+        className={`${scrolled ? "scrolled" : ""} ${navbarClass}`}
+      >
         <Container className="navbar-container">
           <Link href="/" style={{ padding: "10px" }}>
             <Image src={logo} alt="Logo" width={100} height={24} priority />
@@ -68,7 +75,7 @@ export const NavBar = () => {
                           activeLink === link.label
                             ? "active navbar-link"
                             : "navbar-link"
-                        }`}
+                        } ${isMobile ? "mobile-link" : ""}`} // Add a class based on the media query
                         onClick={() => onUpdateActiveLink(link)}
                       >
                         {link.label}
@@ -79,10 +86,7 @@ export const NavBar = () => {
               })}
             </Nav>
             <span className="navbar-text">
-              {/* <HashLink to='#connect'> */}
               <ConnectBtnNavbar />
-
-              {/* </HashLink> */}
             </span>
           </Navbar.Collapse>
         </Container>
