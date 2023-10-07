@@ -14,7 +14,7 @@ export const Banner = () => {
   const [text, setText] = useState("");
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = ["Transforming Ideas into", "Intelligent Conversation"];
+  const toRotate = ["through Digital Excellence"];
   const period = 1000;
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -67,19 +67,20 @@ export const Banner = () => {
                 >
                   {/* <span className="tagline">Welcome to my Portfolio</span> */}
                   <h1 className="text-center text-md-start">
-                    {`AI Chatbot Wizard`}{" "}
+                    {`Empowering Businesses `}{" "}
                     <span
                       className="txt-rotate"
-                      dataPeriod="800"
-                      data-rotate='["Transforming ", "Ideas", "into", "Intelligent Conversation"]'
+                      dataPeriod="500"
+                      data-rotate='["through Digital Excellence"]'
                     >
                       <span className="wrap">{text}</span>
                     </span>
                   </h1>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard.
+                    Harnessing the power of technology to be a catalyst for
+                    digital transformation, we aspire to inspire innovation,
+                    foster meaningful connections, and create a future where
+                    every enterprise operates at the pinnacle of efficiency.
                   </p>
                   <ConnectBtnBanner />
                 </div>

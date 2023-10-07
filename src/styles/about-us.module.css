@@ -145,20 +145,6 @@
   border: 1px solid #4a2fbd;
   cursor: pointer;
 }
-/* 
-. {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  margin: 5px 10px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid white;
-  color: white;
-  font-weight: 600;
-  transition: all ease-in-out 0.2s;
-} */
 
 .social_link {
   position: absolute;

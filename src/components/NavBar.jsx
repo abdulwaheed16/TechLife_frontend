@@ -89,6 +89,7 @@ export const NavBar = () => {
               })}
             </Nav>
             <span className="navbar-text">
+              {/* <span>737 313 1967</span> */}
               <ConnectBtnNavbar />
             </span>
           </Navbar.Collapse>

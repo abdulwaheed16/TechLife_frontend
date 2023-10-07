@@ -21,7 +21,7 @@ const ServiceDetail = ({}) => {
         </div>
         {/* all services available */}
         {services.map((service, index) => (
-          <div key={index} id={service.id}>
+          <div key={index} id={service.slug}>
             <Service service={service} />
             {/* <div className="service-devider"></div> */}
           </div>

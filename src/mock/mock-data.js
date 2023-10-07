@@ -88,6 +88,8 @@ export const services = [
   {
     id: 1,
     title: "Web Design & Development",
+    slug: "web-development",
+
     description:
       "Crafting digital experiences with precision, our web development services bring your vision to life. From responsive designs to robust functionality, we create websites that engage, convert, and inspire.",
     benefits: [
@@ -100,6 +102,8 @@ export const services = [
   {
     id: 2,
     title: "Graphic Designing",
+    slug: "web-development",
+
     description:
       "Transforming ideas into captivating visuals, our graphic designing services capture attention and convey your message effectively. We blend creativity with strategy to craft eye-catching designs for your brand.",
     benefits: [
@@ -112,6 +116,8 @@ export const services = [
   {
     id: 3,
     title: "App Development",
+    slug: "app-development",
+
     description:
       "Building innovative mobile and web applications tailored to your business needs. Our app development services deliver seamless user experiences and cutting-edge features that elevate your digital presence",
     benefits: [
