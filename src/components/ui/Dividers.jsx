@@ -9,11 +9,12 @@ const DividerWhite = () => {
   );
 };
 export default DividerWhite;
+
 // Black Divider
-// export const DividerBlack = () => {
-//   return (
-//     <div className="divider">
-//       <div className="divider-black"></div>
-//     </div>
-//   );
-// };
+export const DividerBlack = () => {
+  return (
+    <div className="divider">
+      <div className="divider-black"></div>
+    </div>
+  );
+};

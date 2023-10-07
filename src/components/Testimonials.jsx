@@ -2,6 +2,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // import styles from "../styles/Home.module.css";
 import TestimonialCard from "./TestimonialCard";
+import DividerWhite from "./ui/Dividers";
 // import { DividerWhite } from "./ui/Dividers";
 
 const Testimonials = () => {
@@ -42,7 +43,6 @@ const Testimonials = () => {
           <TestimonialCard />
         </Carousel>
       </div>
-      {/* <DividerWhite /> */}
     </div>
   );
 };

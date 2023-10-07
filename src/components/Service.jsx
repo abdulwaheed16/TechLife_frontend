@@ -59,7 +59,7 @@ const Service = ({ service }) => {
             <p>{service.description}</p>
           </div>
           <div>
-            <h3>Why You should take our service</h3>
+            <h3>Your Benefits</h3>
             <ul>
               {service.benefits.map((benefit, index) => (
                 <li>

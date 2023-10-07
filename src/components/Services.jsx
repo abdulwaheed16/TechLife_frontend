@@ -12,6 +12,7 @@ import colorSharp from "../assets/img/color-sharp.png";
 import Image from "next/image";
 import { Stack, Row, Col, Container } from "react-bootstrap";
 import { ServiceCard } from "./ServiceCard";
+import DividerWhite from "./ui/Dividers";
 
 export const Services = () => {
   const services = new Array(6).fill(ai_service_image);
@@ -32,6 +33,7 @@ export const Services = () => {
           ))}
         </Row>
       </Container>
+      <DividerWhite />
     </section>
   );
 };

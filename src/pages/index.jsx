@@ -4,7 +4,7 @@ import { Contact } from "@/components/Contact";
 import { Services } from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Blog from "@/components/Blog";
-// import AboutUs from "@/components/AboutUs";
+import AboutUs from "@/components/AboutUs";
 import Clients from "@/components/Clients";
 // import ProfileBlob from "@/assets/img/Profile-Blob";
 
@@ -23,11 +23,11 @@ export default function Home() {
         <Banner />
         <Services />
         <Portfolio />
-        <Blog />
-        {/* <div id="about">
-          <AboutUs />
-        </div> */}
         {/* <ProfileBlob /> */}
+        <Blog />
+        <div id="about">
+          <AboutUs />
+        </div>
         <Clients />
         <div id="connect">
           <Contact />

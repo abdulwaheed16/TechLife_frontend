@@ -10,6 +10,7 @@ import Image from "next/image";
 import { loadOptions, colorStyles } from "./SelectServicesSettings";
 import { servicesOptions as defualtServicesOptions } from "@/mock/mock-data";
 import toast from "react-hot-toast";
+import SendBtn from "./ui/Send-Btn";
 
 export const Contact = () => {
   const animatedComponent = makeAnimated();
@@ -150,9 +151,7 @@ export const Contact = () => {
                           placeholder="Message"
                           onChange={(e) => handleInput(e)}
                         ></textarea>
-                        <button type="submit" className="sendBtn">
-                          <span>{buttonText}</span>
-                        </button>
+                        <SendBtn />
                       </Col>
                     </Row>
                   </form>
