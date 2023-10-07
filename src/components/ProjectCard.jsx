@@ -1,6 +1,7 @@
 import { Col } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
+import robotImage from "../assets/img/header-img.svg";
 
 export const ProjectCard = ({ title, description, imgUrl, projectUrl }) => {
   return (
