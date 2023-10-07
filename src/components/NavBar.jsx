@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import Image from "next/image";
-import logo from "../assets/img/logo.svg";
+// import logo from "/public"
+import logo from "../../public/TechLife.svg";
 import { siteConfig } from "@/config/siteConfig";
 import { Router, useRouter } from "next/router";
 import Link from "next/link";
@@ -48,8 +49,10 @@ export const NavBar = () => {
         className={`${scrolled ? "scrolled" : ""} ${navbarClass}`}
       >
         <Container className="navbar-container">
-          <Link href="/" style={{ padding: "10px" }}>
-            <Image src={logo} alt="Logo" width={100} height={24} priority />
+          <Link href="/" style={{ padding: "10px" }} className="logo">
+            {/* <Image src={logo} alt="Logo" width={100} height=
+            {24} priority /> */}
+            <h2>TechLife</h2>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
             <span className="navbar-toggler-icon"></span>

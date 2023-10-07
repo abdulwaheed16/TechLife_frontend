@@ -4,7 +4,6 @@ import Link from "next/link";
 import projectImage from "../assets/img/project-img1.png";
 import Image from "next/image";
 import Carousel from "react-multi-carousel";
-import Devider from "./Devider";
 import styles from "../styles/Portfolio.module.css";
 
 export const RelatedProjectCard = ({ project }) => {

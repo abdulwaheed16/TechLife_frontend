@@ -1,13 +1,12 @@
 import Head from "next/head";
-// import { Banner } from "@/components/Banner";
 import { Banner } from "@/components/Banner";
 import { Contact } from "@/components/Contact";
 import { Services } from "@/components/Services";
 import Portfolio from "@/components/Portfolio";
 import Blog from "@/components/Blog";
-import AboutUs from "@/components/AboutUs";
+// import AboutUs from "@/components/AboutUs";
 import Clients from "@/components/Clients";
-import ProfileBlob from "@/assets/img/Profile-Blob";
+// import ProfileBlob from "@/assets/img/Profile-Blob";
 
 // const inter = Inter({ subsets: ["latin"] });
 

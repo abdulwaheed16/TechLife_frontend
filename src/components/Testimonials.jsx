@@ -1,8 +1,8 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import styles from "../styles/Home.module.css";
+// import styles from "../styles/Home.module.css";
 import TestimonialCard from "./TestimonialCard";
-import Devider from "./Devider";
+// import { DividerWhite } from "./ui/Dividers";
 
 const Testimonials = () => {
   const responsive = {
@@ -41,8 +41,8 @@ const Testimonials = () => {
           <TestimonialCard />
           <TestimonialCard />
         </Carousel>
-        <Devider />
       </div>
+      {/* <DividerWhite /> */}
     </div>
   );
 };

@@ -149,6 +149,16 @@ nav.navbar.scrolled {
 nav.navbar a.navbar-brand {
   width: 9%;
 }
+.logo {
+  text-decoration: none;
+  /* columns: #fff; */
+  display: flex;
+  align-items: center;
+}
+.logo h2 {
+  color: whitesmoke;
+  width: 100%;
+}
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
@@ -452,15 +462,23 @@ nav.navbar.scrolled {
   }
 }
 /************ Our Service (on Home Page) Css ************/
+.divider .divider-black {
+  border-bottom: 1px solid #121212;
+}
+
+.divider .divider-white {
+  border-bottom: 1px solid #f8f8f8;
+}
+
 .services {
-  padding: 40px 0;
+  padding: 30px 0 50px;
   position: relative;
   background: linear-gradient(
     90deg,
     rgba(170, 54, 124, 0.5),
     rgba(74, 47, 189, 0.5)
   );
-  /* border-bottom: 1px solid whitesmoke; */
+  /* border-bottom: 10px solid rgb(0, 0, 0); */
 }
 
 .services h2 {
@@ -474,9 +492,9 @@ nav.navbar.scrolled {
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
-  margin: 14px auto 30px auto;
+  margin: 10px auto;
   text-align: center;
-  width: 56%;
+  width: 70%;
 }
 .service-card button {
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
@@ -499,13 +517,34 @@ nav.navbar.scrolled {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
   .services {
     padding: 20px 0;
   }
 
   .service-card {
     font-size: 18px;
+  }
+  .services p {
+    width: 80%;
+    /* margin-bottom: 10px; */
+    margin: 10px auto;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .services {
+    padding: 20px 0;
+  }
+
+  .service-card {
+    font-size: 18px;
+  }
+  .services p {
+    width: 95%;
+    /* margin-bottom: 10px; */
+    margin: 10px auto;
+    text-align: start;
   }
 }
 
@@ -537,7 +576,18 @@ nav.navbar.scrolled {
   line-height: 1.5em;
   margin: 14px auto 60px auto;
   text-align: center;
-  width: 80%;
+  width: 70%;
+}
+@media (width<1024px) {
+  .project p {
+    width: 80%;
+  }
+}
+@media (width<576px) {
+  .project p {
+    width: 90%;
+    text-align: start;
+  }
 }
 .project .nav.nav-pills {
   width: 72%;
@@ -1300,7 +1350,8 @@ nav.navbar.scrolled {
 
 .pricing .only-text {
   font-size: 18px;
-  margin-left: 0px; /* Reduce margin between price and text */
+  margin-left: 0px;
+  /* color: ; */
 }
 
 .pricing .button {

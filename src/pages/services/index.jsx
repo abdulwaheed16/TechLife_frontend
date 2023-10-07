@@ -7,7 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import web_developmentImage from "/public/web-development.jpeg";
 import Service from "@/components/Service";
-import Devider from "@/components/Devider";
 
 const ServiceDetail = ({}) => {
   return (
@@ -25,7 +24,6 @@ const ServiceDetail = ({}) => {
           <div key={index} id={service.id}>
             <Service service={service} />
             {/* <div className="service-devider"></div> */}
-            {/* <Devider /> */}
           </div>
         ))}
       </div>

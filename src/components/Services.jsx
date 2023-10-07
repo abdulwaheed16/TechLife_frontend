@@ -3,7 +3,6 @@ import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import Devider from "@/components/Devider";
 
 // import "../styles/Home.module.css";
 import arrow1 from "../assets/img/arrow1.svg";
@@ -17,7 +16,7 @@ import { ServiceCard } from "./ServiceCard";
 export const Services = () => {
   const services = new Array(6).fill(ai_service_image);
   return (
-    <section className="services">
+    <section className="services section-devider">
       <Container className="mx-auto">
         <div className="text-center">
           <h2 className="title mt-4">Our Services</h2>
@@ -33,7 +32,6 @@ export const Services = () => {
           ))}
         </Row>
       </Container>
-      <Devider />
     </section>
   );
 };

@@ -4,10 +4,10 @@ import Testimonials from "./Testimonials";
 
 const Portfolio = () => {
   return (
-    <>
+    <div className="section-devider">
       <Projects />
       <Testimonials />
-    </>
+    </div>
   );
 };
 
