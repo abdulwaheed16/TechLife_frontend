@@ -8,8 +8,8 @@ import { RelatedProjectCard } from "@/components/Related-Project-Card";
 import { projects } from "@/mock/mock-data";
 import styles from "../styles/Portfolio.module.css";
 import Carousel from "react-multi-carousel";
-import { Approaches } from "./Approaches";
-
+import Approaches from "./Approaches";
+import Benifits from "./Benifits";
 const Service = ({ service }) => {
   const responsive = {
     superLargeDesktop: {
@@ -34,6 +34,8 @@ const Service = ({ service }) => {
       items: 1,
     },
   };
+
+  console.log("-----Approaches: ", service.ourApproaches);
   return (
     <>
       <Row className="service-header">
@@ -53,11 +55,10 @@ const Service = ({ service }) => {
         </Col> */}
         <hr />
       </Row>
-      <Row>
+      <p>{service.welcome_msg}</p>
+      <Row xs={1} lg={2}>
         <Col className="service-content">
           <div className="description">
-            {/* <h3>About service</h3> */}
-            <p>{service.welcome_msg}</p>
             <p>{service.desc}</p>
           </div>
           <div>
@@ -71,20 +72,26 @@ const Service = ({ service }) => {
             </ul> */}
           </div>
         </Col>
-        <Col className="service-img-wrapper">
-          <Image src={webImage} className="service-img" />
+        <Col>
+          <div className="service-img-wrapper">
+            {" "}
+            <Image src={service.image} className="service-img" />
+          </div>
         </Col>
       </Row>
 
       {/* Our Approaches */}
 
-      <h3>Our Approches</h3>
-      {/* <Approaches approaches={service.approaches} /> */}
+      <div className="ourApproaches">
+        <h3>Our Approches</h3>
+        <Approaches ourApproaches={service.ourApproaches} />
+      </div>
       {/* Why Choose Us */}
-      <Row>
-        <h3>Why Choose Us</h3>
-        <Col></Col>
-      </Row>
+
+      <div className="ourApproaches">
+        <h3>Why You Should Choose Us</h3>
+        <Benifits benifits={service.benifits} />
+      </div>
       {/* Packages */}
       <Row>
         <h3>Packages</h3>

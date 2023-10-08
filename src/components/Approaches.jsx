@@ -1,25 +1,20 @@
-import { Row, Container } from "react-bootstrap";
-import { ApproachesCard } from "./ApproachesCard";
-import DividerWhite from "./ui/Dividers";
-import styles from "../styles/Services.module.css";
-import { ourServices } from "@/data/services-data/our-services";
+import React from "react";
+import { Col, Row } from "react-bootstrap";
+import ApproachesCard from "./ApproachesCard";
 
-export const Approaches = () => {
-  console.log("Our Serviecs ", ourServices);
-
+const Approaches = ({ ourApproaches }) => {
+  //   console.log("Approaches: ", ourApproaches);
   return (
-    <section className={`${styles.approaches} section-devider`}>
-      <Container className="mx-auto">
-        <div className="text-center">
-          <h2 className="">Our Services</h2>
-        </div>
-        <Row xs={1} md={2} lg={3} xl={3} className={styles.cards}>
-          {ourServices?.map((service, index) => (
-            <ApproachesCard key={index} service={service} />
-          ))}
-        </Row>
-      </Container>
-      <DividerWhite />
-    </section>
+    <>
+      <Row>
+        {ourApproaches?.map((approach, index) => (
+          <Col xs={12} sm={6} xl={4} xxxl={2} key={index}>
+            <ApproachesCard approach={approach} />
+          </Col>
+        ))}
+      </Row>
+    </>
   );
 };
+
+export default Approaches;

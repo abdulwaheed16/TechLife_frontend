@@ -7,7 +7,6 @@ import Clients from "@/components/Clients";
 import OurServices from "@/components/OurServices";
 import Testimonials from "@/components/Testimonials";
 // import ProfileBlob from "@/assets/img/Profile-Blob";
-
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -17,7 +16,7 @@ export default function Home() {
         <title>Techlife</title>
         <meta name="description" content="Coming Soon" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/TechLife_logo.jpeg" />
       </Head>
       <main className={`App`}>
         <Banner />

@@ -1,28 +1,17 @@
-import { Col } from "react-bootstrap";
-import Image from "next/image";
-import styles from "../styles/Services.module.css";
-import Link from "next/link";
-import { useRouter } from "next/router";
+import React from "react";
+import styles from "../styles/approches.module.css";
 
-export const ApproachesCard = ({ service }) => {
-  const router = useRouter();
-
-  const handleClick = () => {
-    router.push(`/services/#${3}`);
-  };
-  // const service_route = service.title.toLowerCase();
-
+const ApproachesCard = ({ approach }) => {
   return (
-    <>
-      <Col className={styles.approaches_card_wrapper}>
-        <div className={styles.approaches_card}>
-          <div className={styles.img_wrapper}>
-            <Image src={service.image} alt="" className={styles.img} />
-          </div>
-          <h2>{service.title}</h2>
-          <p>{service.super_desc}</p>
+    <div className={styles.card_wrapper}>
+      <div className={styles.card}>
+        <div className={styles.content}>
+          <h3>{approach.title}</h3>
+          <p>{approach.description}</p>
         </div>
-      </Col>
-    </>
+      </div>
+    </div>
   );
 };
+
+export default ApproachesCard;

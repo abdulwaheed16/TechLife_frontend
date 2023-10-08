@@ -13,7 +13,7 @@ export const OurServiceCard = ({ service }) => {
           <span>{service.super_desc}</span>
           <div className="block py-4">
             <Link
-              href={`/services/#${service.slug}`}
+              href={`/services/#${service.id}`}
               className="project-card-button"
             >
               View Project

@@ -43,7 +43,7 @@ export const services = [
     price: "16",
     image: web_dev_img,
     ourApproaches: web_dev_approaches,
-    banifits: web_dev_benifits,
+    benifits: web_dev_benifits,
   },
   {
     id: 2,
@@ -54,7 +54,7 @@ export const services = [
     price: "150",
     image: app_dev_img,
     ourApproaches: app_dev_approaches,
-    banifits: app_dev_benifits,
+    benifits: app_dev_benifits,
   },
   {
     id: 3,
@@ -65,7 +65,7 @@ export const services = [
     price: "130",
     image: game_dev_img,
     ourApproaches: game_dev_approaches,
-    banifits: game_dev_benifits,
+    benifits: game_dev_benifits,
   },
   {
     id: 4,
@@ -76,7 +76,7 @@ export const services = [
     price: "120",
     image: digital_marketing_img,
     ourApproaches: digital_marketing_approaches,
-    banifits: digital_marketing_benifits,
+    benifits: digital_marketing_benifits,
   },
   {
     id: 5,
@@ -87,7 +87,7 @@ export const services = [
     price: "210",
     image: human_resource_img,
     outsourcing: Human_Resource_outsourcing,
-    banifits: human_resource_benifits,
+    benifits: human_resource_benifits,
   },
   {
     id: 6,
@@ -97,6 +97,6 @@ export const services = [
     price: "190",
     image: business_dashboard_img,
     ourApproaches: Business_Dashboard_approaches,
-    banifits: business_dashboard_benifits,
+    benifits: business_dashboard_benifits,
   },
 ];
