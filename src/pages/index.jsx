@@ -1,11 +1,11 @@
 import Head from "next/head";
 import { Banner } from "@/components/Banner";
 import { Contact } from "@/components/Contact";
-import { Services } from "@/components/Services";
-import Portfolio from "@/components/Portfolio";
 import Blog from "@/components/Blog";
 import AboutUs from "@/components/AboutUs";
 import Clients from "@/components/Clients";
+import OurServices from "@/components/OurServices";
+import Testimonials from "@/components/Testimonials";
 // import ProfileBlob from "@/assets/img/Profile-Blob";
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -21,8 +21,10 @@ export default function Home() {
       </Head>
       <main className={`App`}>
         <Banner />
-        <Services />
-        <Portfolio />
+        {/* <Services /> */}
+        {/* <Portfolio /> */}
+        <OurServices />
+        <Testimonials />
         {/* <ProfileBlob /> */}
         <Blog />
         <div id="about">

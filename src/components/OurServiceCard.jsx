@@ -1,18 +1,21 @@
 import { Col } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";
-import robotImage from "../assets/img/header-img.svg";
 
-export const ProjectCard = ({ title, description, imgUrl, projectUrl }) => {
+export const OurServiceCard = ({ service }) => {
+  console.log("Service: ", service);
   return (
     <Col size={12} sm={6} lg={4} className="">
       <div className="proj-imgbx project-card">
-        <Image src={imgUrl} className="project-img" />
+        <Image src={service.image} className="project-img" />
         <div className="proj-txtx">
-          <h4>{title}</h4>
-          <span>{description}</span>
+          <h4>{service.title}</h4>
+          <span>{service.super_desc}</span>
           <div className="block py-4">
-            <Link href={`/portfolio/${1}`} className="project-card-button">
+            <Link
+              href={`/services/#${service.slug}`}
+              className="project-card-button"
+            >
               View Project
             </Link>
           </div>

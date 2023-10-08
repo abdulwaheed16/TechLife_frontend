@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import Image from "next/image";
-// import logo from "/public"
-import logo from "../../public/TechLife.svg";
 import { siteConfig } from "@/config/siteConfig";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import Link from "next/link";
-import ServicesMenu from "./Services-Menu";
 import ConnectBtnNavbar from "./ui/Connect-Btn-Navbar";
-import { useMediaQuery } from "@react-hook/media-query"; // Import useMediaQuery
+import { useMediaQuery } from "@react-hook/media-query";
+import NavDropDownServices from "./Nav-DropDown-Services";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("");
@@ -62,7 +59,7 @@ export const NavBar = () => {
               {siteConfig.headerLinks?.map((link, index) => {
                 if (link.label === "Services") {
                   return (
-                    <ServicesMenu
+                    <NavDropDownServices
                       key={link.label}
                       activeLink={activeLink}
                       onUpdateActiveLink={onUpdateActiveLink}

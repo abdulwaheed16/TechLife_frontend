@@ -1,7 +1,7 @@
 import React from "react";
-import { Projects } from "./Projects";
-import Testimonials from "./Testimonials";
-import DividerWhite from "./ui/Dividers";
+import { Projects } from "../../components/OurServices";
+import Testimonials from "../../components/Testimonials";
+import DividerWhite from "../../components/ui/Dividers";
 
 const Portfolio = () => {
   return (

@@ -1,7 +1,8 @@
 // pages/services/[serviceId].js
 
 import { useRouter } from "next/router";
-import { services } from "@/mock/mock-data";
+// import { services } from "@/mock/mock-data";
+import { services } from "@/data/services-data/services";
 import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
 import Link from "next/link";

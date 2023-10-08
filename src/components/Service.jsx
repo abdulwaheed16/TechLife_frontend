@@ -8,6 +8,7 @@ import { RelatedProjectCard } from "@/components/Related-Project-Card";
 import { projects } from "@/mock/mock-data";
 import styles from "../styles/Portfolio.module.css";
 import Carousel from "react-multi-carousel";
+import { Approaches } from "./Approaches";
 
 const Service = ({ service }) => {
   const responsive = {
@@ -39,7 +40,7 @@ const Service = ({ service }) => {
         <Col xs={12} lg={8}>
           <h2 className="title">{service.title}</h2>
         </Col>
-        <Col xs={12} lg={2} className="pricing-larg-screen">
+        {/* <Col xs={12} lg={2} className="pricing-larg-screen">
           <div className="pricing">
             <h4>
               <span className="only-text">Starting at </span>{" "}
@@ -49,24 +50,25 @@ const Service = ({ service }) => {
               Get Now
             </Link>
           </div>
-        </Col>
+        </Col> */}
         <hr />
       </Row>
       <Row>
         <Col className="service-content">
           <div className="description">
             {/* <h3>About service</h3> */}
-            <p>{service.description}</p>
+            <p>{service.welcome_msg}</p>
+            <p>{service.desc}</p>
           </div>
           <div>
-            <h3>Your Benefits</h3>
-            <ul>
+            {/* <h3>Your Benefits</h3> */}
+            {/* <ul>
               {service.benefits.map((benefit, index) => (
                 <li>
                   <FiCheck className="listItem-icon" /> {benefit}
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </Col>
         <Col className="service-img-wrapper">
@@ -74,6 +76,20 @@ const Service = ({ service }) => {
         </Col>
       </Row>
 
+      {/* Our Approaches */}
+
+      <h3>Our Approches</h3>
+      {/* <Approaches approaches={service.approaches} /> */}
+      {/* Why Choose Us */}
+      <Row>
+        <h3>Why Choose Us</h3>
+        <Col></Col>
+      </Row>
+      {/* Packages */}
+      <Row>
+        <h3>Packages</h3>
+        <Col></Col>
+      </Row>
       {/* Related Projects  */}
       <div className={styles.related_projects}>
         <h3 className={styles.related_project_title}>Related Projects</h3>
@@ -93,7 +109,7 @@ const Service = ({ service }) => {
         </div>
       </div>
       {/* Pricing and CTA for screens < 992 */}
-      <Row className="">
+      {/* <Row className="">
         {" "}
         <Col xs={12} lg={2} className="pricing-small-screen">
           <div className="pricing">
@@ -106,7 +122,7 @@ const Service = ({ service }) => {
             </Link>
           </div>
         </Col>
-      </Row>
+      </Row> */}
     </>
   );
 };

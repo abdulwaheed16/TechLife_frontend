@@ -5,7 +5,7 @@ import styles from "../styles/Services.module.css";
 import { useState } from "react";
 import { services } from "@/mock/mock-data";
 
-const ServicesMenu = ({ activeLink, onUpdateActiveLink }) => {
+const NavDropDownServices = ({ activeLink, onUpdateActiveLink }) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const handleToggle = () => setShowDropdown(!showDropdown);
 
@@ -17,7 +17,9 @@ const ServicesMenu = ({ activeLink, onUpdateActiveLink }) => {
       onMouseEnter={() => setShowDropdown(true)}
       onMouseLeave={() => setShowDropdown(false)}
       onClick={() => setShowDropdown(!showDropdown)}
-      className={showDropdown ? styles.dropdownOpen : styles.dropdownClosed}
+      className={`${
+        showDropdown ? styles.dropdownOpen : styles.dropdownClosed
+      }`}
     >
       <div className={styles.dropdownMenu}>
         {" "}
@@ -40,4 +42,4 @@ const ServicesMenu = ({ activeLink, onUpdateActiveLink }) => {
   );
 };
 
-export default ServicesMenu;
+export default NavDropDownServices;
