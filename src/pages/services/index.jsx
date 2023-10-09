@@ -9,10 +9,10 @@ import Link from "next/link";
 import web_developmentImage from "/public/web-development.jpeg";
 import Service from "@/components/Service";
 
-const ServiceDetail = ({}) => {
+const ServicesPage = ({}) => {
   return (
     <div className="service-page">
-      <div className="service-page-inner" style={{ width: "90%" }}>
+      <div className="service-page-inner">
         <h1>Services</h1>
         <div className="description-main">
           <p>
@@ -32,4 +32,4 @@ const ServiceDetail = ({}) => {
   );
 };
 
-export default ServiceDetail;
+export default ServicesPage;

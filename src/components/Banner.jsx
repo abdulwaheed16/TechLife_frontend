@@ -57,7 +57,7 @@ export const Banner = () => {
     <section className="banner" id="home">
       <Container>
         <Row className="aligh-items-center">
-          <Col xs={12} md={6} xl={7}>
+          <Col xs={12} lg={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) => (
                 <div
@@ -95,12 +95,14 @@ export const Banner = () => {
                     isVisible ? "animate__animated animate__zoomIn" : ""
                   }
                 >
-                  <Image
-                    src={headerImg}
-                    alt="Header Img"
-                    width={550}
-                    className="img-fluid"
-                  />
+                  <div className="img_wrapper">
+                    <Image
+                      src={headerImg}
+                      alt="Header Img"
+                      width={550}
+                      className="img-fluid"
+                    />
+                  </div>
                 </div>
               )}
             </TrackVisibility>

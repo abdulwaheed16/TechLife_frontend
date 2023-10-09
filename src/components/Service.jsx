@@ -6,10 +6,12 @@ import webImage from "/public/web_development.jpg";
 import { FiCheck } from "react-icons/fi";
 import { RelatedProjectCard } from "@/components/Related-Project-Card";
 import { projects } from "@/mock/mock-data";
-import styles from "../styles/Portfolio.module.css";
+import styles from "../styles/Services.module.css";
 import Carousel from "react-multi-carousel";
 import Approaches from "./Approaches";
 import Benifits from "./Benifits";
+import Packages from "./Packages";
+
 const Service = ({ service }) => {
   const responsive = {
     superLargeDesktop: {
@@ -35,41 +37,21 @@ const Service = ({ service }) => {
     },
   };
 
-  console.log("-----Approaches: ", service.ourApproaches);
+  // console.log("-----Approaches: ", service.ourApproaches);
   return (
-    <>
+    <div className={styles.service_section}>
       <Row className="service-header">
         <Col xs={12} lg={8}>
           <h2 className="title">{service.title}</h2>
         </Col>
-        {/* <Col xs={12} lg={2} className="pricing-larg-screen">
-          <div className="pricing">
-            <h4>
-              <span className="only-text">Starting at </span>{" "}
-              <span className="price">{`$102`}</span>{" "}
-            </h4>
-            <Link href={`/`} className="button">
-              Get Now
-            </Link>
-          </div>
-        </Col> */}
+
         <hr />
       </Row>
-      <p>{service.welcome_msg}</p>
+      <p className="welcome_msg">{service.welcome_msg}</p>
       <Row xs={1} lg={2}>
         <Col className="service-content">
           <div className="description">
             <p>{service.desc}</p>
-          </div>
-          <div>
-            {/* <h3>Your Benefits</h3> */}
-            {/* <ul>
-              {service.benefits.map((benefit, index) => (
-                <li>
-                  <FiCheck className="listItem-icon" /> {benefit}
-                </li>
-              ))}
-            </ul> */}
           </div>
         </Col>
         <Col>
@@ -83,22 +65,22 @@ const Service = ({ service }) => {
       {/* Our Approaches */}
 
       <div className="ourApproaches">
-        <h3>Our Approches</h3>
+        <h3>Our Approaches</h3>
         <Approaches ourApproaches={service.ourApproaches} />
       </div>
       {/* Why Choose Us */}
 
-      <div className="ourApproaches">
+      <div className="benifits">
         <h3>Why You Should Choose Us</h3>
         <Benifits benifits={service.benifits} />
       </div>
       {/* Packages */}
-      <Row>
+      <div className="packages">
         <h3>Packages</h3>
-        <Col></Col>
-      </Row>
+        <Packages packages={service.packages} />
+      </div>
       {/* Related Projects  */}
-      <div className={styles.related_projects}>
+      {/* <div className={styles.related_projects}>
         <h3 className={styles.related_project_title}>Related Projects</h3>
         <div className={styles.project_cards}>
           <Carousel
@@ -112,25 +94,9 @@ const Service = ({ service }) => {
               </div>
             ))}
           </Carousel>
-          {/* <Devider /> */}
         </div>
-      </div>
-      {/* Pricing and CTA for screens < 992 */}
-      {/* <Row className="">
-        {" "}
-        <Col xs={12} lg={2} className="pricing-small-screen">
-          <div className="pricing">
-            <h4>
-              <span className="only-text">Starting at </span>{" "}
-              <span className="price">{`$102`}</span>{" "}
-            </h4>
-            <Link href={`/`} className="button">
-              Get Now
-            </Link>
-          </div>
-        </Col>
-      </Row> */}
-    </>
+      </div> */}
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
+import contactImage from "../../public/images/down_image.jpg";
 import "animate.css";
 // import Select from "react-select";
 import AsyncSelect from "react-select/async";
@@ -67,13 +68,16 @@ export const Contact = () => {
           <Col size={12} lg={6} className="img-section">
             <TrackVisibility>
               {({ isVisible }) => (
-                <Image
-                  className={
-                    isVisible ? "animate__animated animate__zoomIn" : ""
-                  }
-                  src={contactImg}
-                  alt="Contact Us"
-                />
+                <div className="img_wrapper">
+                  {" "}
+                  <Image
+                    className={
+                      isVisible ? "animate__animated animate__zoomIn" : ""
+                    }
+                    src={contactImage}
+                    alt="Contact Us"
+                  />
+                </div>
               )}
             </TrackVisibility>
           </Col>

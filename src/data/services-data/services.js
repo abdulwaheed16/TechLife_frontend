@@ -30,6 +30,12 @@ import {
   human_resource_benifits,
   web_dev_benifits,
 } from "./banifits";
+import { web_dev_packages } from "./packages/web-dev-pacakges";
+import { app_dev_packages } from "./packages/app_dev_packages";
+import { game_dev_packages } from "./packages/game_dev_packages";
+import { digital_marketing_packages } from "./packages/digital_marketing_packages";
+import { hr_packages } from "./packages/hr_packages";
+import { business_dashboard_packages } from "./packages/business_dashboard_packages";
 
 // Our Services ( Home Page only)
 
@@ -44,6 +50,7 @@ export const services = [
     image: web_dev_img,
     ourApproaches: web_dev_approaches,
     benifits: web_dev_benifits,
+    packages: web_dev_packages,
   },
   {
     id: 2,
@@ -55,6 +62,7 @@ export const services = [
     image: app_dev_img,
     ourApproaches: app_dev_approaches,
     benifits: app_dev_benifits,
+    packages: app_dev_packages,
   },
   {
     id: 3,
@@ -66,6 +74,7 @@ export const services = [
     image: game_dev_img,
     ourApproaches: game_dev_approaches,
     benifits: game_dev_benifits,
+    packages: game_dev_packages,
   },
   {
     id: 4,
@@ -77,6 +86,7 @@ export const services = [
     image: digital_marketing_img,
     ourApproaches: digital_marketing_approaches,
     benifits: digital_marketing_benifits,
+    packages: digital_marketing_packages,
   },
   {
     id: 5,
@@ -88,6 +98,7 @@ export const services = [
     image: human_resource_img,
     outsourcing: Human_Resource_outsourcing,
     benifits: human_resource_benifits,
+    packages: hr_packages,
   },
   {
     id: 6,
@@ -98,5 +109,6 @@ export const services = [
     image: business_dashboard_img,
     ourApproaches: Business_Dashboard_approaches,
     benifits: business_dashboard_benifits,
+    packages: business_dashboard_packages,
   },
 ];

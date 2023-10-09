@@ -958,8 +958,13 @@ nav.navbar.scrolled {
   background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
   padding: 40px 0 200px 0;
 }
+.contact .img_wrapper {
+  width: 400px;
+  height: 400px;
+}
 .contact img {
-  width: 92%;
+  width: 100%;
+  height: 100%;
 }
 .contact h2 {
   font-size: 45px;
@@ -1291,12 +1296,20 @@ nav.navbar.scrolled {
 }
 .service-page p {
   width: 60%;
+  line-height: normal;
   /* text-align: center; */
 }
 .service-page-inner {
   width: 95%;
 }
-
+.service-header .title {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 15px;
+  /* color: #f0f0f0; */
+  letter-spacing: 1.2px;
+  line-height: 35px;
+}
 .service-header hr {
   width: 100%;
   border-color: #fff;
@@ -1306,42 +1319,40 @@ nav.navbar.scrolled {
 }
 
 /* Pricing Styling */
-.pricing {
-  /* margin: 40px 0 80px; */
+/* .pricing {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
-}
+} */
 
-.pricing h4 {
+/* .pricing h4 {
   margin: 0;
   white-space: nowrap;
   display: flex;
   align-items: center;
-  background: linear-gradient(90deg, #8f2263, #32217c); /* padding: 2px 20px; */
+  background: linear-gradient(90deg, #8f2263, #32217c); 
   color: #dddddd;
   padding: 5px 50px 8px 20px;
   margin-right: -15px;
   border-radius: 0 20px 20px 0;
   z-index: 999;
-}
+} */
 
-.pricing .price {
+/* .pricing .price {
   font-size: 28px;
   font-weight: 500;
   letter-spacing: 3px;
   margin-left: 10px;
   white-space: nowrap;
-}
+} */
 
-.pricing .only-text {
+/* .pricing .only-text {
   font-size: 18px;
   margin-left: 0px;
-  /* color: ; */
-}
+} */
 
-.pricing .button {
+/* .pricing .button {
   text-decoration: none;
   background: linear-gradient(90deg, #aa367c, #4a2fbd);
   color: #fff;
@@ -1361,23 +1372,37 @@ nav.navbar.scrolled {
   background: linear-gradient(90deg, #4a2fbd, #aa367c);
   scale: 1.1;
   z-index: 99999;
+} */
+
+.welcome_msg {
+  /* text-align: center; */
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  color: yellow;
 }
 /* Service Content Styling */
 .service-content {
   background: transparent;
-  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  /* margin: 10px 0; */
   /* text-align: left; */
   letter-spacing: 1px;
 }
 
 .service-content h3 {
   font-size: 20px;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   font-weight: 500;
   margin: 10px 0 20px;
 }
 .service-content .description {
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
   color: #eeeeee;
 }
 
@@ -1403,17 +1428,14 @@ nav.navbar.scrolled {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 300px;
-  border: 1px solid white;
+  height: 70%;
+  /* background-color: #2b1880; */
+  /* border: 1px solid white; */
   overflow: hidden;
 }
 .service-img {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  /* padding: 20px; */
   width: 100%;
-  height: 100%;
+  height: 90%;
   object-fit: cover;
 }
 
@@ -1423,14 +1445,33 @@ nav.navbar.scrolled {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 60px 0;
+  border-top: 2px solid rgb(22, 22, 22);
+  margin-top: 20px;
+  padding: 30px 0 50px;
 }
-.ourApproaches h3 {
+.benifits {
+  padding: 30px 0 50px;
+  margin-top: 20px;
+  border-top: 2px solid rgb(22, 22, 22);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.packages {
+  padding: 30px 0 50px;
+  border-top: 2px solid rgb(26, 26, 26);
+}
+
+.ourApproaches h3,
+.benifits h3,
+.packages h3 {
   font-size: 32px;
   letter-spacing: 1px;
   font-weight: 500;
-  margin: 30px 0;
+  /* margin: 30px 0; */
   text-align: center;
+  padding: 20px 0 30px;
   /* color: #eeeeee; */
 }
 .related-projects {
@@ -1470,7 +1511,12 @@ nav.navbar.scrolled {
 }
 
 /* Responsive Styles */
-@media (width<=992px) {
+@media (width<=1440px) {
+  .ourApproaches {
+    margin: -160px 0 0;
+  }
+}
+@media (width<=1024px) {
   .service-header h2 {
     font-size: 24px;
   }
@@ -1484,9 +1530,12 @@ nav.navbar.scrolled {
     display: block;
     margin: 0px 0 60px;
   }
+  .ourApproaches {
+    margin: -60px 0 0;
+  }
 }
 
-@media (width> 992px) {
+/* @media (width> 992px) {
   .service-page > p {
     max-width: 90%;
   }
@@ -1496,9 +1545,12 @@ nav.navbar.scrolled {
   .pricing-small-screen {
     display: none;
   }
+} */
+
+@media (width<=768px) {
 }
 
-@media (max-width: 576px) {
+@media (width <= 576px) {
   .service-page-inner {
     width: 95%;
   }
@@ -1523,11 +1575,11 @@ nav.navbar.scrolled {
   }
   .service-page p {
     width: 100%;
-    margin-bottom: -10px;
+    margin-bottom: 10px;
   }
   .service-header .title {
     text-align: center;
-    margin: 40px 0 20px;
+    margin: 20px 0 20px;
     font-size: 36px;
   }
   .pricing {
@@ -1543,9 +1595,12 @@ nav.navbar.scrolled {
     width: 300px;
     height: auto;
   }
+  /* .ourApproaches {
+    margin: 20px 0 180px;
+  } */
 }
 
-@media (width<=425) {
+@media (width<=425px) {
   .pricing {
     /* margin: 40px 0 80px; */
     display: flex;
@@ -1554,10 +1609,24 @@ nav.navbar.scrolled {
     justify-content: center;
     flex-wrap: nowrap;
   }
+  .welcome_msg {
+    font-size: 18px;
+  }
+  .service-content .description {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+  .ourApproaches {
+    margin: -80px 0 0;
+  }
 }
-@media (width>1440) {
+
+@media (width>1440px) {
   .service-page-inner {
     width: 80%;
+  }
+  .ourApproaches {
+    margin: -250px 0 0;
   }
 }
 .service-devider {

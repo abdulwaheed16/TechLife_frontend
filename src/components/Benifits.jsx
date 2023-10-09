@@ -6,15 +6,13 @@ import styles from "../styles/approches.module.css";
 const Benifits = ({ benifits }) => {
   //   console.log("Approaches: ", ourApproaches);
   return (
-    <>
-      <div className={styles.benifits}>
-        {benifits?.map((benifit, index) => (
-          <div key={index}>
-            <BenifitsCard benifit={benifit} />
-          </div>
-        ))}
-      </div>
-    </>
+    <Row>
+      {benifits?.map((benifit, index) => (
+        <Col xs={12} sm={6} xl={4} xxxl={2} key={index}>
+          <BenifitsCard benifit={benifit} />
+        </Col>
+      ))}
+    </Row>
   );
 };
 
