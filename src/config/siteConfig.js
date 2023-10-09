@@ -14,10 +14,10 @@ export const siteConfig = {
       label: "Services",
       path: "/services",
     },
-    {
-      label: "Blog",
-      path: "/blog",
-    },
+    // {
+    //   label: "Blog",
+    //   path: "/blog",
+    // },
     {
       label: "About",
       path: "/#about",

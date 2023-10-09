@@ -81,7 +81,7 @@ export const business_dashboard_packages = [
     idealFor:
       "Ideal for businesses needing advanced features and customization",
     customPrice:
-      "Custom (based on the complexity of the dashboard and specific client requirements)",
+      "(based on the complexity of the dashboard and specific client requirements)",
     features: [
       {
         title: "Data Sources",
@@ -125,8 +125,8 @@ export const business_dashboard_packages = [
   {
     id: 1,
     package_name: "Enterprise Business Dashboard Package",
-    idealFor:
-      "Custom  (tailored to the specific needs and scale of the enterprise)",
+    idealFor: "Ideal for large enterprises with extensive data needs",
+    customPrice: "(tailored to the specific needs and scale of the enterprise)",
     features: [
       {
         title: "Data Sources",

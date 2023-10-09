@@ -8,9 +8,12 @@ import Link from "next/link";
 
 //   </div>;
 // };
-const PackagesCard = ({ service_package }) => {
+const PackagesCard = ({ service_package, service_sub_package }) => {
   const package_features = service_package?.features;
   console.log("Features: ", package_features);
+  //   if (service_sub_package) {
+  //     service_package = service_sub_package;
+  //   }
   return (
     <div className={styles.card_wrapper}>
       <div className={styles.card}>
@@ -37,12 +40,25 @@ const PackagesCard = ({ service_package }) => {
         </div>
 
         {/* ----------------Pricing-------------- */}
-        <div className={styles.price_wrapper}>
-          <div className={styles.price}>
-            <span className={styles.oldPrice}>$120</span>
-            <span className={styles.newPrice}>$60</span>
+
+        {service_package?.customPrice ? (
+          <div className={styles.customPrice}>
+            <h3>
+              Custom Price <span>{service_package?.customPrice}</span>
+            </h3>
           </div>
-        </div>
+        ) : (
+          <div className={styles.price_wrapper}>
+            <div className={styles.price}>
+              <span className={styles.oldPrice}>
+                ${service_package.oldPrice}
+              </span>
+              <span className={styles.newPrice}>
+                ${service_package.newPrice}
+              </span>
+            </div>
+          </div>
+        )}
         <div className={styles.button_wrapper}>
           <Link href={`/`} className={styles.button}>
             Get Now

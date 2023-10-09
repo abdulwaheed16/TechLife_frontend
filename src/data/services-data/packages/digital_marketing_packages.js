@@ -8,7 +8,7 @@ export const digital_marketing_packages = [
     package_name: "Social Media Marketing Package",
     sub_packages: [
       {
-        sub_package_name: "Starter Package",
+        package_name: "Starter Package",
         oldPrice: "800",
         newPrice: "400",
         features: [
@@ -39,7 +39,7 @@ export const digital_marketing_packages = [
         ],
       },
       {
-        sub_package_name: "Standard Package",
+        package_name: "Standard Package",
         oldPrice: "1600",
         newPrice: "800",
         features: [
@@ -70,7 +70,7 @@ export const digital_marketing_packages = [
         ],
       },
       {
-        sub_package_name: "Premium Package",
+        package_name: "Premium Package",
         oldPrice: "3000",
         newPrice: "1500",
         features: [
@@ -108,7 +108,7 @@ export const digital_marketing_packages = [
     package_name: "Search Engine Optimization (SEO) Packages",
     sub_packages: [
       {
-        sub_package_name: "Basic SEO Package",
+        package_name: "Basic SEO Package",
         oldPrice: "1200",
         newPrice: "600",
         features: [
@@ -131,7 +131,7 @@ export const digital_marketing_packages = [
         ],
       },
       {
-        sub_package_name: "Standard SEO Package",
+        package_name: "Standard SEO Package",
         oldPrice: "2000",
         newPrice: "1000",
         features: [
@@ -158,7 +158,7 @@ export const digital_marketing_packages = [
         ],
       },
       {
-        sub_package_name: "Advanced SEO Package",
+        package_name: "Advanced SEO Package",
         oldPrice: "4400",
         newPrice: "2200",
         features: [
@@ -197,7 +197,7 @@ export const digital_marketing_packages = [
     package_name: "Pay-Per-Click (PPC) Advertising Packages",
     sub_packages: [
       {
-        sub_package_name: "Starter PPC Package",
+        package_name: "Starter PPC Package",
         customPrice: "Management fee + 12% of ad spend",
         features: [
           {
@@ -231,7 +231,7 @@ export const digital_marketing_packages = [
         ],
       },
       {
-        sub_package_name: "Advanced PPC Package",
+        package_name: "Advanced PPC Package",
         customPrice: "Management fee + 12% of ad spend",
         features: [
           {
@@ -265,7 +265,7 @@ export const digital_marketing_packages = [
         ],
       },
       {
-        sub_package_name: "Enterprise PPC Package",
+        package_name: "Enterprise PPC Package",
         customPrice: "Management fee + 12% of ad spend",
         features: [
           {

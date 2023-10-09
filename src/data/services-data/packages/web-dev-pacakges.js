@@ -73,9 +73,7 @@ export const web_dev_packages = [
     id: 1,
     package_name: "Custom Web Application Package",
     idealFor: "Ideal for businesses needing advanced, tailored solutions",
-    oldPrice: "",
-    newPrice: "",
-    customPrice: "Custom Quote (based on project scope)",
+    customPrice: "(based on project scope)",
     features: [
       {
         title: "Custom Features",

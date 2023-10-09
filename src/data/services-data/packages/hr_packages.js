@@ -8,7 +8,7 @@ export const hr_packages = [
     package_name: "Hourly Rate Model",
     idealFor:
       "Ideal for businesses needing flexible support on an hourly basis:",
-    customPrice: "12 per hour per agent",
+    customPrice: "$12 per hour per agent",
     features: [
       {
         title: "Customer Support",
@@ -33,7 +33,7 @@ export const hr_packages = [
     package_name: "Monthly Retainer Package",
     idealFor:
       "Ideal for businesses requiring consistent support on a monthly basis",
-    customPrice: "1500 per hour per agent",
+    customPrice: "$1500 per hour per agent",
     features: [
       {
         title: "Dedicated Agents",
@@ -66,7 +66,7 @@ export const hr_packages = [
     package_name: "Performance-Based Pricing",
     idealFor: "Ideal for businesses focusing on sales outcomes and conversions",
     customPrice:
-      "Custom (based on the complexity of the sales process and agreed-upon commission percentage)",
+      "(based on the complexity of the sales process and agreed-upon commission percentage)",
     features: [
       {
         title: "Lead Generation",
@@ -95,8 +95,7 @@ export const hr_packages = [
     package_name: "Project-Based Pricing",
     idealFor:
       "Ideal for businesses with specific short-term sales or customer support projects",
-    customPrice:
-      "Price: Custom (based on the project scope, complexity, and duration)",
+    customPrice: "(based on the project scope, complexity, and duration)",
     features: [
       {
         title: "Scope Definition",
@@ -128,7 +127,7 @@ export const hr_packages = [
     id: 1,
     package_name: "24/7 Support Package",
     idealFor: "Ideal for businesses needing round-the-clock customer support",
-    customPrice: "Custom",
+    customPrice: " ",
     features: [
       {
         title: "Dedicated Team",

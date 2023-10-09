@@ -6,25 +6,34 @@ import clientName3 from "/public/amazon-removebg-preview.png";
 
 const color = "#000";
 export const servicesOptions = [
-  { value: "web development", label: "Web Development", color: color },
   {
-    value: "mobile development",
-    label: "Mobile Development",
+    value: "Web development",
+    label: "Web Development",
     color: color,
   },
   {
-    value: "graphic design",
-    label: "Graphic Design",
+    value: "app development",
+    label: "App Development",
     color: color,
   },
   {
-    value: "seo",
-    label: "SEO",
+    value: "game development",
+    label: "Game Development",
     color: color,
   },
   {
     value: "digital marketing",
     label: "Digital Marketing",
+    color: color,
+  },
+  {
+    value: "human resource outsourcing",
+    label: "Human Resource Outsourcing",
+    color: color,
+  },
+  {
+    value: "business dashboard",
+    label: "Business Dashboard",
     color: color,
   },
 ];

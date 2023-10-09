@@ -9,9 +9,10 @@ import makeAnimated from "react-select/animated";
 import TrackVisibility from "react-on-screen";
 import Image from "next/image";
 import { loadOptions, colorStyles } from "./SelectServicesSettings";
-import { servicesOptions as defualtServicesOptions } from "@/mock/mock-data";
+import { servicesOptions } from "@/data/services-data/our-services";
 import toast from "react-hot-toast";
 import SendBtn from "./ui/Send-Btn";
+import { ourServices } from "@/data/services-data/our-services";
 
 export const Contact = () => {
   const animatedComponent = makeAnimated();
@@ -61,6 +62,7 @@ export const Contact = () => {
     setSelectedOptions(selectedOption);
   };
 
+  //
   return (
     <section className="contact" id="connect">
       <Container>
@@ -95,19 +97,7 @@ export const Contact = () => {
                   </h2>
                   <form onSubmit={handleSubmit}>
                     <Row>
-                      <Col size={12} sm={6} className="px-1">
-                        <input
-                          type="text"
-                          name="firstName"
-                          value={formDetails.firstName}
-                          placeholder="First Name"
-                          onChange={(e) =>
-                            // onFormUpdate("firstName", e.target.value)
-                            handleInput(e)
-                          }
-                        />
-                      </Col>
-                      <Col size={12} sm={6} className="px-1">
+                      <Col size={12} xs={12} className="px-1">
                         <input
                           type="text"
                           name="lastName"
@@ -116,7 +106,7 @@ export const Contact = () => {
                           onChange={(e) => handleInput(e)}
                         />
                       </Col>
-                      <Col size={12} sm={6} className="px-1">
+                      <Col size={12} xs={12} className="px-1">
                         <input
                           type="email"
                           name="email"
@@ -125,7 +115,7 @@ export const Contact = () => {
                           onChange={(e) => handleInput(e)}
                         />
                       </Col>
-                      <Col size={12} sm={6} className="px-1">
+                      <Col size={12} xs={12} className="px-1">
                         <input
                           type="tel"
                           name="phone"
@@ -134,10 +124,10 @@ export const Contact = () => {
                           onChange={(e) => handleInput(e)}
                         />
                       </Col>
-                      <Col size={12} sm={12} className="px-1 py-4">
+                      <Col size={12} xs={12} className="px-1 py-4">
                         <AsyncSelect
                           loadOptions={loadOptions}
-                          defaultOptions={defualtServicesOptions}
+                          defaultOptions={servicesOptions}
                           styles={colorStyles}
                           onChange={handleSelectChange}
                           isMulti

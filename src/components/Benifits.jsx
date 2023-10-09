@@ -7,6 +7,7 @@ const Benifits = ({ benifits }) => {
   //   console.log("Approaches: ", ourApproaches);
   return (
     <Row>
+      <h3 className="benifits_heading">Why You Should Choose Us</h3>
       {benifits?.map((benifit, index) => (
         <Col xs={12} sm={6} xl={4} xxxl={2} key={index}>
           <BenifitsCard benifit={benifit} />

@@ -65,18 +65,18 @@ const Service = ({ service }) => {
       {/* Our Approaches */}
 
       <div className="ourApproaches">
-        <h3>Our Approaches</h3>
-        <Approaches ourApproaches={service.ourApproaches} />
+        <Approaches
+          ourApproaches={service.ourApproaches}
+          outsourcing={service?.outsourcing}
+        />
       </div>
       {/* Why Choose Us */}
 
       <div className="benifits">
-        <h3>Why You Should Choose Us</h3>
         <Benifits benifits={service.benifits} />
       </div>
       {/* Packages */}
       <div className="packages">
-        <h3>Packages</h3>
         <Packages packages={service.packages} />
       </div>
       {/* Related Projects  */}

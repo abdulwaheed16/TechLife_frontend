@@ -8,6 +8,7 @@ import OurServices from "@/components/OurServices";
 import Testimonials from "@/components/Testimonials";
 // import ProfileBlob from "@/assets/img/Profile-Blob";
 // const inter = Inter({ subsets: ["latin"] });
+import logo from "../../public/TechLife_logo-preview.png";
 
 export default function Home() {
   return (
@@ -16,7 +17,7 @@ export default function Home() {
         <title>Techlife</title>
         <meta name="description" content="Coming Soon" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/TechLife_logo.jpeg" />
+        <link rel="icon" href="/TechLife_logo.svg" />
       </Head>
       <main className={`App`}>
         <Banner />
@@ -25,11 +26,11 @@ export default function Home() {
         <OurServices />
         <Testimonials />
         {/* <ProfileBlob /> */}
-        <Blog />
+        {/* <Blog /> */}
         <div id="about">
           <AboutUs />
         </div>
-        <Clients />
+        {/* <Clients /> */}
         <div id="connect">
           <Contact />
         </div>

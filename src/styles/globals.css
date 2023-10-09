@@ -1463,9 +1463,9 @@ nav.navbar.scrolled {
   border-top: 2px solid rgb(26, 26, 26);
 }
 
-.ourApproaches h3,
-.benifits h3,
-.packages h3 {
+.ourApproaches_heading,
+.benifits_heading,
+.packages_heading {
   font-size: 32px;
   letter-spacing: 1px;
   font-weight: 500;

@@ -65,3 +65,38 @@ export const ourServices = [
       "Empowering businesses with intuitive and insightful dashboard interfaces, our services transform complex data into actionable insights, enabling informed decision-making and driving strategic growth.",
   },
 ];
+
+// used in contact form, consultation
+const color = "#000";
+export const servicesOptions = [
+  {
+    value: "Web development",
+    label: "Web Development",
+    color: color,
+  },
+  {
+    value: "app development",
+    label: "App Development",
+    color: color,
+  },
+  {
+    value: "game development",
+    label: "Game Development",
+    color: color,
+  },
+  {
+    value: "digital marketing",
+    label: "Digital Marketing",
+    color: color,
+  },
+  {
+    value: "human resource outsourcing",
+    label: "Human Resource Outsourcing",
+    color: color,
+  },
+  {
+    value: "business dashboard",
+    label: "Business Dashboard",
+    color: color,
+  },
+];
