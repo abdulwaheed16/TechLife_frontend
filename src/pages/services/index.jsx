@@ -8,8 +8,22 @@ import Image from "next/image";
 import Link from "next/link";
 import web_developmentImage from "/public/web-development.jpeg";
 import Service from "@/components/Service";
+import { useEffect } from "react";
+import BackToTopBtn from "@/components/ui/BackToTop-Btn";
 
 const ServicesPage = ({}) => {
+  const router = useRouter();
+
+  const { slug } = router.query;
+  useEffect(() => {
+    if (slug) {
+      window.scrollTo = {
+        top: document.getElementById(slug).offsetTop,
+        behavior: "smooth",
+      };
+      console.log("Service Id: ", slug);
+    }
+  }, [slug]);
   return (
     <div className="service-page">
       <div className="service-page-inner">
@@ -22,12 +36,13 @@ const ServicesPage = ({}) => {
         </div>
         {/* all services available */}
         {services.map((service, index) => (
-          <div key={index} id={service.id}>
+          <div key={index} id={`${service.slug}`}>
             <Service service={service} />
             {/* <div className="service-devider"></div> */}
           </div>
         ))}
       </div>
+      {/* <BackToTopBtn /> */}
     </div>
   );
 };

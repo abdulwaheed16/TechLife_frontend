@@ -33,14 +33,14 @@ const AboutUs = () => {
       imageUrl: emp_image_2,
     },
     {
-      id: 2,
+      id: 4,
       name: "Jane Smith",
       role: "CTO",
       canMeet: false,
       imageUrl: emp_image_1,
     },
     {
-      id: 3,
+      id: 5,
       name: "Alice Johnson",
       role: "Lead Developer",
       canMeet: false,

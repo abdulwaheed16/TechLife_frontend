@@ -8,9 +8,13 @@ import Link from "next/link";
 
 //   </div>;
 // };
-const PackagesCard = ({ service_package, service_sub_package }) => {
+const PackagesCard = ({
+  service_package,
+  service_sub_package,
+  service_title,
+}) => {
   const package_features = service_package?.features;
-  console.log("Features: ", package_features);
+  // console.log("Features: ", package_features);
   //   if (service_sub_package) {
   //     service_package = service_sub_package;
   //   }
@@ -59,8 +63,19 @@ const PackagesCard = ({ service_package, service_sub_package }) => {
             </div>
           </div>
         )}
+        {/* ---------------get a quote---------------- */}
         <div className={styles.button_wrapper}>
-          <Link href={`/`} className={styles.button}>
+          <Link
+            href={{
+              pathname: "/",
+              hash: "#connect",
+              query: {
+                service_title: service_title,
+                package_title: service_package.package_name,
+              },
+            }}
+            className={styles.button}
+          >
             Get Now
           </Link>
         </div>

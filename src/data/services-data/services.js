@@ -44,6 +44,7 @@ export const services = [
   {
     id: 1,
     title: "Web development",
+    slug: "web-development",
     welcome_msg: "Welcome to The Tech Life – Where Ideas Come to Life Online!",
     desc: "At The Tech Life, we specialize in crafting exceptional web development and design solutions tailored to meet your unique needs. In today's digital age, your online presence is often the first interaction potential clients have with your business. We understand the importance of making that first impression count. With our expert web development and design services, we transform your vision into a captivating, user-friendly, and responsive website that not only showcases your brand but also engages your audience effectively.",
     price: "16",
@@ -55,6 +56,7 @@ export const services = [
   {
     id: 2,
     title: "App development",
+    slug: "app-development",
     welcome_msg:
       "Welcome to [Your Company Name] – Your Partner in Transformative App Development!",
     desc: "At The Tech Life, we take immense pride in our cutting-edge app development services tailored to meet the dynamic needs of businesses in the digital age. Mobile applications have become the lifeblood of modern enterprises, connecting businesses with their customers on a personal level. With our expertise, creativity, and technical prowess, we bring your app ideas to life, creating immersive, intuitive, and high-performance mobile experiences.",
@@ -67,6 +69,7 @@ export const services = [
   {
     id: 3,
     title: "Game development",
+    slug: "game-development",
     welcome_msg:
       "Welcome to [The Tech Life] – Where Imagination Transforms into Gaming Reality!",
     desc: "At [The Tech Life], we are passionate about game development that goes beyond entertainment—it's about creating experiences, crafting narratives, and building worlds that captivate players and leave a lasting impact. With our dedicated team of skilled developers, designers, and storytellers, we bring your gaming dreams to life, offering a diverse range of gaming solutions that span genres and platforms.",
@@ -79,6 +82,7 @@ export const services = [
   {
     id: 4,
     title: "Digital Marketing",
+    slug: "digital-marketing",
     welcome_msg:
       "Welcome to [The Tech Life] – Mastering the Art of Digital Marketing!",
     desc: "At [The Tech Life], we are more than just marketers; we are storytellers, strategists, and digital enthusiasts who thrive on helping businesses succeed in the vast online landscape. With the ever-changing digital world, your brand's visibility and engagement are pivotal to your success. That's where we come in. Our comprehensive digital marketing services are designed to elevate your brand, increase your online presence, and drive meaningful interactions with your audience.",
@@ -91,6 +95,7 @@ export const services = [
   {
     id: 5,
     title: "Human Resource Outsourcing",
+    slug: "human-resource-outsourcing",
     welcome_msg:
       "Welcome to [The Tech Life] – Your Trusted Partner in Outsourced Customer Support and Sales Solutions!",
     desc: "At [The Tech Life], we understand the vital role customer support and sales play in shaping the success of businesses. That's why we offer specialized outsourced services, designed to seamlessly integrate with your operations while providing top-notch customer support and sales solutions.",
@@ -103,6 +108,7 @@ export const services = [
   {
     id: 6,
     title: "Business Dashboard",
+    slug: "business-dashboard",
     welcome_msg: "Welcome to [The Tech Life] – Where data drives Decisions",
     desc: "At [The Tech Life], we specialize in crafting cutting-edge business dashboard and interface solutions that revolutionize the way businesses interpret and utilize data. In today's fast-paced digital landscape, staying ahead requires not just data, but actionable insights. Our services go beyond aesthetics – we transform complex data into intuitive, user-friendly interfaces that provide deep analytical capabilities, enabling businesses to make informed decisions and strategize for success.",
     price: "190",

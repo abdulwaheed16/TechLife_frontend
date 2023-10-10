@@ -14,11 +14,10 @@ export const colorStyles = {
     return {
       ...styles,
       borderColor: "#FFFFFF80",
-
       backgroundColor:
         "linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)",
       borderRadius: "10px",
-      "& input::placeholder": {
+      "input::placeholder": {
         color: "#fff",
         content: '"Your Custom Placeholder Text"', // Change the placeholder text here
       },

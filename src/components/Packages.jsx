@@ -3,11 +3,11 @@ import PackagesCard from "./PackagesCard";
 import { Row, Col } from "react-bootstrap";
 import styles from "../styles/packages.module.css";
 
-const Packages = ({ packages }) => {
-  console.log("Packages: ", packages);
+const Packages = ({ packages, service_title }) => {
+  // console.log("Packages: ", packages);
 
   const sub_packages = packages?.map((pack) => pack.sub_packages);
-  console.log("***********", sub_packages);
+  // console.log("***********", sub_packages);
   return (
     <>
       <h3 className="packages_heading">Pick Your Package</h3>
@@ -28,8 +28,11 @@ const Packages = ({ packages }) => {
       ) : ( */}
       <Row xs={1} lg={2} xxl={2} xxxl={4} className={""}>
         {packages?.map((service_package, index) => (
-          <Col>
-            <PackagesCard service_package={service_package} />
+          <Col key={index}>
+            <PackagesCard
+              service_package={service_package}
+              service_title={service_title}
+            />
           </Col>
         ))}
       </Row>

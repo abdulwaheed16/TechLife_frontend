@@ -3,7 +3,8 @@ import React from "react";
 import { NavDropdown } from "react-bootstrap";
 import styles from "../styles/Services.module.css";
 import { useState } from "react";
-import { services } from "@/mock/mock-data";
+// import { services } from "@/mock/mock-data";
+import { ourServices } from "@/data/services-data/our-services";
 
 const NavDropDownServices = ({ activeLink, onUpdateActiveLink }) => {
   const [showDropdown, setShowDropdown] = useState(false);
@@ -24,10 +25,10 @@ const NavDropDownServices = ({ activeLink, onUpdateActiveLink }) => {
       <div className={styles.dropdownMenu}>
         {" "}
         {/* Use the CSS module class */}
-        {services.map((service, index) => (
+        {ourServices.map((service, index) => (
           <Link
             key={index}
-            href={`/services/#${service.id}`}
+            href={`/services/#${service.slug}`}
             className={`d-block ${styles.nav_link} ${
               activeLink === service.title
                 ? " active navbar-link"

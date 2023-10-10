@@ -37,6 +37,7 @@ export const Footer = () => {
               {siteConfig.footerLinks?.map((link, index) => (
                 <Link
                   href={link.path}
+                  key={index}
                   className={`nav-link ${
                     activeLink === link.label
                       ? "active navbar-link"

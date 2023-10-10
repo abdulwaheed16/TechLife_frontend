@@ -13,8 +13,15 @@ import { servicesOptions } from "@/data/services-data/our-services";
 import toast from "react-hot-toast";
 import SendBtn from "./ui/Send-Btn";
 import { ourServices } from "@/data/services-data/our-services";
+import { useRouter } from "next/router";
+import chalk from "chalk";
 
 export const Contact = () => {
+  const router = useRouter();
+  const { service_title, package_title } = router.query;
+
+  console.log("Selected Package", chalk.green(service_title, package_title));
+
   const animatedComponent = makeAnimated();
   const asyncSelectRef = useRef();
 
@@ -57,9 +64,22 @@ export const Contact = () => {
     asyncSelectRef.current.clearValue();
   };
 
-  const handleSelectChange = (selectedOption) => {
-    console.log("Selected Option: ", selectedOption);
-    setSelectedOptions(selectedOption);
+  const handleSelectChange = (selectedOptions) => {
+    const selectedLabels = selectedOptions.map((option) => {
+      const group = servicesOptions.find((category) =>
+        category.options.some((opt) => opt.value === option.value)
+      );
+
+      return `${group.label}: ${option.label}`;
+    });
+
+    console.log("Selected Options:", selectedLabels);
+    setSelectedOptions(selectedOptions);
+  };
+
+  const defaultOptionValue = {
+    value: package_title,
+    label: package_title,
   };
 
   //
@@ -128,12 +148,14 @@ export const Contact = () => {
                         <AsyncSelect
                           loadOptions={loadOptions}
                           defaultOptions={servicesOptions}
+                          defaultValue={defaultOptionValue}
                           styles={colorStyles}
                           onChange={handleSelectChange}
                           isMulti
                           // closeMenuOnSelect={true}
                           components={animatedComponent}
                           ref={asyncSelectRef}
+                          placeholder="Select Your Desired Package  ( see the service page for more details)"
                         />
                       </Col>
 

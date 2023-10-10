@@ -20,7 +20,7 @@ const OurServices = () => {
                     isVisible ? "animate__animated animate__fadeIn" : ""
                   }
                 >
-                  <h2>Projects</h2>
+                  <h2>Our Services </h2>
                   <p>
                     {" "}
                     and sLorem Ipsum is simply dummy text of the printing and
@@ -29,7 +29,9 @@ const OurServices = () => {
                   </p>
                   <Row className="mt-4">
                     {ourServices.map((service, index) => {
-                      return <OurServiceCard key={index} service={service} />;
+                      return (
+                        <OurServiceCard key={service.id} service={service} />
+                      );
                     })}
                   </Row>
                 </div>
@@ -38,7 +40,11 @@ const OurServices = () => {
           </Col>
         </Row>
       </Container>
-      <Image className="background-image-right" src={colorSharp2}></Image>
+      <Image
+        className="background-image-right"
+        src={colorSharp2}
+        alt="Service Image"
+      ></Image>
     </section>
   );
 };

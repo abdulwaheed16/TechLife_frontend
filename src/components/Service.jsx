@@ -57,7 +57,11 @@ const Service = ({ service }) => {
         <Col>
           <div className="service-img-wrapper">
             {" "}
-            <Image src={service.image} className="service-img" />
+            <Image
+              src={service.image}
+              alt="service Image"
+              className="service-img"
+            />
           </div>
         </Col>
       </Row>
@@ -77,7 +81,7 @@ const Service = ({ service }) => {
       </div>
       {/* Packages */}
       <div className="packages">
-        <Packages packages={service.packages} />
+        <Packages packages={service.packages} service_title={service.title} />
       </div>
       {/* Related Projects  */}
       {/* <div className={styles.related_projects}>
