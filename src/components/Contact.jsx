@@ -102,7 +102,7 @@ export const Contact = () => {
                           type="text"
                           name="lastName"
                           value={formDetails.lasttName}
-                          placeholder="Last Name"
+                          placeholder="Full Name"
                           onChange={(e) => handleInput(e)}
                         />
                       </Col>
