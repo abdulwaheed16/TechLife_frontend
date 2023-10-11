@@ -6,7 +6,7 @@ import Link from "next/link";
 const PackagesCardDgM = ({
   service_sub_package,
   service_title,
-  sub_service_title,
+  package_title,
 }) => {
   const package_features = service_sub_package?.features;
   console.log("Sub Package Name: ", service_sub_package?.sub_package_name);
@@ -62,7 +62,8 @@ const PackagesCardDgM = ({
               hash: "#connect",
               query: {
                 service: service_title,
-                plan: service_sub_package.package_name,
+                plan: package_title,
+                sub_plan: service_sub_package?.sub_package_name,
               },
             }}
             className={styles.button}

@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import contactImage from "../../public/images/down_image.jpg";
+
 import "animate.css";
 // import Select from "react-select";
 import AsyncSelect from "react-select/async";
@@ -18,9 +19,12 @@ import chalk from "chalk";
 
 export const Contact = () => {
   const router = useRouter();
-  const { service, plan } = router.query;
+  const { service, plan, sub_plan } = router.query;
 
-  console.log("Selected Package", chalk.green(service, plan));
+  console.log(
+    "Selected Package",
+    chalk.green(`${service}/${plan}/${sub_plan}`)
+  );
 
   const animatedComponent = makeAnimated();
   const asyncSelectRef = useRef();
@@ -76,11 +80,18 @@ export const Contact = () => {
     console.log("Selected Options:", selectedLabels);
     setSelectedOptions(selectedOptions);
   };
-
-  const defaultOptionValue = {
-    value: service,
-    label: plan,
-  };
+  let defaultOptionValue;
+  if (sub_plan) {
+    defaultOptionValue = {
+      value: service,
+      label: `${plan} - ${sub_plan}`,
+    };
+  } else {
+    defaultOptionValue = {
+      value: service,
+      label: `${plan}`,
+    };
+  }
   //
   return (
     <section className="contact" id="connect">
@@ -112,7 +123,7 @@ export const Contact = () => {
                 >
                   <h2>
                     Book A <span style={{ color: "yellow" }}>Free</span>{" "}
-                    Consultancy
+                    Consultation
                   </h2>
                   <form onSubmit={handleSubmit}>
                     <Row>

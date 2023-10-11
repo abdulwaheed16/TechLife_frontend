@@ -16,7 +16,7 @@ const PackagesDgM = ({ service_package, service_title }) => {
             <PackagesCardDgM
               service_sub_package={service_sub_package}
               service_title={service_title}
-              sub_service_title={service_sub_package?.package_name}
+              package_title={service_package?.package_name}
             />
           </Col>
         ))}
