@@ -9,14 +9,17 @@ const ConnectBtnNavbar = () => {
     router.push("//#connect");
   };
   return (
-    <button
-      className={styles.button}
-      onClick={() => {
-        handleClick();
-      }}
-    >
-      Let's Connect
-    </button>
+    <div className="nav-contact">
+      <span className="nav-phone-number">+1 ( 737 ) 313 1967 </span>
+      <button
+        className={styles.button}
+        onClick={() => {
+          handleClick();
+        }}
+      >
+        Let's Connect
+      </button>
+    </div>
   );
 };
 

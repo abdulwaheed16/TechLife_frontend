@@ -7,10 +7,14 @@ import navIcon3 from "../assets/img/nav-icon3.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { contactInfo } from "@/mock/mock-data";
+import { TermsAndConditions } from "./Terms-And-Conditions";
 
 export const Footer = () => {
   const { address, phone, email } = contactInfo;
   const [activeLink, setActiveLink] = useState("home");
+
+  const [modalShow, setModalShow] = useState(false);
+
   return (
     <footer className="footer">
       <Container>
@@ -72,12 +76,12 @@ export const Footer = () => {
         <Row className="footer-end">
           <Col size={12} sm={4} className="">
             <div className="quick-links">
-              <Link href={"/privacy-policy"} className="quick-link">
+              <button className="quick-link" onClick={() => setModalShow(true)}>
                 Privacy Policy
-              </Link>
-              <Link href={"/terms-and-conditions"} className="quick-link">
+              </button>
+              <button className="quick-link" onClick={() => setModalShow(true)}>
                 Terms and Conditions
-              </Link>
+              </button>
             </div>
           </Col>
           <Col
@@ -92,6 +96,7 @@ export const Footer = () => {
           </Col>
         </Row>
       </Container>
+      <TermsAndConditions show={modalShow} onHide={() => setModalShow(false)} />
     </footer>
   );
 };

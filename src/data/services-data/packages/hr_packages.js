@@ -66,7 +66,7 @@ export const hr_packages = [
     package_name: "Performance-Based Pricing",
     idealFor: "Ideal for businesses focusing on sales outcomes and conversions",
     customPrice:
-      "(based on the complexity of the sales process and agreed-upon commission percentage)",
+      "based on the complexity of the sales process and agreed-upon commission percentage",
     features: [
       {
         title: "Lead Generation",
@@ -95,7 +95,7 @@ export const hr_packages = [
     package_name: "Project-Based Pricing",
     idealFor:
       "Ideal for businesses with specific short-term sales or customer support projects",
-    customPrice: "(based on the project scope, complexity, and duration)",
+    customPrice: "based on the project scope, complexity, and duration",
     features: [
       {
         title: "Scope Definition",

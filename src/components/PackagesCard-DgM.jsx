@@ -3,33 +3,24 @@ import styles from "../styles/packages.module.css";
 import { FiCheck } from "react-icons/fi";
 import Link from "next/link";
 
-// const ListItem = () => {
-//   return <div>
-
-//   </div>;
-// };
-const PackagesCard = ({
-  service_package,
+const PackagesCardDgM = ({
   service_sub_package,
   service_title,
+  sub_service_title,
 }) => {
-  const package_features = service_package?.features;
-  // console.log("Features: ", package_features);
-  //   if (service_sub_package) {
-  //     service_package = service_sub_package;
-  //   }
+  const package_features = service_sub_package?.features;
+  console.log("Sub Package Name: ", service_sub_package?.sub_package_name);
   return (
     <div className={styles.card_wrapper}>
       <div className={styles.card}>
         <div className={styles.card_header}>
-          <h3>{service_package?.package_name}</h3>
-          <p className={styles.idealFor}>{service_package?.idealFor}</p>
+          <h3>{service_sub_package?.sub_package_name}</h3>
         </div>
         {/* ----------- Features List------------ */}
 
         <div className={styles.features}>
           <ul>
-            {package_features?.map((feature, index) => (
+            {service_sub_package?.features?.map((feature, index) => (
               <li key={index}>
                 <span className={styles.bullet}>
                   <FiCheck />
@@ -45,20 +36,20 @@ const PackagesCard = ({
 
         {/* ----------------Pricing-------------- */}
 
-        {service_package?.customPrice ? (
+        {service_sub_package?.customPrice ? (
           <div className={styles.customPrice}>
             <h3>
-              Custom Price <span>{service_package?.customPrice}</span>
+              Custom Price <span>{service_sub_package?.customPrice}</span>
             </h3>
           </div>
         ) : (
           <div className={styles.price_wrapper}>
             <div className={styles.price}>
               <span className={styles.oldPrice}>
-                ${service_package.oldPrice}
+                ${service_sub_package.oldPrice}
               </span>
               <span className={styles.newPrice}>
-                ${service_package.newPrice}
+                ${service_sub_package.newPrice}
               </span>
             </div>
           </div>
@@ -71,7 +62,7 @@ const PackagesCard = ({
               hash: "#connect",
               query: {
                 service: service_title,
-                plan: service_package.package_name,
+                plan: service_sub_package.package_name,
               },
             }}
             className={styles.button}
@@ -84,4 +75,4 @@ const PackagesCard = ({
   );
 };
 
-export default PackagesCard;
+export default PackagesCardDgM;

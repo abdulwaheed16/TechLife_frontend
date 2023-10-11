@@ -2,8 +2,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 // import styles from "../styles/Home.module.css";
 import TestimonialCard from "./TestimonialCard";
-import DividerWhite from "./ui/Dividers";
-// import { DividerWhite } from "./ui/Dividers";
+import { testimonials } from "@/data/testimonials-data";
 
 const Testimonials = () => {
   const responsive = {
@@ -14,7 +13,7 @@ const Testimonials = () => {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 2,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -35,12 +34,9 @@ const Testimonials = () => {
           infinite={false}
           className="owl-carousel"
         >
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
-          <TestimonialCard />
+          {testimonials?.map((testimonial, index) => (
+            <TestimonialCard key={index} testimonial={testimonial} />
+          ))}
         </Carousel>
       </div>
     </div>

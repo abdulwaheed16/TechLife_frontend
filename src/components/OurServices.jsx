@@ -21,12 +21,7 @@ const OurServices = () => {
                   }
                 >
                   <h2>Our Services </h2>
-                  <p>
-                    {" "}
-                    and sLorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s.
-                  </p>
+                  {/* <p></p> */}
                   <Row className="mt-4">
                     {ourServices.map((service, index) => {
                       return (

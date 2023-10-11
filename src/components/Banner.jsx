@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
-import headerImg from "../assets/img/header-img.svg";
+// import headerImg from "../assets/img/header-img.svg";
+import roboImage from "../../public/images/robo_image-preview .png";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
@@ -54,61 +55,63 @@ export const Banner = () => {
   };
 
   return (
-    <section className="banner" id="home">
-      <Container>
-        <Row className="aligh-items-center">
-          <Col xs={12} lg={6} xl={7}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__fadeIn" : ""
-                  }
-                >
-                  {/* <span className="tagline">Welcome to my Portfolio</span> */}
-                  <h1 className="text-center text-md-start">
-                    {`Empowering Businesses `}{" "}
-                    <span
-                      className="txt-rotate"
-                      dataPeriod="500"
-                      data-rotate='["through Digital Excellence"]'
-                    >
-                      <span className="wrap">{text}</span>
-                    </span>
-                  </h1>
-                  <p>
-                    Harnessing the power of technology to be a catalyst for
-                    digital transformation, we aspire to inspire innovation,
-                    foster meaningful connections, and create a future where
-                    every enterprise operates at the pinnacle of efficiency.
-                  </p>
-                  <ConnectBtnBanner />
-                </div>
-              )}
-            </TrackVisibility>
-          </Col>
-          <Col xs={12} md={6} xl={5}>
-            <TrackVisibility>
-              {({ isVisible }) => (
-                <div
-                  className={
-                    isVisible ? "animate__animated animate__zoomIn" : ""
-                  }
-                >
-                  <div className="img_wrapper">
-                    <Image
-                      src={headerImg}
-                      alt="Header Img"
-                      width={550}
-                      className="img-fluid"
-                    />
+    <div className="banner-wrapper">
+      <section className="banner" id="home">
+        <Container>
+          <Row className="aligh-items-center">
+            <Col xs={12} lg={6} xl={7}>
+              <TrackVisibility>
+                {({ isVisible }) => (
+                  <div
+                    className={
+                      isVisible ? "animate__animated animate__fadeIn" : ""
+                    }
+                  >
+                    {/* <span className="tagline">Welcome to my Portfolio</span> */}
+                    <h1 className="text-center text-md-start">
+                      {`Empowering Businesses `}{" "}
+                      <span
+                        className="txt-rotate"
+                        dataPeriod="500"
+                        data-rotate='["through Digital Excellence"]'
+                      >
+                        <span className="wrap">{text}</span>
+                      </span>
+                    </h1>
+                    <p>
+                      Harnessing the power of technology to be a catalyst for
+                      digital transformation, we aspire to inspire innovation,
+                      foster meaningful connections, and create a future where
+                      every enterprise operates at the pinnacle of efficiency.
+                    </p>
+                    <ConnectBtnBanner />
                   </div>
-                </div>
-              )}
-            </TrackVisibility>
-          </Col>
-        </Row>
-      </Container>
-    </section>
+                )}
+              </TrackVisibility>
+            </Col>
+            <Col xs={12} md={6} xl={5}>
+              <TrackVisibility>
+                {({ isVisible }) => (
+                  <div
+                    className={
+                      isVisible ? "animate__animated animate__zoomIn" : ""
+                    }
+                  >
+                    <div className="img_wrapper">
+                      <Image
+                        src={roboImage}
+                        alt="Header Img"
+                        width={550}
+                        className="img-fluid"
+                      />
+                    </div>
+                  </div>
+                )}
+              </TrackVisibility>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+    </div>
   );
 };

@@ -9,6 +9,7 @@ import Testimonials from "@/components/Testimonials";
 // import ProfileBlob from "@/assets/img/Profile-Blob";
 // const inter = Inter({ subsets: ["latin"] });
 import logo from "../../public/TechLife_logo-preview.png";
+import Refer from "@/components/Refer";
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         <Testimonials />
         {/* <ProfileBlob /> */}
         {/* <Blog /> */}
+        <Refer />
         <div id="about">
           <AboutUs />
         </div>

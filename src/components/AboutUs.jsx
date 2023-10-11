@@ -8,6 +8,7 @@ import { BsBoxArrowUpRight } from "react-icons/bs";
 import Image from "next/image";
 import emp_image_1 from "../../public/emp_1.jpg";
 import emp_image_2 from "../../public/emp_2.jpg";
+import OurTeam from "./OurTeam";
 
 const AboutUs = () => {
   const teamMembers = [
@@ -54,86 +55,24 @@ const AboutUs = () => {
       <Container>
         <Row className={styles.our_company}>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            magnam recusandae laboriosam cupiditate minus facilis, soluta sequi{" "}
-            <span className={styles.our_aim}>Our Aim</span> is accusantium
-            placeat minus enim, similique pariatur veniam sunt. Blanditiis quo
-            dolor cupiditate ad?
+            At <span>Techlife, a Wyoming, US based LLC</span>, our mission is to
+            empower businesses through digital excellence. We are committed to
+            delivering innovative and customised IT solutions, including web,
+            app, and game development, as well as cutting-edge business
+            intelligence dashboards.
+          </p>
+          <p>
+            By leveraging our expertise, creativity, and technical proficiency,
+            we enable businesses to thrive in the digital landscape. We strive
+            to exceed client expectations by providing top-notch services that
+            transform ideas into impactful digital experiences. With a focus on
+            quality, collaboration, and continuous improvement, we aim to be the
+            trusted partner that businesses rely on to achieve their digital
+            ambitions and drive sustainable growth in the ever-evolving
+            technology realm
           </p>
         </Row>
-        <div className={styles.our_team}>
-          <h2>Our Team</h2>
-          <Row>
-            {teamMembers.map((member) => (
-              <Col
-                xs={12}
-                // sm={4}
-                md={6}
-                lg={3}
-                className={styles.team_card_wrapper}
-                key={member.id}
-              >
-                <div className={styles.team_card}>
-                  <div className={styles.blob}>
-                    <div className={styles.team_member_img_wrapper}>
-                      {" "}
-                      <Image
-                        src={member.imageUrl}
-                        alt={member.name}
-                        width={150}
-                        height={150}
-                        className={styles.team_member_img}
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <p className={styles.member_name}>{member.name}</p>
-                    <p className={styles.member_role}>{member.role}</p>
-                  </div>
-                  {/* Showing Meet button for specific employee */}
-                  <div className={styles.buttons}>
-                    {member.canMeet && (
-                      <Link href={`/`} className={styles.meet_button}>
-                        Meet
-                      </Link>
-                    )}
-                    <Link href={`/`} className={styles.profile_button}>
-                      Profile{" "}
-                      {/* <span>
-                        <BsBoxArrowUpRight />
-                      </span> */}
-                    </Link>
-                  </div>
-                  {/* profile */}
-                  <div></div>
-                  <div className={styles.social_link}>
-                    <Link
-                      href={`/`}
-                      className={styles.link}
-                      style={{ backgroundColor: "#0866FF" }}
-                    >
-                      <FaDiscord color="white" />
-                    </Link>
-                    <Link
-                      href={`/`}
-                      className={styles.link}
-                      style={{ backgroundColor: "black" }}
-                    >
-                      <FaGithub color="white" />
-                    </Link>
-                    <Link
-                      href={`/`}
-                      className={styles.link}
-                      style={{ backgroundColor: "#0A66C2" }}
-                    >
-                      <BiLogoLinkedin color="white" />
-                    </Link>
-                  </div>
-                </div>
-              </Col>
-            ))}
-          </Row>
-        </div>
+        {/* <OurTeam teamMembers={teamMembers} /> */}
       </Container>
     </section>
   );

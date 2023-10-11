@@ -158,9 +158,9 @@ export const human_resource_benifits = [
 export const business_dashboard_benifits = [
   {
     id: 1,
-    title: "Strategic Decision-Making:",
+    title: "Strategic Decision-Making",
     description:
-      "Our interfaces empower you to make strategic decisions based on data-driven insights. By presenting complex data in a digestible format, we enable you to identify patterns, trends, and opportunities, facilitating proactive    decision-making that can steer your business towards success.",
+      "Our interfaces empower you to make strategic decisions based on data-driven insights. By presenting complex data in a digestible format, we enable you to identify patterns, trends, and opportunities, facilitating proactive decision-making that can steer your business towards success.",
   },
 
   {
@@ -179,8 +179,8 @@ export const business_dashboard_benifits = [
 
   {
     id: 1,
-    title: "Collaborative Partnership:",
+    title: "Collaborative Partnership",
     description:
-      "We view our clients as partners. Our collaborative approach involves understanding your business goals, challenges, and aspirations. We work closely with you, providing ongoing support and adapting our solutions to meet your evolving needs, ensuring a partnership that adds long-term value to your    organization.",
+      "We view our clients as partners. Our collaborative approach involves understanding your business goals, challenges, and aspirations. We work closely with you, providing ongoing support and adapting our solutions to meet your evolving needs, ensuring a partnership that adds long-term value to your organization.",
   },
 ];

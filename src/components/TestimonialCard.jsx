@@ -3,44 +3,42 @@ import userImage from "../../public/userImage.jpeg";
 import React from "react";
 import backgroundImage from "../assets/img/Profile-Blob.jsx";
 import ProfileBlob from "../assets/img/Profile-Blob.jsx";
+import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
 
-const TestimonialCard = () => {
-  const testimonials = [
-    {
-      name: "Abdul waheed",
-      designation: "Web Developer",
-      company: "XYZ",
-      image: "",
-      description:
-        "I've had the privilege of collaborating with Company on multiple projects, and they consistently deliver outstanding results. Their team's creativity and attention to detail are second to none.",
-    },
-  ];
+const TestimonialCard = ({ testimonial }) => {
+  const { name, company, quote } = testimonial;
   return (
-    <div className="">
+    <div className="testimonial_card">
       <div className="text-center mx-3 position-relative">
-        <div
+        {/* <div
           className="userImage_wrapper"
           style={{
             padding: "10px",
           }}
         >
-          {/* <div className="userImage_blob">
-            <ProfileBlob />
-          </div> */}
           <Image
             src={userImage}
             alt="client profile picture"
             height={80}
             className="userImage rounded-pill "
           />
-        </div>
+        </div> */}
         <div className="content">
-          <div className="pt-3 px-2 px-lg-1">
-            <p className="text-start py-4 desc">
-              {testimonials[0].description}
+          <div className="">
+            <p className="text-start pt-4 pb-2  desc">
+              <span className="quotation_mark quotation-mark-start">
+                <BiSolidQuoteAltLeft />
+              </span>
+              {quote}
+              <span className="quotation_mark quotation-mark-end">
+                <BiSolidQuoteAltRight />
+              </span>
             </p>
-            <p className="mt-auto">
-              <span className="designation">Designation at </span>CompanyName
+            <p className=" client_name">
+              <span className="designation">{name}</span>
+              <span style={{ color: "yellow" }}> at </span>
+              {company}
+              {/* person Name */}
             </p>
           </div>
         </div>

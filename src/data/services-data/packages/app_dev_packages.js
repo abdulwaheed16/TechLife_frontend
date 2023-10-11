@@ -86,7 +86,7 @@ export const app_dev_packages = [
     package_name: "Custom Mobile App Package",
     idealFor:
       "Ideal for businesses needing advanced, tailored mobile solutions",
-    customPrice: "Custom Quote (based on project scope)",
+    customPrice: "based on project scope",
 
     features: [
       {

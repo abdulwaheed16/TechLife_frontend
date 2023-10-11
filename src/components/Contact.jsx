@@ -18,9 +18,9 @@ import chalk from "chalk";
 
 export const Contact = () => {
   const router = useRouter();
-  const { service_title, package_title } = router.query;
+  const { service, plan } = router.query;
 
-  console.log("Selected Package", chalk.green(service_title, package_title));
+  console.log("Selected Package", chalk.green(service, plan));
 
   const animatedComponent = makeAnimated();
   const asyncSelectRef = useRef();
@@ -78,10 +78,9 @@ export const Contact = () => {
   };
 
   const defaultOptionValue = {
-    value: package_title,
-    label: package_title,
+    value: service,
+    label: plan,
   };
-
   //
   return (
     <section className="contact" id="connect">
