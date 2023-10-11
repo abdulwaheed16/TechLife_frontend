@@ -25,7 +25,7 @@ const TestimonialCard = ({ testimonial }) => {
         </div> */}
         <div className="content">
           <div className="">
-            <p className="text-start pt-4 pb-2  desc">
+            <p className="text-start  desc">
               <span className="quotation_mark quotation-mark-start">
                 <BiSolidQuoteAltLeft />
               </span>
@@ -34,7 +34,7 @@ const TestimonialCard = ({ testimonial }) => {
                 <BiSolidQuoteAltRight />
               </span>
             </p>
-            <p className=" client_name">
+            <p className="client_name">
               <span className="designation">{name}</span>
               <span style={{ color: "yellow" }}> at </span>
               {company}

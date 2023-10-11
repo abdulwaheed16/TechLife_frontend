@@ -28,7 +28,7 @@ const Testimonials = () => {
     <div className="testimonials">
       <div className="inner_section">
         <h2>Testimonials</h2>
-        <h3>See what our clients says about us</h3>
+        <p>See what our clients says about us</p>
         <Carousel
           responsive={responsive}
           infinite={false}

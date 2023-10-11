@@ -11,6 +11,7 @@ import Carousel from "react-multi-carousel";
 import Approaches from "./Approaches";
 import Benifits from "./Benifits";
 import Packages from "./Packages";
+import AddOns from "./Add-Ons";
 
 const Service = ({ service }) => {
   const responsive = {
@@ -83,6 +84,11 @@ const Service = ({ service }) => {
       <div className="packages">
         <Packages packages={service.packages} service_title={service.title} />
       </div>
+      {service.add_ons && (
+        <div>
+          <AddOns add_ons={service?.add_ons} service_title={service?.title} />
+        </div>
+      )}
       {/* Related Projects  */}
       {/* <div className={styles.related_projects}>
         <h3 className={styles.related_project_title}>Related Projects</h3>

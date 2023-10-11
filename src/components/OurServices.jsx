@@ -21,7 +21,10 @@ const OurServices = () => {
                   }
                 >
                   <h2>Our Services </h2>
-                  {/* <p></p> */}
+                  <p>
+                    Where Functionality Meets Flair, Your Digital Solutions
+                    Partner
+                  </p>
                   <Row className="mt-4">
                     {ourServices.map((service, index) => {
                       return (

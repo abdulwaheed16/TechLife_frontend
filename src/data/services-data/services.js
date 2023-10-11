@@ -30,9 +30,18 @@ import {
   human_resource_benifits,
   web_dev_benifits,
 } from "./banifits";
-import { web_dev_packages } from "./packages/web-dev-pacakges";
-import { app_dev_packages } from "./packages/app_dev_packages";
-import { game_dev_packages } from "./packages/game_dev_packages";
+import {
+  additional_services_web_dev,
+  web_dev_packages,
+} from "./packages/web-dev-pacakges";
+import {
+  additional_services_app_dev,
+  app_dev_packages,
+} from "./packages/app_dev_packages";
+import {
+  additional_services_game_dev,
+  game_dev_packages,
+} from "./packages/game_dev_packages";
 import { digital_marketing_packages } from "./packages/digital_marketing_packages";
 import { hr_packages } from "./packages/hr_packages";
 import { business_dashboard_packages } from "./packages/business_dashboard_packages";
@@ -52,6 +61,7 @@ export const services = [
     ourApproaches: web_dev_approaches,
     benifits: web_dev_benifits,
     packages: web_dev_packages,
+    add_ons: additional_services_web_dev,
   },
   {
     id: 2,
@@ -65,6 +75,7 @@ export const services = [
     ourApproaches: app_dev_approaches,
     benifits: app_dev_benifits,
     packages: app_dev_packages,
+    add_ons: additional_services_app_dev,
   },
   {
     id: 3,
@@ -78,6 +89,7 @@ export const services = [
     ourApproaches: game_dev_approaches,
     benifits: game_dev_benifits,
     packages: game_dev_packages,
+    add_ons: additional_services_game_dev,
   },
   {
     id: 4,

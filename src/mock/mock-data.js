@@ -4,40 +4,6 @@ import clientName1 from "/public/microsoft-removebg-preview.png";
 import clientName2 from "/public/silicon-removebg-preview.png";
 import clientName3 from "/public/amazon-removebg-preview.png";
 
-const color = "#000";
-export const servicesOptions = [
-  {
-    value: "Web development",
-    label: "Web Development",
-    color: color,
-  },
-  {
-    value: "app development",
-    label: "App Development",
-    color: color,
-  },
-  {
-    value: "game development",
-    label: "Game Development",
-    color: color,
-  },
-  {
-    value: "digital marketing",
-    label: "Digital Marketing",
-    color: color,
-  },
-  {
-    value: "human resource outsourcing",
-    label: "Human Resource Outsourcing",
-    color: color,
-  },
-  {
-    value: "business dashboard",
-    label: "Business Dashboard",
-    color: color,
-  },
-];
-
 // Blog data
 
 export const blogs = [
@@ -223,9 +189,9 @@ export const projects = [
 // Contact Information
 
 export const contactInfo = {
-  address: "D-91, Tipu Sultan Road, Karachi",
-  phone: "09823401234",
-  email: "test123@gmail.com",
+  address: "30 N Gould St Ste 36191 Sheridan, WY 82801",
+  phone: "+1 ( 737 ) 313 1967 ",
+  email: "Support@thetechlife.co",
 };
 
 // Clients

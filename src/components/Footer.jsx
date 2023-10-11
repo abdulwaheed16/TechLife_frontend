@@ -8,12 +8,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { contactInfo } from "@/mock/mock-data";
 import { TermsAndConditions } from "./Terms-And-Conditions";
+import { PrivacyPolicy } from "./Privacy-Policy";
 
 export const Footer = () => {
   const { address, phone, email } = contactInfo;
   const [activeLink, setActiveLink] = useState("home");
 
-  const [modalShow, setModalShow] = useState(false);
+  const [termsConditionsShow, setTermsConditionsShow] = useState(false);
+
+  const [privacyPolicyShow, setPrivacyPolicyShow] = useState(false);
 
   return (
     <footer className="footer">
@@ -76,10 +79,16 @@ export const Footer = () => {
         <Row className="footer-end">
           <Col size={12} sm={4} className="">
             <div className="quick-links">
-              <button className="quick-link" onClick={() => setModalShow(true)}>
+              <button
+                className="quick-link"
+                onClick={() => setPrivacyPolicyShow(true)}
+              >
                 Privacy Policy
               </button>
-              <button className="quick-link" onClick={() => setModalShow(true)}>
+              <button
+                className="quick-link"
+                onClick={() => setTermsConditionsShow(true)}
+              >
                 Terms and Conditions
               </button>
             </div>
@@ -96,7 +105,14 @@ export const Footer = () => {
           </Col>
         </Row>
       </Container>
-      <TermsAndConditions show={modalShow} onHide={() => setModalShow(false)} />
+      <TermsAndConditions
+        show={termsConditionsShow}
+        onHide={() => setTermsConditionsShow(false)}
+      />
+      <PrivacyPolicy
+        show={privacyPolicyShow}
+        onHide={() => setPrivacyPolicyShow(false)}
+      />
     </footer>
   );
 };

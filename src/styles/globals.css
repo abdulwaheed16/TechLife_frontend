@@ -744,14 +744,14 @@ nav.navbar.scrolled {
   margin-bottom: 20px;
 }
 
-.testimonials h3 {
+.testimonials p {
   color: #f1f1f1;
   font-size: 18px;
   letter-spacing: 0.8px;
   line-height: 1.5em;
   margin: 14px auto 60px auto;
   text-align: center;
-  width: 56%;
+  width: 95%;
 }
 .magicpattern {
   width: 100%;
@@ -766,18 +766,14 @@ nav.navbar.scrolled {
   /* height: 300px; */
 }
 .userImage_wrapper {
-  margin-bottom: -30px;
+  /* margin-bottom: -30px; */
   /* box-shadow: 10 10 0px rgba(128, 128, 128, 0.5); */
   /* border-bottom: 5px solid black; */
   border-radius: 50%;
 
   position: relative;
 }
-.userImage_blob {
-  margin-bottom: -40px;
-  opacity: 0.4;
-  border-radius: 50%;
-}
+
 .userImage {
   border-bottom: 5px solid black;
 
@@ -789,7 +785,7 @@ nav.navbar.scrolled {
   border-radius: 3%;
   border-bottom: 2px solid whitesmoke;
   border-right: 2px solid whitesmoke;
-  height: 300px;
+  height: 380px;
   color: whitesmoke;
   background: linear-gradient(to right, #7f3399, transparent);
 }
@@ -802,7 +798,7 @@ nav.navbar.scrolled {
   font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1.1em;
-  color: rgba(255, 255, 0, 0.9);
+  color: rgba(245, 245, 245, 0.9);
   /* position: absolute; */
 }
 .quotation-mark-start {
@@ -818,7 +814,7 @@ nav.navbar.scrolled {
   font-size: 18px;
   font-weight: 4 00;
   letter-spacing: 0.8px;
-  line-height: 1.1em;
+  /* line-height: 1.1em; */
   color: #f1f1f1;
   font-style: italic;
   /* margin-top: auto; */
@@ -830,7 +826,7 @@ nav.navbar.scrolled {
 } */
 @media (width<=1024px) {
   .content {
-    height: 370px;
+    height: 400px;
   }
 }
 @media (max-width: 768px) {
@@ -842,7 +838,7 @@ nav.navbar.scrolled {
     font-size: 28px;
   }
 
-  .testimonials h3 {
+  .testimonials p {
     font-size: 20px;
   }
 }
@@ -858,7 +854,7 @@ nav.navbar.scrolled {
     font-size: 28px;
   }
 
-  .testimonials h3 {
+  .testimonials p {
     font-size: 20px;
   }
 
@@ -885,7 +881,7 @@ nav.navbar.scrolled {
     font-size: 24px;
   }
 
-  .testimonials h3 {
+  .testimonials p {
     font-size: 18px;
   }
 
@@ -914,7 +910,7 @@ nav.navbar.scrolled {
 }
 @media (width<=375px) {
   .content {
-    height: 400px;
+    height: 560px;
   }
 }
 /************ Blog Css ************/
@@ -1242,6 +1238,7 @@ nav.navbar.scrolled {
 }
 .contact-info {
   list-style-type: none;
+  width: 80%;
   /* padding: 20px ; */
 }
 .contact-info li {
