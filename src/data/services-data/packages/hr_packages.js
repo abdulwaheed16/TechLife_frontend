@@ -33,7 +33,7 @@ export const hr_packages = [
     package_name: "Monthly Retainer Package",
     idealFor:
       "Ideal for businesses requiring consistent support on a monthly basis",
-    customPrice: "$1500 per hour per agent",
+    customPrice: "$1500 per month per agent",
     features: [
       {
         title: "Dedicated Agents",

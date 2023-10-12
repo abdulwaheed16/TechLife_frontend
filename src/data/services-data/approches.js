@@ -139,7 +139,7 @@ export const Human_Resource_outsourcing = [
   },
   {
     id: 1,
-    title: "Cost-Effective Solutions:",
+    title: "Cost-Effective Solutions",
     description:
       "Outsourcing customer support and sales to [Your Company Name] allows you to significantly reduce operational costs. We offer cost-effective​ solutions tailored to your needs, enabling you to allocate resources efficiently while maintaining exceptional service quality.",
   },

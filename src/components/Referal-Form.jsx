@@ -4,12 +4,25 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import styles from "../styles/ui/connect-btn-banner.module.css";
 import refer_styles from "../styles/Refer.module.css";
+import ReferalCode from "./Referal-Code";
 
 function ReferalForm() {
   const [show, setShow] = useState(false);
-
+  const [isReferalCode, setIsReferalCode] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const referalCode = "123-345";
+  const siteLink = "https://tech-life-frontend.vercel.app/";
+  const shareInformation = {
+    referalCode: referalCode,
+    siteLink: siteLink,
+  };
+
+  const handleReferalCode = () => {
+    handleClose();
+    setIsReferalCode(true);
+  };
 
   return (
     <div>
@@ -19,7 +32,7 @@ function ReferalForm() {
 
       <Modal show={show} onHide={handleClose} className={refer_styles.model}>
         <Modal.Header closeButton>
-          <Modal.Title>Refer and get Shares</Modal.Title>
+          <Modal.Title>Generate Your Referal Code</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -36,36 +49,29 @@ function ReferalForm() {
                 autoFocus
               />
             </Form.Group>
-            <Form.Group className="mb-3" aria-required>
-              {/* <Form.Label>Full Name</Form.Label> */}
-              <Form.Control
-                type="text"
-                placeholder="Referee's FullName"
-                autoFocus
-              />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-              {/* <Form.Label>Email address</Form.Label> */}
-              <Form.Control
-                type="email"
-                placeholder="Referee's Email address"
-                autoFocus
-              />
-            </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               {/* <Form.Label>Business Name</Form.Label> */}
               <Form.Control
                 type="email"
-                placeholder="Referee's Business Name"
+                placeholder="Business Name ( optional )"
                 autoFocus
               />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleClose}>Refer</Button>
+          <Button onClick={handleReferalCode}>Generate</Button>
         </Modal.Footer>
       </Modal>
+      {isReferalCode && (
+        <ReferalCode
+          key={isReferalCode}
+          isReferalCode={isReferalCode}
+          setIsReferalCode={setIsReferalCode}
+          shareInformation={shareInformation}
+          onHide={handleClose}
+        />
+      )}
     </div>
   );
 }

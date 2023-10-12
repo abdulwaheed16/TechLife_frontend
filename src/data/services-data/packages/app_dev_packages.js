@@ -132,7 +132,7 @@ export const app_dev_packages = [
     package_name: "App Redesign and Optimization Package",
     idealFor: "Ideal for businesses looking to improve an existing mobile app",
     oldPrice: "10000",
-    newPrice: "50000",
+    newPrice: "5000",
     features: [
       {
         title: "App Usability Audit",

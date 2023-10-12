@@ -4,7 +4,7 @@
 
 .dropdownMenu {
   background-color: #121212;
-  padding: 10px 10px !important;
+  padding: 10px 10px 20px !important;
   margin: -10px 0 !important;
   border-bottom: 3px solid white;
   border-radius: 5px;
@@ -21,7 +21,9 @@
   display: inline-block;
   transition: 0.2s ease-in-out;
 }
-
+.nav_link:last-child {
+  margin-bottom: 20px;
+}
 .nav_link:hover {
   color: #fff;
   background-color: rgb(39, 39, 39);

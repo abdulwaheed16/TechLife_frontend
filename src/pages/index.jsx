@@ -28,7 +28,9 @@ export default function Home() {
         <Testimonials />
         {/* <ProfileBlob /> */}
         {/* <Blog /> */}
-        <Refer />
+        <div id="refer">
+          <Refer />
+        </div>
         <div id="about">
           <AboutUs />
         </div>

@@ -17,10 +17,11 @@ const Refer = () => {
       refer_counts: "9 and above",
     },
   ];
+
   return (
     <div className={styles.refer_section}>
       <div className={styles.refer}>
-        <h2>Refer to someone and get more discount</h2>
+        <h2>Refer to someone and get share</h2>
         <p className={styles.referal_bonus}>
           Referring us is not just a gesture; it's a partnership. Help us reach
           new heights by introducing our services to others, and earn a generous
@@ -35,7 +36,7 @@ const Refer = () => {
           {discounts.map((discount, index) => (
             <p className={styles.discount_offer} key={index}>
               <span className={styles.off_percent}>
-                {discount.off_percent}% OFF
+                {discount.off_percent}% share
               </span>
               <span className={styles.refer_count}>
                 {discount.refer_counts} Referees

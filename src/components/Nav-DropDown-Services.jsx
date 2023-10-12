@@ -28,7 +28,7 @@ const NavDropDownServices = ({ activeLink, onUpdateActiveLink }) => {
         {ourServices.map((service, index) => (
           <Link
             key={index}
-            href={`/services/#${service.slug}`}
+            href={`/services#${service.slug}`}
             className={`d-block ${styles.nav_link} ${
               activeLink === service.title
                 ? " active navbar-link"
@@ -38,6 +38,9 @@ const NavDropDownServices = ({ activeLink, onUpdateActiveLink }) => {
             {service.title}
           </Link>
         ))}
+        <Link href="/#refer" className={"refer_button"}>
+          Refer to get more shares
+        </Link>
       </div>
     </NavDropdown>
   );

@@ -28,6 +28,7 @@
     "react-on-screen": "^2.1.1",
     "react-responsive-carousel": "^3.2.23",
     "react-select": "^5.7.7",
+    "usehooks-ts": "^2.9.1",
     "vercel": "^32.3.1",
     "web-vitals": "^2.1.4"
   }

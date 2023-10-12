@@ -80,4 +80,10 @@
   justify-content: center;
   margin: 20px;
 }
+
+@media (width<=425px) {
+  .refer_section .referal_bonus {
+    text-align: start;
+  }
+}
 /*---------- Banner -------------*/
