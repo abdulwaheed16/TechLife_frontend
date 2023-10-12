@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { NavBar } from "@/components/NavBar";
 import NavbarTest from "@/mock/Navbar";
 import { Footer } from "@/components/Footer";
@@ -20,7 +20,9 @@ export default function App({ Component, pageProps }) {
   Router.events.on("routeChangeError", (url) => {
     setLoading(false);
   });
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <>
       {loading && <Loader />}

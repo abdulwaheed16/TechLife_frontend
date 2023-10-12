@@ -19,19 +19,36 @@ function ReferalForm() {
 
       <Modal show={show} onHide={handleClose} className={refer_styles.model}>
         <Modal.Header closeButton>
-          <Modal.Title>Refree Information</Modal.Title>
+          <Modal.Title>Refer and get Shares</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" aria-required>
               {/* <Form.Label>Full Name</Form.Label> */}
-              <Form.Control type="email" placeholder="FullName" autoFocus />
+              <Form.Control type="text" placeholder="Your FullName" autoFocus />
+            </Form.Group>
+
+            <Form.Group className="mb-3" aria-required>
+              {/* <Form.Label>Full Name</Form.Label> */}
+              <Form.Control
+                type="email"
+                placeholder="Your Email address"
+                autoFocus
+              />
+            </Form.Group>
+            <Form.Group className="mb-3" aria-required>
+              {/* <Form.Label>Full Name</Form.Label> */}
+              <Form.Control
+                type="text"
+                placeholder="Referee's FullName"
+                autoFocus
+              />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               {/* <Form.Label>Email address</Form.Label> */}
               <Form.Control
                 type="email"
-                placeholder="Email address"
+                placeholder="Referee's Email address"
                 autoFocus
               />
             </Form.Group>
@@ -39,7 +56,7 @@ function ReferalForm() {
               {/* <Form.Label>Business Name</Form.Label> */}
               <Form.Control
                 type="email"
-                placeholder="Business Name"
+                placeholder="Referee's Business Name"
                 autoFocus
               />
             </Form.Group>

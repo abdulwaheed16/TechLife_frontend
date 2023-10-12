@@ -1,6 +1,6 @@
 import nodemailer from "nodemailer";
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method === "POST") {
     const transportor = nodemailer.createTransport({
       host: "",
@@ -11,6 +11,7 @@ export default function handler(req, res) {
         pass: "",
       },
     });
+
+    res.status(200).json({ message: "Testing message of GET method" });
   }
-  res.status(400).json({ message: "bad request" });
 }
