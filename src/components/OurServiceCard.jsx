@@ -17,7 +17,7 @@ export const OurServiceCard = ({ service }) => {
           <span>{service.super_desc}</span>
           <div className="block py-4">
             <Link
-              href={`/services/#${service.id}`}
+              href={`/services/#${service.slug}`}
               className="project-card-button"
             >
               View Project

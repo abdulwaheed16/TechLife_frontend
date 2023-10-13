@@ -1039,7 +1039,7 @@ nav.navbar.scrolled {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px auto;
+  margin: 20px auto 20px 0;
 }
 .contact img {
   width: 100%;

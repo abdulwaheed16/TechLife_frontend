@@ -20,9 +20,9 @@ export default function App({ Component, pageProps }) {
   Router.events.on("routeChangeError", (url) => {
     setLoading(false);
   });
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+  // });
   return (
     <>
       {loading && <Loader />}

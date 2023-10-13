@@ -228,3 +228,24 @@ export const clients = [
     title: "Silicon",
   },
 ];
+
+export const users = [
+  {
+    username: "user1",
+    useremail: "user1@example.com",
+    referralcode: "1234567890",
+    timestamps: "2023-10-13T13:15:22.000Z",
+  },
+  {
+    username: "user2",
+    useremail: "user2@example.com",
+    referralcode: "9876543210",
+    timestamps: "2023-10-13T13:15:23.000Z",
+  },
+  {
+    username: "user3",
+    useremail: "user3@example.com",
+    referralcode: "0123456789",
+    timestamps: "2023-10-13T13:15:24.000Z",
+  },
+];

@@ -96,25 +96,25 @@ export const Contact = () => {
         category.options.some((opt) => opt.value === option.value)
       );
 
-      return `${group.label}: ${option.label}`;
+      return `${group?.label}: ${option?.label}`;
     });
 
     console.log("Selected Options:", selectedLabels);
-    setSelectedOptions(selectedOptions);
+    setSelectedOptions(selectedLabels);
   };
   let defaultOptionValue;
-  // if (sub_plan) {
-  defaultOptionValue = {
-    value: service,
-    label: `${plan} - ${sub_plan}`,
-  };
-  // } else {
-  //   defaultOptionValue = {
-  //     value: service,
-  //     label: `${plan}`,
-  //   };
-  // }
-  //
+  if (sub_plan) {
+    defaultOptionValue = {
+      value: service,
+      label: `${plan} - ${sub_plan}`,
+    };
+  } else {
+    defaultOptionValue = {
+      value: service,
+      label: `${plan}`,
+    };
+  }
+
   const [isChecked, setIsChecked] = useState(false);
   const handleCheckboxChange = (e) => {
     setIsChecked(e.target.checked);
