@@ -1,7 +1,7 @@
-import { servicesOptions as options } from "@/mock/mock-data";
+import { servicesOptions as options } from "@/data/services-data/our-services";
 export const loadOptions = (searchValue, callback) => {
   setTimeout(() => {
-    const filteredOptions = options.filter((option) =>
+    const filteredOptions = options?.filter((option) =>
       option.label.toLowerCase().includes(searchValue.toLowerCase())
     );
     callback(filteredOptions);
@@ -17,9 +17,9 @@ export const colorStyles = {
       backgroundColor:
         "linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)",
       borderRadius: "10px",
-      "input::placeholder": {
+      "& input::placeholder": {
         color: "#fff",
-        content: '"Your Custom Placeholder Text"', // Change the placeholder text here
+        content: '"Your Custom Placeholder Text"',
       },
     };
   },

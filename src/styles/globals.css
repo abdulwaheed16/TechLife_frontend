@@ -1068,7 +1068,7 @@ nav.navbar.scrolled {
   font-weight: 500;
   font-size: 18px;
   letter-spacing: 0.8px;
-  transition: 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .contact form .input:focus,
 .contact form textarea:focus {
@@ -1170,6 +1170,17 @@ nav.navbar.scrolled {
   scale: 1.1;
 }
 
+/* .css-1jqq78o-placeholder {
+  grid-area: 1/1/2/3;
+  color: hsl(0, 0%, 10%);
+  margin-left: 2px;
+  margin-right: 2px;
+  box-sizing: border-box;
+} */
+.css-1jqq78o-placeholder {
+  background-color: transparent;
+  color: #eee;
+}
 @media (width<=768px) {
   .img-section {
     order: 2;

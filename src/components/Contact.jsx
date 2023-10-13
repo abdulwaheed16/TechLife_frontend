@@ -2,9 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import contactImage from "../../public/images/down_image.jpg";
-
 import "animate.css";
-// import Select from "react-select";
 import AsyncSelect from "react-select/async";
 import makeAnimated from "react-select/animated";
 import TrackVisibility from "react-on-screen";
@@ -20,10 +18,26 @@ import chalk from "chalk";
 export const Contact = () => {
   const router = useRouter();
   const { service, plan, sub_plan } = router.query;
+  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [defaultOptionValues, setDefaultOptionValues] = useState(null);
+  const [serviceName, setServiceName] = useState(service ?? "");
+  const [packageName, setPackageName] = useState(plan ?? "");
+  const [subPackageName, setSubPackageName] = useState(sub_plan ?? "");
 
   // Select input animations and useRef
   const animatedComponent = makeAnimated();
   const asyncSelectRef = useRef();
+
+  const isPackageAdded = selectedOptions.find(
+    (opt) => opt?.service === service && opt?.package === plan
+  );
+
+  if (!isPackageAdded) {
+    selectedOptions.push({
+      service: service,
+      package: plan,
+    });
+  }
 
   // Form feilds
 
@@ -37,23 +51,23 @@ export const Contact = () => {
 
   const [formDetails, setFormDetails] = useState(formInitialDetails);
 
-  // const defaultOption = {
-  //   service: service,
-  //   plan: plan,
-  //   sub_plan: sub_plan ?? "",
-  // };
-  const [selectedOptions, setSelectedOptions] = useState({
-    service: service ? service : "",
-    plan: plan ? plan : "",
-    sub_plan: sub_plan ? sub_plan : "",
-  });
-
   // const onFormUpdate = (category, value) => {
   //   setFormDetails({
   //     ...formDetails,
   //     [category]: value,
   //   });
   // };
+  // If there is plan or sub_plan
+  useEffect(() => {
+    if (service && plan) {
+      setDefaultOptionValues({
+        value: service,
+        label: sub_plan ? `${plan} - ${sub_plan}` : plan,
+      });
+    } else {
+      setDefaultOptionValues(null);
+    }
+  }, [service, plan, sub_plan]);
 
   // --------------------------------------
   const handleInput = (event) => {
@@ -67,55 +81,30 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const contact_details = { ...formDetails, selectedOptions };
+    const contact_details = { ...formDetails, ...selectedOptions };
     console.log("Contact Info", contact_details);
+
     setFormDetails(formInitialDetails);
     asyncSelectRef.current.clearValue();
   };
+
   // -------------------------------------
   const handleSelectChange = (selectedOptions) => {
-    const selectedLabels = selectedOptions.map((option) => {
+    const selectedPackages = selectedOptions.map((option) => {
       const group = servicesOptions.find((category) =>
         category.options.some((opt) => opt.value === option.value)
       );
 
       return {
-        service: service ? service : group?.label,
-        package: plan ? plan : option?.value,
-        sub_package: sub_plan ?? "",
+        service: group?.label,
+        package: option?.value,
+        sub_package: sub_plan ? sub_plan : "",
       };
     });
 
-    console.log("Selected Options:", selectedLabels);
-    setSelectedOptions(selectedLabels);
+    console.log("Selected Options:", selectedPackages);
+    setSelectedOptions(selectedPackages);
   };
-  // ---------------------------------------
-  // If there is plan or sub_plan
-  let defaultOptionValue;
-  if (plan) {
-    // setting up the default values for react-select
-    defaultOptionValue = {
-      value: service,
-      label: `${plan}`,
-    };
-
-    // servicesOptions.push({
-    //   label: service,
-    //   value: plan,
-    // });
-
-    console.log("Selected Package", chalk.green(`${service}/${plan}`));
-  } else if (sub_plan) {
-    defaultOptionValue = {
-      value: service,
-      label: `${plan} - ${sub_plan}`,
-    };
-
-    console.log(
-      "Selected Package",
-      chalk.green(`${service}/${plan}/${sub_plan}`)
-    );
-  }
 
   // --------------------------------------
 
@@ -123,6 +112,7 @@ export const Contact = () => {
   const handleCheckboxChange = (e) => {
     setIsChecked(e.target.checked);
   };
+
   // ===========================================================
   return (
     <section className="contact" id="connect">
@@ -193,7 +183,7 @@ export const Contact = () => {
                           <AsyncSelect
                             loadOptions={loadOptions}
                             defaultOptions={servicesOptions}
-                            defaultValue={defaultOptionValue}
+                            defaultValue={defaultOptionValues}
                             styles={colorStyles}
                             onChange={handleSelectChange}
                             isMulti
@@ -201,6 +191,7 @@ export const Contact = () => {
                             components={animatedComponent}
                             ref={asyncSelectRef}
                             placeholder="Select Your Desired Package  ( see the service page for more details)"
+                            className="select-packs"
                           />
                         </Col>
                       )}
@@ -209,7 +200,7 @@ export const Contact = () => {
                           <AsyncSelect
                             loadOptions={loadOptions}
                             defaultOptions={servicesOptions}
-                            // defaultValue={defaultOptionValue}
+                            defaultValue={defaultOptionValues}
                             styles={colorStyles}
                             onChange={handleSelectChange}
                             isMulti

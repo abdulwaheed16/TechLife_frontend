@@ -124,17 +124,18 @@
   /* text-decoration: line-through; */
   /* font-size: 24px; */
   font-weight: 300;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   padding-left: 10px;
   padding-right: 10px;
 }
 .oldPrice {
   text-decoration: line-through;
-  font-size: 32px;
-  color: #fff;
+  text-decoration-color: #fff;
+  font-size: 28px;
+  color: #eee;
 }
 .newPrice {
-  font-size: 40px;
+  font-size: 36px;
 }
 .customPrice span {
   font-size: 20px;
