@@ -359,6 +359,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     
   } */
 }
+
+.refer_button_wrapper {
+  margin-top: 20px;
+  padding-left: 5px;
+}
 .refer_button {
   text-decoration: none;
   color: #eee;

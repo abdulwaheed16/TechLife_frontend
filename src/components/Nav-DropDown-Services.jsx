@@ -38,9 +38,11 @@ const NavDropDownServices = ({ activeLink, onUpdateActiveLink }) => {
             {service.title}
           </Link>
         ))}
-        <Link href="/#refer" className={"refer_button"}>
-          Refer to get more shares
-        </Link>
+        <div className="refer_button_wrapper">
+          <Link href="/#refer" className={"refer_button"}>
+            Refer to get more shares
+          </Link>
+        </div>
       </div>
     </NavDropdown>
   );

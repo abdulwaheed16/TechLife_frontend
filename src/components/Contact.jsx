@@ -21,26 +21,11 @@ export const Contact = () => {
   const router = useRouter();
   const { service, plan, sub_plan } = router.query;
 
-  console.log(
-    "Selected Package",
-    chalk.green(`${service}/${plan}/${sub_plan}`)
-  );
-
-  // for scrolling to spacific id
-
-  useEffect(() => {
-    router.events.on("routeChangeComplete", () => {
-      if (router.pathname === "/services") {
-        window.scrollTo({
-          top: document.querySelector(`#${"connect"}`).offsetTop - 100,
-          behavior: "smooth",
-        });
-      }
-    });
-  }, [router]);
-  // dropdown animations
+  // Select input animations and useRef
   const animatedComponent = makeAnimated();
   const asyncSelectRef = useRef();
+
+  // Form feilds
 
   const formInitialDetails = {
     firstName: "",
@@ -49,27 +34,28 @@ export const Contact = () => {
     phone: "",
     message: "",
   };
-  const isErrors = {
-    firstName: false,
-    lastName: false,
-    email: false,
-    phone: false,
-    message: false,
-  };
+
   const [formDetails, setFormDetails] = useState(formInitialDetails);
-  const [isError, setIsError] = useState(isErrors);
 
-  const [selectedOptions, setSelectedOptions] = useState([]);
-  const [buttonText, setButtonText] = useState("Send");
-  const [status, setStatus] = useState({});
+  // const defaultOption = {
+  //   service: service,
+  //   plan: plan,
+  //   sub_plan: sub_plan ?? "",
+  // };
+  const [selectedOptions, setSelectedOptions] = useState({
+    service: service ? service : "",
+    plan: plan ? plan : "",
+    sub_plan: sub_plan ? sub_plan : "",
+  });
 
-  const onFormUpdate = (category, value) => {
-    setFormDetails({
-      ...formDetails,
-      [category]: value,
-    });
-  };
+  // const onFormUpdate = (category, value) => {
+  //   setFormDetails({
+  //     ...formDetails,
+  //     [category]: value,
+  //   });
+  // };
 
+  // --------------------------------------
   const handleInput = (event) => {
     const { name, value } = event.target;
     setFormDetails({
@@ -80,45 +66,64 @@ export const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setButtonText("Sending...");
 
-    const selected_options = selectedOptions.map((option) => option.label);
-    const contact_details = { ...formDetails, selected_options };
+    const contact_details = { ...formDetails, selectedOptions };
     console.log("Contact Info", contact_details);
-    setButtonText("Send");
     setFormDetails(formInitialDetails);
     asyncSelectRef.current.clearValue();
   };
-
+  // -------------------------------------
   const handleSelectChange = (selectedOptions) => {
     const selectedLabels = selectedOptions.map((option) => {
       const group = servicesOptions.find((category) =>
         category.options.some((opt) => opt.value === option.value)
       );
 
-      return `${group?.label}: ${option?.label}`;
+      return {
+        service: service ? service : group?.label,
+        package: plan ? plan : option?.value,
+        sub_package: sub_plan ?? "",
+      };
     });
 
     console.log("Selected Options:", selectedLabels);
     setSelectedOptions(selectedLabels);
   };
+  // ---------------------------------------
+  // If there is plan or sub_plan
   let defaultOptionValue;
-  if (sub_plan) {
-    defaultOptionValue = {
-      value: service,
-      label: `${plan} - ${sub_plan}`,
-    };
-  } else {
+  if (plan) {
+    // setting up the default values for react-select
     defaultOptionValue = {
       value: service,
       label: `${plan}`,
     };
+
+    // servicesOptions.push({
+    //   label: service,
+    //   value: plan,
+    // });
+
+    console.log("Selected Package", chalk.green(`${service}/${plan}`));
+  } else if (sub_plan) {
+    defaultOptionValue = {
+      value: service,
+      label: `${plan} - ${sub_plan}`,
+    };
+
+    console.log(
+      "Selected Package",
+      chalk.green(`${service}/${plan}/${sub_plan}`)
+    );
   }
+
+  // --------------------------------------
 
   const [isChecked, setIsChecked] = useState(false);
   const handleCheckboxChange = (e) => {
     setIsChecked(e.target.checked);
   };
+  // ===========================================================
   return (
     <section className="contact" id="connect">
       <Container>
