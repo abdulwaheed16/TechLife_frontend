@@ -52,12 +52,12 @@ export const siteConfig = {
   socialLinks: [
     {
       name: "Github",
-      link: "https://github.com/abdulwaheed",
+      link: "https://github.com/",
       icon: "fab fa-github",
     },
     {
       name: "LinkedIn",
-      link: "https://linkedin.com/in/abdulwaheed",
+      link: "https://www.linkedin.com/",
       icon: "fab fa-linkedin",
     },
     {

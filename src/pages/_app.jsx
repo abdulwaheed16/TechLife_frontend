@@ -28,8 +28,8 @@ export default function App({ Component, pageProps }) {
       {loading && <Loader />}
       <NavBar />
       {/* <NavbarTest /> */}
-      <Toaster />
       <Component {...pageProps} />
+      <Toaster />
       <Footer />
       {/* <BackToTopBtn /> */}
     </>

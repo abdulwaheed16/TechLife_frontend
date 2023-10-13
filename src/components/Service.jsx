@@ -48,10 +48,10 @@ const Service = ({ service }) => {
 
         <hr />
       </Row>
-      <p className="welcome_msg">{service.welcome_msg}</p>
       <Row xs={1} lg={2}>
         <Col className="service-content">
           <div className="description">
+            <p className="welcome_msg">{service.welcome_msg}</p>
             <p>{service.desc}</p>
           </div>
         </Col>
@@ -78,7 +78,7 @@ const Service = ({ service }) => {
       {/* Why Choose Us */}
 
       <div className="benifits">
-        <Benifits benifits={service.benifits} />
+        <Benifits benifits={service.benifits} service_title={service?.title} />
       </div>
       {/* Packages */}
       <div className="packages">

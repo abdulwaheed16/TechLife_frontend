@@ -1,7 +1,8 @@
 import { useRef, useState, useEffect } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
-import contactImg from "../assets/img/contact-img.svg";
-import contactImage from "../../public/images/down_image.jpg";
+// import contactImage from "../assets/img/contact-img.svg";
+import contactImage from "../../public/images/robo_image-preview.png";
+
 import "animate.css";
 import AsyncSelect from "react-select/async";
 import makeAnimated from "react-select/animated";
@@ -18,8 +19,8 @@ import chalk from "chalk";
 export const Contact = () => {
   const router = useRouter();
   const { service, plan, sub_plan } = router.query;
+
   const [selectedOptions, setSelectedOptions] = useState([]);
-  const [defaultOptionValues, setDefaultOptionValues] = useState(null);
   const [serviceName, setServiceName] = useState(service ?? "");
   const [packageName, setPackageName] = useState(plan ?? "");
   const [subPackageName, setSubPackageName] = useState(sub_plan ?? "");
@@ -57,17 +58,6 @@ export const Contact = () => {
   //     [category]: value,
   //   });
   // };
-  // If there is plan or sub_plan
-  useEffect(() => {
-    if (service && plan) {
-      setDefaultOptionValues({
-        value: service,
-        label: sub_plan ? `${plan} - ${sub_plan}` : plan,
-      });
-    } else {
-      setDefaultOptionValues(null);
-    }
-  }, [service, plan, sub_plan]);
 
   // --------------------------------------
   const handleInput = (event) => {
@@ -81,9 +71,12 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const contact_details = { ...formDetails, ...selectedOptions };
+    const contact_details = {
+      ...formDetails,
+      packages: { ...selectedOptions },
+    };
     console.log("Contact Info", contact_details);
-
+    toast.success("Thanks for contacting us");
     setFormDetails(formInitialDetails);
     asyncSelectRef.current.clearValue();
   };
@@ -105,6 +98,28 @@ export const Contact = () => {
     console.log("Selected Options:", selectedPackages);
     setSelectedOptions(selectedPackages);
   };
+  // ---------------------------------------
+  // If there is plan or sub_plan
+  let defaultOptionValue;
+  if (plan && !sub_plan) {
+    // setting up the default values for react-select
+    defaultOptionValue = {
+      value: service,
+      label: `${plan}`,
+    };
+
+    console.log("Selected Package", chalk.green(`${service}/${plan}`));
+  } else if (sub_plan) {
+    defaultOptionValue = {
+      value: service,
+      label: `${plan} - ${sub_plan}`,
+    };
+
+    console.log(
+      "Selected Package",
+      chalk.green(`${service}/${plan}/${sub_plan}`)
+    );
+  }
 
   // --------------------------------------
 
@@ -128,6 +143,8 @@ export const Contact = () => {
                       isVisible ? "animate__animated animate__zoomIn" : ""
                     }
                     src={contactImage}
+                    width={450}
+                    height={450}
                     alt="Contact Us"
                   />
                 </div>
@@ -151,7 +168,7 @@ export const Contact = () => {
                       <Col size={12} xs={12} className="px-1">
                         <input
                           type="text"
-                          name="lastName"
+                          name="fullname"
                           value={formDetails.lasttName}
                           className="input"
                           placeholder="Full Name"
@@ -183,7 +200,7 @@ export const Contact = () => {
                           <AsyncSelect
                             loadOptions={loadOptions}
                             defaultOptions={servicesOptions}
-                            defaultValue={defaultOptionValues}
+                            defaultValue={defaultOptionValue}
                             styles={colorStyles}
                             onChange={handleSelectChange}
                             isMulti
@@ -200,7 +217,7 @@ export const Contact = () => {
                           <AsyncSelect
                             loadOptions={loadOptions}
                             defaultOptions={servicesOptions}
-                            defaultValue={defaultOptionValues}
+                            // defaultValue={defaultOptionValue}
                             styles={colorStyles}
                             onChange={handleSelectChange}
                             isMulti

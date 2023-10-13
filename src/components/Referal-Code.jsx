@@ -34,8 +34,8 @@ const ReferalCode = ({ isReferalCode, setIsReferalCode, shareInformation }) => {
         </Modal.Header>
         <Modal.Body>
           {/* <Image src={}/> */}
-          <p>Referal Code: {shareInformation?.referalCode}</p>
           <p>{shareInformation?.siteLink}</p>
+          <p>code: {shareInformation?.referalCode}</p>
           <Button
             variant="primary"
             onClick={() => {

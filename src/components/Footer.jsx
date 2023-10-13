@@ -62,10 +62,10 @@ export const Footer = () => {
               <h2 className="">Follow Us</h2>
               <div className="color-line"></div>
               <div className="social-icon">
-                <Link href="#">
+                <Link href="https://www.linkedin.com/">
                   <Image src={navIcon1} alt="Icon" />
                 </Link>
-                <Link href="#">
+                <Link href="">
                   <Image src={navIcon2} alt="Icon" />
                 </Link>
                 <Link href="#">
