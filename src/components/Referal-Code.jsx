@@ -29,7 +29,7 @@ const ReferalCode = ({ isReferalCode, setIsReferalCode, shareInformation }) => {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Referal Code
+            Referral Code
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -43,6 +43,7 @@ const ReferalCode = ({ isReferalCode, setIsReferalCode, shareInformation }) => {
               //   navigator.clipboard.writeText(shareInformation.siteLink);
               setIsCopied(true);
             }}
+            className={styles.copy_button}
           >
             {isCopied ? "Copied" : "Copy"}
           </Button>

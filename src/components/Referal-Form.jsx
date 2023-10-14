@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import styles from "../styles/ui/connect-btn-banner.module.css";
+import style from "../styles/Refer.module.css";
 import refer_styles from "../styles/Refer.module.css";
 import ReferalCode from "./Referal-Code";
 
@@ -32,7 +33,7 @@ function ReferalForm() {
 
       <Modal show={show} onHide={handleClose} className={refer_styles.model}>
         <Modal.Header closeButton>
-          <Modal.Title>Generate Your Referal Code</Modal.Title>
+          <Modal.Title>Generate Your Referral Code</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -60,7 +61,9 @@ function ReferalForm() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleReferalCode}>Generate</Button>
+          <Button onClick={handleReferalCode} className={style.copy_button}>
+            Generate
+          </Button>
         </Modal.Footer>
       </Modal>
       {isReferalCode && (
