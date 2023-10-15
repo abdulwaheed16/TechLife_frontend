@@ -209,11 +209,12 @@ export const Contact = () => {
                             ref={asyncSelectRef}
                             placeholder="Select Your Desired Package  ( see the service page for more details)"
                             className="select-packs"
+                            style={{ color: "white" }}
                           />
                         </Col>
                       )}
                       {!service && (
-                        <Col size={12} xs={12} className="px-1 py-4">
+                        <Col size={12} xs={12} className="px-1 py-3">
                           <AsyncSelect
                             loadOptions={loadOptions}
                             defaultOptions={servicesOptions}
@@ -240,7 +241,7 @@ export const Contact = () => {
                       <Col xs={12}>
                         <div class="form-check mt-3 mb-2">
                           <input
-                            class="form-check-input"
+                            className="form-check-input"
                             type="checkbox"
                             value=""
                             id="flexCheckDefault"

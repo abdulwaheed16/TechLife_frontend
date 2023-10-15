@@ -3,7 +3,6 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import styles from "../styles/ui/connect-btn-banner.module.css";
-import style from "../styles/Refer.module.css";
 import refer_styles from "../styles/Refer.module.css";
 import ReferalCode from "./Referal-Code";
 
@@ -44,24 +43,22 @@ function ReferalForm() {
 
             <Form.Group className="mb-3" aria-required>
               {/* <Form.Label>Full Name</Form.Label> */}
-              <Form.Control
-                type="email"
-                placeholder="Your Email address"
-                autoFocus
-              />
+              <Form.Control type="email" placeholder="Your Email address" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
               {/* <Form.Label>Business Name</Form.Label> */}
               <Form.Control
                 type="email"
                 placeholder="Business Name ( optional )"
-                autoFocus
               />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={handleReferalCode} className={style.copy_button}>
+          <Button
+            onClick={handleReferalCode}
+            className={refer_styles.copy_button}
+          >
             Generate
           </Button>
         </Modal.Footer>

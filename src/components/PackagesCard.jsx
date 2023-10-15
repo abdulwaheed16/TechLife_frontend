@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/packages.module.css";
 import { FiCheck } from "react-icons/fi";
 import Link from "next/link";
+import GetNowBtn from "./ui/Get-Now-Btn";
 
 // const ListItem = () => {
 //   return <div>
@@ -65,19 +66,7 @@ const PackagesCard = ({
         )}
         {/* ---------------get a quote---------------- */}
         <div className={styles.button_wrapper}>
-          <Link
-            href={{
-              pathname: "/",
-              hash: "#connect",
-              query: {
-                service: service_title,
-                plan: service_package.package_name,
-              },
-            }}
-            className={styles.button}
-          >
-            Get Now
-          </Link>
+          <GetNowBtn />
         </div>
       </div>
     </div>

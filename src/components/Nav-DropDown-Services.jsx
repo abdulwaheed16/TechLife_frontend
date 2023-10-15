@@ -21,6 +21,7 @@ const NavDropDownServices = ({ activeLink, onUpdateActiveLink }) => {
       className={`${
         showDropdown ? styles.dropdownOpen : styles.dropdownClosed
       }`}
+      style={{ fontSize: "18px" }}
     >
       <div className={styles.dropdownMenu}>
         {" "}
@@ -34,6 +35,7 @@ const NavDropDownServices = ({ activeLink, onUpdateActiveLink }) => {
                 ? " active navbar-link"
                 : " navbar-link"
             }`}
+            onClick={() => onUpdateActiveLink(service)}
           >
             {service.title}
           </Link>

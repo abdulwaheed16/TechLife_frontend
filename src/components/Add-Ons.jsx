@@ -10,7 +10,7 @@ const AddOns = ({ add_ons, service_title }) => {
         <ul>
           {add_ons?.map((add_on, index) => (
             <div className={styles.list_item}>
-              <FiCheck color="#0fff0f" />{" "}
+              <FiCheck color="#0fff0f" className={styles.list_item_icon} />{" "}
               <li key={index}>
                 <span className={styles.title}>{add_on?.title}</span>
                 <span className={styles.desc}>{add_on?.desc}</span>

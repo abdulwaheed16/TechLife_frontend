@@ -1,4 +1,5 @@
 import { servicesOptions as options } from "@/data/services-data/our-services";
+
 export const loadOptions = (searchValue, callback) => {
   setTimeout(() => {
     const filteredOptions = options?.filter((option) =>
@@ -13,16 +14,18 @@ export const colorStyles = {
   control: (styles) => {
     return {
       ...styles,
-      borderColor: "#FFFFFF80",
-      backgroundColor:
-        "linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)",
-      borderRadius: "10px",
+      backgroundColor: `linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)`,
+      borderRadius: "15px",
+      padding: "3px 0px",
+      color: "#fff",
+
       "& input::placeholder": {
-        color: "#fff",
+        color: "#fff !important",
         content: '"Your Custom Placeholder Text"',
       },
     };
   },
+
   option: (styles, { data, isDisabled, isFocused, isSelected }) => {
     return {
       ...styles,
@@ -37,9 +40,10 @@ export const colorStyles = {
     return {
       ...styles,
       background: "linear-gradient(90.21deg, #971864 -5.91%, #2f1797 111.58%)",
-      scale: 1.1,
       color: "#fff",
-      borderColor: "#fff",
+      padding: "5px",
+      borderRadius: "7px",
+      borderLeft: "2px solid #eee",
     };
   },
 

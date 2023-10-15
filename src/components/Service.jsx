@@ -52,6 +52,7 @@ const Service = ({ service }) => {
         <Col className="service-content">
           <div className="description">
             <p className="welcome_msg">{service.welcome_msg}</p>
+
             <p>{service.desc}</p>
           </div>
         </Col>

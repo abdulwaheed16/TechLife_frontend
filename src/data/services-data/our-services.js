@@ -10,7 +10,7 @@ import business_dashboard_img from "/public/images/Business Intelligence Dashboa
 export const ourServices = [
   {
     id: 1,
-    title: "Web development",
+    title: "Web Development",
     slug: "web-development",
     image: web_dev_img,
     super_desc:
@@ -18,7 +18,7 @@ export const ourServices = [
   },
   {
     id: 2,
-    title: "App development",
+    title: "App Development",
     slug: "app-development",
     image: app_dev_img,
     super_desc:
@@ -26,7 +26,7 @@ export const ourServices = [
   },
   {
     id: 3,
-    title: "Game development",
+    title: "Game Development",
     slug: "game-development",
     image: game_dev_img,
     super_desc:

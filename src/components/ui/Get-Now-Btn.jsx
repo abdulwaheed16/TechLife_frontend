@@ -1,26 +1,25 @@
 import React from "react";
-import styles from "../../styles/ui/connect-btn-nav.module.css";
+import styles from "../../styles/ui/get-now-btn.module.css";
 import { useRouter } from "next/router";
 
-const ConnectBtnNavbar = () => {
+const GetNowBtn = () => {
   const router = useRouter();
 
   const handleClick = () => {
     router.push("//#connect");
   };
   return (
-    <div className="nav-contact">
-      <span className="nav-phone-number">+1 ( 737 ) 313 1967 </span>
+    <div className={styles.button_wrapper}>
       <button
         className={styles.button}
         onClick={() => {
           handleClick();
         }}
       >
-        Lets Connect
+        Get Now
       </button>
     </div>
   );
 };
 
-export default ConnectBtnNavbar;
+export default GetNowBtn;

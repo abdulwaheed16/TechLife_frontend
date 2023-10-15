@@ -15,7 +15,8 @@ const ConnectBtnBanner = () => {
         handleClick();
       }}
     >
-      Lets Connect
+      Book <span style={{ color: "yellow", margin: "0 5px" }}> Free </span>{" "}
+      Consultation
     </button>
   );
 };

@@ -8,7 +8,7 @@
   /* width: 100%; */
 }
 .card {
-  width: 350px;
+  width: auto;
   height: 400px;
   background: linear-gradient(90deg, rgba(170, 54, 124), rgba(74, 47, 189));
   display: flex;

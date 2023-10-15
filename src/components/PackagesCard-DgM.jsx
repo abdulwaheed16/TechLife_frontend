@@ -14,7 +14,9 @@ const PackagesCardDgM = ({
     <div className={styles.card_wrapper}>
       <div className={styles.card}>
         <div className={styles.card_header}>
-          <h3>{service_sub_package?.sub_package_name}</h3>
+          <h3 className={styles.sub_package_name}>
+            {service_sub_package?.sub_package_name}
+          </h3>
         </div>
         {/* ----------- Features List------------ */}
 

@@ -29,7 +29,7 @@ const ServicesPage = ({}) => {
         </div>
         {/* all services available */}
         {services.map((service, index) => (
-          <div key={index} id={service.slug}>
+          <div key={index} id={service.slug} className={"service"}>
             <Service service={service} />
           </div>
         ))}
