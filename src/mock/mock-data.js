@@ -249,3 +249,46 @@ export const clients = [
 //     timestamps: "2023-10-13T13:15:24.000Z",
 //   },
 // ];
+const color = "#000";
+
+// Define a function to add or remove packages from servicesOptions
+export const updateServicesOptions = (
+  servicesOptions,
+  service,
+  plan,
+  subPlan,
+  selectedPackages
+) => {
+  if (service && plan && subPlan) {
+    // Remove the selected package from servicesOptions
+    servicesOptions = servicesOptions.map((category) => {
+      category.options = category.options.filter(
+        (option) => option.value !== plan
+      );
+      return category;
+    });
+  }
+
+  if (selectedPackages.length > 0) {
+    // Add the selected packages back to servicesOptions if not already present
+    selectedPackages.forEach((selectedPackage) => {
+      const category = servicesOptions.find(
+        (category) => category.label === selectedPackage.service
+      );
+      if (category) {
+        const exists = category.options.some(
+          (option) => option.value === selectedPackage.package
+        );
+        if (!exists) {
+          category.options.push({
+            value: selectedPackage.package,
+            label: selectedPackage.package,
+            color: color, // Ensure you have color defined somewhere
+          });
+        }
+      }
+    });
+  }
+
+  return servicesOptions;
+};

@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/packages.module.css";
 import { FiCheck } from "react-icons/fi";
 import Link from "next/link";
+import GetNowBtn from "./ui/Get-Now-Btn";
 
 const PackagesCardDgM = ({
   service_sub_package,
@@ -58,20 +59,11 @@ const PackagesCardDgM = ({
         )}
         {/* ---------------get a quote---------------- */}
         <div className={styles.button_wrapper}>
-          <Link
-            href={{
-              pathname: "/",
-              hash: "#connect",
-              query: {
-                service: service_title,
-                plan: package_title,
-                sub_plan: service_sub_package?.sub_package_name,
-              },
-            }}
-            className={styles.button}
-          >
-            Get Now
-          </Link>
+          <GetNowBtn
+            service={service_title}
+            plan={package_title}
+            sub_plan={service_sub_package?.sub_package_name}
+          />
         </div>
       </div>
     </div>

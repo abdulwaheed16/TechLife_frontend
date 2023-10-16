@@ -4,10 +4,12 @@ import xlsx from "xlsx";
 // import { users as data } from "@/mock/mock-data";
 import { Leads } from "@/utils/leads";
 import { email_template } from "@/utils/Email-Template";
+import chalk from "chalk";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const data = req.body;
+    const { data } = req.body.json();
+    console.log("CONTACT DATA: ", chalk.green(data));
     // const filedata = Leads()
     const transportor = nodemailer.createTransport({
       host: "smtp.gmail.com",
@@ -24,7 +26,7 @@ export default async function handler(req, res) {
       to: "abwaheed.ahmad@gmail.com",
       subject: "This is subject",
       text: "This is testing text",
-      html: email_template(data),
+      html: email_template({ data }),
       attachments: [
         {
           filename: "../../data/attachments/leads.xlsx",
@@ -36,9 +38,9 @@ export default async function handler(req, res) {
 
     // Try sending the email.
     try {
-      const info = await transportor.sendMail(mailOptions);
+      // const info = await transportor.sendMail(mailOptions);
 
-      console.log("Message sent: %s", info.messageId);
+      // console.log("Message sent: %s", info.messageId);
       res
         .status(200)
         .send({ message: "Email sent", data: data, fileData: "Leads" });

@@ -1196,7 +1196,7 @@ nav.navbar.scrolled {
 .form-check-input {
   color: #160561;
 }
-@media (width<=768px) {
+@media (width<=992px) {
   .img-section {
     order: 2;
     /* background-color: red; */

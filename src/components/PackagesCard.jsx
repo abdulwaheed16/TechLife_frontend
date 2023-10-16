@@ -66,7 +66,10 @@ const PackagesCard = ({
         )}
         {/* ---------------get a quote---------------- */}
         <div className={styles.button_wrapper}>
-          <GetNowBtn />
+          <GetNowBtn
+            service={service_title}
+            plan={service_package?.package_name}
+          />
         </div>
       </div>
     </div>

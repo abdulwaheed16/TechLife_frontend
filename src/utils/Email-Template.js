@@ -1,4 +1,4 @@
-export const email_template = (data) => {
+export const email_template = ({ data }) => {
   const template = `
 <!DOCTYPE html>
 <html>

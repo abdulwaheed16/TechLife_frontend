@@ -8,6 +8,7 @@ import { Router } from "next/router";
 import Loader from "@/components/Loader";
 import { Toaster } from "react-hot-toast";
 import BackToTopBtn from "@/components/ui/BackToTop-Btn";
+import Provider from "@/components/Provider";
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = useState(false);
@@ -25,13 +26,15 @@ export default function App({ Component, pageProps }) {
   // });
   return (
     <>
-      {loading && <Loader />}
-      <NavBar />
-      {/* <NavbarTest /> */}
-      <Component {...pageProps} />
-      <Toaster />
-      <Footer />
-      {/* <BackToTopBtn /> */}
+      <Provider>
+        {loading && <Loader />}
+        <NavBar />
+        {/* <NavbarTest /> */}
+        <Component {...pageProps} />
+        <Toaster />
+        <Footer />
+        {/* <BackToTopBtn /> */}
+      </Provider>
     </>
   );
 }

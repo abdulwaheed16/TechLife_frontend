@@ -13,51 +13,30 @@ import { servicesOptions } from "@/data/services-data/our-services";
 import toast from "react-hot-toast";
 import SendBtn from "./ui/Send-Btn";
 import { ourServices } from "@/data/services-data/our-services";
+import { updateServicesOptions } from "@/mock/mock-data";
 import { useRouter } from "next/router";
 import chalk from "chalk";
+import useContact from "@/hooks/useContact";
 
 export const Contact = () => {
-  const router = useRouter();
-  const { service, plan, sub_plan } = router.query;
-
-  const [selectedOptions, setSelectedOptions] = useState([]);
-  const [serviceName, setServiceName] = useState(service ?? "");
-  const [packageName, setPackageName] = useState(plan ?? "");
-  const [subPackageName, setSubPackageName] = useState(sub_plan ?? "");
-
   // Select input animations and useRef
   const animatedComponent = makeAnimated();
   const asyncSelectRef = useRef();
 
-  const isPackageAdded = selectedOptions.find(
-    (opt) => opt?.service === service && opt?.package === plan
-  );
-
-  if (!isPackageAdded) {
-    selectedOptions.push({
-      service: service,
-      package: plan,
-    });
-  }
+  const router = useRouter();
+  const { service, plan, sub_plan } = router.query;
+  const [selectedPackages, setSelectedPackages] = useState([]);
 
   // Form feilds
 
   const formInitialDetails = {
-    firstName: "",
-    lastName: "",
+    fullname: "",
     email: "",
     phone: "",
     message: "",
   };
 
   const [formDetails, setFormDetails] = useState(formInitialDetails);
-
-  // const onFormUpdate = (category, value) => {
-  //   setFormDetails({
-  //     ...formDetails,
-  //     [category]: value,
-  //   });
-  // };
 
   // --------------------------------------
   const handleInput = (event) => {
@@ -68,64 +47,95 @@ export const Contact = () => {
     });
   };
 
+  // ------------------------------------
+  // if ((service && plan) || sub_plan) {
+  //   const isPackageExists = selectedPackages?.find(
+  //     (pkg) => pkg?.service === service
+  //   );
+
+  //   if (!isPackageExists) {
+  //     selectedPackages?.push({
+  //       service: service,
+  //       package: plan,
+  //       sub_package: sub_plan,
+  //     });
+  //   }
+  // }
+
+  // -------------------------------------
+  const handleSelectChange = (selectedOptions) => {
+    const selected_options = selectedOptions.map((option) => {
+      const group = servicesOptions.find((category) =>
+        category.options.some((opt) => opt.value === option.value)
+      );
+      const package_name = option.value.split("-").slice(0, 1).join().trim();
+      const sub_package = option.value.split("-").slice(1).join().trim();
+      // console.log("PACKAGE: ", package_name);
+      // console.log("SUB-PACKAGE: ", sub_package);
+
+      return {
+        service: group?.label,
+        package: package_name ? package_name : option?.value,
+        sub_package: sub_package ? sub_package : "",
+      };
+    });
+
+    console.log("Selected Options:", selected_options);
+    setSelectedPackages(selected_options);
+  };
+
+  // Handle Submit----------------
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const contact_details = {
       ...formDetails,
-      packages: { ...selectedOptions },
+      packages: selectedPackages,
     };
+
+    // const { isLoading, isError, error, success } = useContact({
+    //   data: contact_details,
+    // });
+
+    // isLoading && toast.loading("sending...");
+    // success && toast.success("Thanks for contacting us");
+    const data = contact_details;
+    try {
+      toast.loading("sending...");
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ data }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Request failed with status: " + response.status);
+      }
+
+      const message = await response.json();
+      toast.dismiss();
+      message && toast.success("Thanks for contacting us");
+    } catch (error) {
+      console.log("Error:", error);
+    }
+
     console.log("Contact Info", contact_details);
-    toast.success("Thanks for contacting us");
     setFormDetails(formInitialDetails);
+    setSelectedPackages();
     asyncSelectRef.current.clearValue();
   };
-
-  // -------------------------------------
-  const handleSelectChange = (selectedOptions) => {
-    const selectedPackages = selectedOptions.map((option) => {
-      const group = servicesOptions.find((category) =>
-        category.options.some((opt) => opt.value === option.value)
-      );
-
-      return {
-        service: group?.label,
-        package: option?.value,
-        sub_package: sub_plan ? sub_plan : "",
-      };
-    });
-
-    console.log("Selected Options:", selectedPackages);
-    setSelectedOptions(selectedPackages);
-  };
   // ---------------------------------------
-  // If there is plan or sub_plan
-  let defaultOptionValue;
-  if (plan && !sub_plan) {
-    // setting up the default values for react-select
-    defaultOptionValue = {
-      value: service,
-      label: `${plan}`,
-    };
 
-    console.log("Selected Package", chalk.green(`${service}/${plan}`));
-  } else if (sub_plan) {
-    defaultOptionValue = {
-      value: service,
-      label: `${plan} - ${sub_plan}`,
-    };
-
-    console.log(
-      "Selected Package",
-      chalk.green(`${service}/${plan}/${sub_plan}`)
-    );
-  }
-
-  // --------------------------------------
+  let defaultOptionValue = {
+    value: service,
+    label: sub_plan ? `${plan} - ${sub_plan}` : plan,
+  };
 
   const [isChecked, setIsChecked] = useState(false);
   const handleCheckboxChange = (e) => {
-    setIsChecked(e.target.checked);
+    setIsChecked(!isChecked);
   };
 
   // ===========================================================
@@ -169,7 +179,7 @@ export const Contact = () => {
                         <input
                           type="text"
                           name="fullname"
-                          value={formDetails.lasttName}
+                          value={formDetails.fullname}
                           className="input"
                           placeholder="Full Name"
                           onChange={(e) => handleInput(e)}

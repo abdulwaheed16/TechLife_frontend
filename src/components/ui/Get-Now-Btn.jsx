@@ -1,23 +1,23 @@
 import React from "react";
 import styles from "../../styles/ui/get-now-btn.module.css";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
-const GetNowBtn = () => {
+const GetNowBtn = ({ service, plan, sub_plan }) => {
   const router = useRouter();
 
-  const handleClick = () => {
-    router.push("//#connect");
-  };
   return (
     <div className={styles.button_wrapper}>
-      <button
-        className={styles.button}
-        onClick={() => {
-          handleClick();
+      <Link
+        href={{
+          hash: "#connect",
+          pathname: "/",
+          query: { service, plan, sub_plan: sub_plan ?? "" },
         }}
+        className={styles.button}
       >
         Get Now
-      </button>
+      </Link>
     </div>
   );
 };

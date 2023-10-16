@@ -34,14 +34,14 @@ export const siteConfig = {
       label: "Services",
       path: "/services",
     },
-    {
-      label: "Blog",
-      path: "/blog",
-    },
-    {
-      label: "Contact", //added
-      path: "/contact-us",
-    },
+    // {
+    //   label: "Blog",
+    //   path: "/blog",
+    // },
+    // {
+    //   label: "Contact", //added
+    //   path: "/contact-us",
+    // },
     {
       label: "About",
       path: "/#about",
