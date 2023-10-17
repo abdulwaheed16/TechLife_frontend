@@ -1,65 +1,87 @@
 export const email_template = ({ data }) => {
-  const template = `
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Referral Code Email</title>
-  <style>
-    body {
-      font-family: sans-serif;
+  const groupedPackages = {};
+
+  // Group packages by service
+  data?.packages?.forEach((pkg, index) => {
+    if (!groupedPackages[pkg.service]) {
+      groupedPackages[pkg.service] = [];
     }
 
-    .container {
-      width: 500px;
-      margin: 0 50px;
-    }
+    groupedPackages[pkg.service].push(pkg);
+  });
 
-    .header {
-      text-align: center;
-    }
+  const servicesAndPackages = Object.keys(groupedPackages).map((service) => {
+    const packages = groupedPackages[service]
+      .map(
+        (pkg) => `
+        <div key=${pkg.package}>
+          <p style="color: #333; font-size: 14px;">* ${pkg.package} ${
+          pkg.sub_package &&
+          `<span style="font-size: 14px; color: #666;"> - ${pkg.sub_package}</span>`
+        }</p>          
+        </div>
+      `
+      )
+      .join("");
 
-    .body {
-      padding: 20px;
-    }
+    const servicePackagesCount = groupedPackages[service].length;
 
-    .footer {
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>Referral Code Email</h1>
-    </div>
+    return `
+      <div style="margin-bottom: 20px; border-top: 1px solid #ccc;">
+        <p style="font-weight: bold; color: #333; font-size: 16px;"> ${service}</p>
+        <p style="color: #666; font-size: 14px;">${servicePackagesCount} ${
+      packages.length > 1 ? "Packages" : "Package"
+    }</p>
+        ${packages}
+      </div>
+    `;
+  });
 
-    <div class="body">
-      <p>Hi ${data.name},</p>
+  const servicesCount = Object.keys(groupedPackages).length;
 
-      <p>Thank you for signing up for our service! Here is your referral code: <code>${data.referralCode}</code></p>
-
-      <p>You can share your referral code with your friends and family, and they will get a discount on their first purchase. You will also get a commission on every sale that you generate.</p>
-
-      <p>To visit our website, please click on the following link: [website link]</p>
-
-      <p>Your user information is as follows:</p>
-
-      <ul>
-        <li>Name: ${data.name}</li>
-        <li>Email: ${data.email}</li>
-      </ul>
-
-      <p>Thank you for being a customer!</p>
-    </div>
-
-    <div class="footer">
-      <p>Sincerely,</p>
-      <p>[Your name]</p>
-    </div>
-  </div>
-</body>
-</html>
-`;
-
-  return template;
+  return `
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          width: 60%;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f4;
+        }
+        .container {
+          margin: 20px auto;
+          padding: 20px;
+          background-color: #fff;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+          text-align: center;
+        }
+        .body {
+          padding: 20px;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">  
+        <div class="body">
+          <h2 style="color: #333; font-size: 24px;">Client Information</h2>
+          <p style="font-weight: bold; color: #333; font-size: 18px;">Name: ${
+            data.fullname
+          }</p>
+          <p style="color: #666; font-size: 16px;">Email: ${data.email}</p>
+          <h3 style="color: #333; font-style: italic;  margin-bottom:10px;">Referral Code: <code>${
+            data.referral_code ? data?.referral_code : ` - - -  `
+          }</code></h3>
+          <h2 style="color: #333; ">Packages</h2>
+          ${servicesCount} Services
+          ${servicesAndPackages.join("")}
+        </div>
+      </div>
+    </body>
+    </html>
+  `;
 };

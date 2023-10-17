@@ -34,6 +34,7 @@ export const Contact = () => {
     email: "",
     phone: "",
     message: "",
+    referral_code: "",
   };
 
   const [formDetails, setFormDetails] = useState(formInitialDetails);
@@ -114,9 +115,10 @@ export const Contact = () => {
         throw new Error("Request failed with status: " + response.status);
       }
 
-      const message = await response.json();
+      const res = await response.json();
+      console.log("Response data: ", res);
       toast.dismiss();
-      message && toast.success("Thanks for contacting us");
+      res && toast.success("Thanks for contacting us");
     } catch (error) {
       console.log("Error:", error);
     }

@@ -8,7 +8,7 @@ import chalk from "chalk";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
-    const { data } = req.body.json();
+    const { data } = req.body;
     console.log("CONTACT DATA: ", chalk.green(data));
     // const filedata = Leads()
     const transportor = nodemailer.createTransport({
@@ -22,9 +22,9 @@ export default async function handler(req, res) {
     });
 
     const mailOptions = {
-      from: "test@gmail.com",
+      from: data.email,
       to: "abwaheed.ahmad@gmail.com",
-      subject: "This is subject",
+      subject: "Client@TheTechLife",
       text: "This is testing text",
       html: email_template({ data }),
       attachments: [
@@ -38,9 +38,9 @@ export default async function handler(req, res) {
 
     // Try sending the email.
     try {
-      // const info = await transportor.sendMail(mailOptions);
+      const info = await transportor.sendMail(mailOptions);
 
-      // console.log("Message sent: %s", info.messageId);
+      console.log("Message sent: %s", info.messageId);
       res
         .status(200)
         .send({ message: "Email sent", data: data, fileData: "Leads" });
