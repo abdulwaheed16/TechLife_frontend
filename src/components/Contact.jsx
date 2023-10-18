@@ -185,6 +185,7 @@ export const Contact = () => {
                           className="input"
                           placeholder="Full Name"
                           onChange={(e) => handleInput(e)}
+                          required
                         />
                       </Col>
                       <Col size={12} xs={12} className="px-1">
@@ -195,6 +196,7 @@ export const Contact = () => {
                           className="input"
                           placeholder="Email Address"
                           onChange={(e) => handleInput(e)}
+                          required
                         />
                       </Col>
                       <Col size={12} xs={12} className="px-1">
@@ -205,6 +207,7 @@ export const Contact = () => {
                           className="input"
                           placeholder="Phone No."
                           onChange={(e) => handleInput(e)}
+                          required
                         />
                       </Col>
                       {service && (
@@ -222,6 +225,7 @@ export const Contact = () => {
                             placeholder="Select Your Desired Package  ( see the service page for more details)"
                             className="select-packs"
                             style={{ color: "white" }}
+                            required
                           />
                         </Col>
                       )}
@@ -238,6 +242,7 @@ export const Contact = () => {
                             components={animatedComponent}
                             ref={asyncSelectRef}
                             placeholder="Select Your Desired Package  ( see the service page for more details)"
+                            required
                           />
                         </Col>
                       )}
