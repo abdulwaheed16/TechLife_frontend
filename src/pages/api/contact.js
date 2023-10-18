@@ -1,4 +1,4 @@
-import { transporter } from "@/config/nodemailer";
+// import { transporter, mailOptions } from "@/config/nodemailer";
 import nodemailer from "nodemailer";
 import xlsx from "xlsx";
 // import { users as data } from "@/mock/mock-data";
@@ -7,72 +7,81 @@ import { email_template } from "@/utils/Email-Template";
 import chalk from "chalk";
 import { get_clients_details } from "@/utils/clients-google-sheet";
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import { JWT } from "google-auth-library";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
     const { data } = req.body;
+
+    // ----------------------------------------------------
     console.log("CONTACT DATA: ", chalk.green(data));
-    // const filedata = Leads()
-    // const client_details = await get_clients_details();
-    let client_details = "";
-    const doc = new GoogleSpreadsheet(process.env.SPREADSHEET_ID);
     try {
-      await doc.useServiceAccountAuth({
-        client_email: process.env.SPREADSHEET_CLIENT_EMAIL,
-        private_key: process.env.SPREADSHEET_PRIVATE_KEY,
-      });
+      // const sheetTitle = await get_clients_details();
+      // const ServiceAccountAuth = new JWT({
+      //   email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+      //   key: process.env.GOOGLE_PRIVATE_KEY,
+      //   scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+      // });
 
-      await doc.loadInfo();
-      let sheet = doc.sheetsByIndex[0];
-      await sheet.addRows({
-        Name: "Asad",
-        Email: "asad@gmail.com",
-        Phone: "1231231234",
-        Packages: "testing packages",
-        ReferralCode: "121-342",
+      // const doc = new GoogleSpreadsheet(
+      //   process.env.SPREADSHEET_ID,
+      //   ServiceAccountAuth
+      // );
+
+      // await doc.loadInfo();
+
+      // const clients_sheet = doc.sheetsByTitle["Clients"];
+
+      // ----------------------Send email-------------------//
+      const transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
+        auth: {
+          user: "abwaheed.ahmed@gmail.com",
+          pass: "heqrqapfwacnuleg",
+        },
       });
-      const rows = await sheet.getRows();
-      console.log("Rows: ", rows);
-      client_details = rows;
-      return rows;
+      const mailOptions = {
+        from: data.email,
+        // to: "sikandarhashmi96@gmail.com",
+        to: "abwaheed.ahmad@gmail.com",
+        subject: "Client@TheTechLife-testing",
+        text: "This is testing text",
+        html: email_template({ data }),
+        // attachments: [
+        //   {
+        //     filename: "../../data/attachments/leads.xlsx",
+        //     type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        //     content: "",
+        //   },
+        // ],
+      };
+
+      try {
+        const info = await transporter.sendMail(mailOptions);
+
+        console.log("Message sent: %s", info.messageId);
+        res.status(200).send({
+          message: "Sent Mail successfully",
+          data: data,
+          // sheet_title: doc?.title,
+          // sheetPageName: clients_sheet,
+        });
+      } catch (error) {
+        // If the email fails to send, log the error and send a response to the client.
+        console.log(error);
+        res.status(500).send("Something went wrong while sending the email.");
+
+        // Uncomment the following lines to troubleshoot the error.
+        // console.log(mailOptions);
+        // console.log(transportor);
+      }
+      // ------------------------------------------------
     } catch (error) {
-      console.log("SpreadSheet Authorization Failed Error: ", error);
-    }
-
-    const mailOptions = {
-      from: data.email,
-      // to: "sikandarhashmi96@gmail.com",
-      to: "abwaheed.ahmad@gmail.com",
-      subject: "Client@TheTechLife-testing",
-      text: "This is testing text",
-      html: email_template({ data }),
-      // attachments: [
-      //   {
-      //     filename: "../../data/attachments/leads.xlsx",
-      //     type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-      //     content: "",
-      //   },
-      // ],
-    };
-
-    // Try sending the email.
-    try {
-      const info = await transporter.sendMail(mailOptions);
-
-      console.log("Message sent: %s", info.messageId);
-      res.status(200).send({
-        message: "Sent Mail successfully",
-        data: data,
-        clientDetals: client_details,
+      res.status(500).send({
+        message: "Failed to record information, please try to resend",
       });
-    } catch (error) {
-      // If the email fails to send, log the error and send a response to the client.
-      console.log(error);
-      res.status(500).send("Something went wrong while sending the email.");
-
-      // Uncomment the following lines to troubleshoot the error.
-      // console.log(mailOptions);
-      // console.log(transportor);
     }
   } else {
     res.status(400).json({ message: "bad request" });

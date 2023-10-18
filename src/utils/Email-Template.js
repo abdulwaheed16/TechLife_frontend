@@ -1,3 +1,4 @@
+import Link from "next/link";
 export const email_template = ({ data }) => {
   const groupedPackages = {};
 
@@ -81,6 +82,9 @@ export const email_template = ({ data }) => {
           ${servicesAndPackages.join("")}
         </div>
       </div>
+
+      <a href="https://docs.google.com/spreadsheets/d/14juNBCai2AMxj6xwqtNCHNXfLcrbIlo2H-Ou-uTWx9A/edit#gid=0">View Spreadsheet</a>
+      
     </body>
     </html>
   `;

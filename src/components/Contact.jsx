@@ -17,6 +17,7 @@ import { updateServicesOptions } from "@/mock/mock-data";
 import { useRouter } from "next/router";
 import chalk from "chalk";
 import useContact from "@/hooks/useContact";
+import { v4 as userID } from "uuid";
 
 export const Contact = () => {
   // Select input animations and useRef
@@ -111,10 +112,41 @@ export const Contact = () => {
         body: JSON.stringify({ data }),
       });
 
+      // add data to the spreadsheet as well
+      const userId = userID();
+      // --------------------------------------------------
+      fetch("https://sheetdb.io/api/v1/fp30ohtre51sf", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          data: [
+            {
+              UserID: "",
+              Name: data?.fullname,
+              Email: data?.email,
+              Phone: data?.phone,
+              Packages: data?.packages
+                ?.map(
+                  (pkg) =>
+                    `*${pkg?.service}\n-${pkg?.package}\n${pkg?.sub_package}\n`
+                )
+                .join(),
+              ReferralCode: data?.referral_code,
+              Message: data?.message,
+            },
+          ],
+        }),
+      })
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+
+      // --------------------------------------------------
       if (!response.ok) {
         throw new Error("Request failed with status: " + response.status);
       }
-
       const res = await response.json();
       console.log("Response data: ", res);
       toast.dismiss();
