@@ -19,3 +19,37 @@
 .copy_button:hover {
   background: linear-gradient(90deg, rgba(133, 25, 90), rgba(32, 14, 112));
 }
+.form_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.form_body form {
+  display: flex;
+  flex-direction: column;
+}
+.form_body form input {
+  width: 80%;
+  margin: 10px auto;
+  padding: 6px;
+  border: 1px solid white;
+  border-radius: 5px;
+  outline: 1px solid rgba(32, 14, 112);
+  outline-offset: 1px;
+  transition: all ease 0.2s;
+}
+.form_body form input:active,
+.form_body form input:focus {
+  outline: 2px solid rgba(32, 14, 112);
+  outline-offset: 2px;
+}
+
+.generate_button {
+  width: 40%;
+  margin-left: auto;
+  margin-top: 15px;
+}
+
+.error {
+  color: red;
+}

@@ -4,7 +4,12 @@ import Modal from "react-bootstrap/Modal";
 import styles from "../styles/Refer.module.css";
 import { useCopyToClipboard } from "usehooks-ts";
 
-const ReferalCode = ({ isReferalCode, setIsReferalCode, shareInformation }) => {
+const ReferalCode = ({
+  isReferalCode,
+  setIsReferalCode,
+  shareInformation,
+  referralCode,
+}) => {
   const [show, setShow] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
@@ -14,6 +19,11 @@ const ReferalCode = ({ isReferalCode, setIsReferalCode, shareInformation }) => {
   };
   const handleShow = () => setShow(true);
   const [value, copy] = useCopyToClipboard();
+
+  const siteInfo = {
+    link: "https://thetechlife.co",
+    referralCode,
+  };
 
   return (
     <div>
@@ -34,12 +44,12 @@ const ReferalCode = ({ isReferalCode, setIsReferalCode, shareInformation }) => {
         </Modal.Header>
         <Modal.Body>
           {/* <Image src={}/> */}
-          <p>{shareInformation?.siteLink}</p>
-          <p>code: {shareInformation?.referalCode}</p>
+          <p>{siteInfo?.link}</p>
+          <p>code: {siteInfo?.referralCode}</p>
           <Button
             variant="primary"
             onClick={() => {
-              copy(shareInformation.siteLink);
+              copy(siteInfo?.link);
               //   navigator.clipboard.writeText(shareInformation.siteLink);
               setIsCopied(true);
             }}
