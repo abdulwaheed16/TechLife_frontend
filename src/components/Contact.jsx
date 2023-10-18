@@ -49,19 +49,6 @@ export const Contact = () => {
   };
 
   // ------------------------------------
-  // if ((service && plan) || sub_plan) {
-  //   const isPackageExists = selectedPackages?.find(
-  //     (pkg) => pkg?.service === service
-  //   );
-
-  //   if (!isPackageExists) {
-  //     selectedPackages?.push({
-  //       service: service,
-  //       package: plan,
-  //       sub_package: sub_plan,
-  //     });
-  //   }
-  // }
 
   // -------------------------------------
   const handleSelectChange = (selectedOptions) => {
@@ -95,9 +82,22 @@ export const Contact = () => {
     //   sub_package: sub_plan,
     // });
 
+    const newPackage = {
+      service: service,
+      package: plan,
+      sub_package: sub_plan,
+    };
+
+    selectedPackages.push(newPackage);
+
+    const selected_packages = selectedPackages?.filter((pkg) => {
+      if (pkg?.service !== undefined) {
+        return pkg;
+      }
+    });
     const contact_details = {
       ...formDetails,
-      packages: selectedPackages,
+      packages: selected_packages,
     };
 
     const data = contact_details;
@@ -119,14 +119,16 @@ export const Contact = () => {
       console.log("Response data: ", res);
       toast.dismiss();
       res && toast.success("Thanks for contacting us");
+
+      console.log("Contact Info", contact_details);
+      setFormDetails(formInitialDetails);
+      setSelectedPackages();
+      asyncSelectRef.current.clearValue();
+
+      router.push("/");
     } catch (error) {
       console.log("Error:", error);
     }
-
-    console.log("Contact Info", contact_details);
-    setFormDetails(formInitialDetails);
-    setSelectedPackages();
-    asyncSelectRef.current.clearValue();
   };
 
   // --------------------------------------

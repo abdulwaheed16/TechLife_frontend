@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const OurServiceCard = ({ service }) => {
-  console.log("Service: ", service);
+  // console.log("Service: ", service);
   return (
     <Col size={12} sm={6} lg={4} className="">
       <div className="proj-imgbx project-card">
