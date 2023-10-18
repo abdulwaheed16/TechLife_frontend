@@ -79,8 +79,8 @@ export const servicesOptions = [
         color: color,
       },
       {
-        value: "E-commerce Website Package",
-        label: "E-commerce Website Package",
+        value: "E commerce Website Package",
+        label: "E commerce Website Package",
         color: color,
       },
       {
@@ -104,8 +104,8 @@ export const servicesOptions = [
         color: color,
       },
       {
-        value: "E-commerce Mobile App Package",
-        label: "E-commerce Mobile App Package",
+        value: "E commerce Mobile App Package",
+        label: "E commerce Mobile App Package",
         color: color,
       },
       {
@@ -129,8 +129,8 @@ export const servicesOptions = [
         color: color,
       },
       {
-        value: "Mid-Level Game Development Package",
-        label: "Mid-Level Game Development Package",
+        value: "Mid Level Game Development Package",
+        label: "Mid Level Game Development Package",
         color: color,
       },
       {
@@ -209,8 +209,8 @@ export const servicesOptions = [
         color: color,
       },
       {
-        value: "Performance-Based Pricing",
-        label: "Performance-Based Pricing",
+        value: "Performance Based Pricing",
+        label: "Performance Based Pricing",
         color: color,
       },
       {

@@ -89,17 +89,17 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // selectedPackages.push({
+    //   service: service,
+    //   package: plan,
+    //   sub_package: sub_plan,
+    // });
+
     const contact_details = {
       ...formDetails,
       packages: selectedPackages,
     };
 
-    // const { isLoading, isError, error, success } = useContact({
-    //   data: contact_details,
-    // });
-
-    // isLoading && toast.loading("sending...");
-    // success && toast.success("Thanks for contacting us");
     const data = contact_details;
     try {
       toast.loading("sending...");
@@ -128,11 +128,15 @@ export const Contact = () => {
     setSelectedPackages();
     asyncSelectRef.current.clearValue();
   };
+
+  // --------------------------------------
+
   // ---------------------------------------
 
   let defaultOptionValue = {
     value: service,
     label: sub_plan ? `${plan} - ${sub_plan}` : plan,
+    isFixed: true,
   };
 
   const [isChecked, setIsChecked] = useState(false);
@@ -219,8 +223,14 @@ export const Contact = () => {
                             styles={colorStyles}
                             onChange={handleSelectChange}
                             isMulti
+                            isFixed={true}
+                            isClearable={false}
+                            isSearchable={servicesOptions}
                             // closeMenuOnSelect={true}
-                            components={animatedComponent}
+                            components={{
+                              DropdownIndicator: null, // Remove the dropdown indicator
+                              ...animatedComponent,
+                            }}
                             ref={asyncSelectRef}
                             placeholder="Select Your Desired Package  ( see the service page for more details)"
                             className="select-packs"
@@ -238,8 +248,13 @@ export const Contact = () => {
                             styles={colorStyles}
                             onChange={handleSelectChange}
                             isMulti
+                            isFixed={true}
+                            isClearable={false}
                             // closeMenuOnSelect={true}
-                            components={animatedComponent}
+                            components={{
+                              DropdownIndicator: null, // Remove the dropdown indicator
+                              ...animatedComponent,
+                            }}
                             ref={asyncSelectRef}
                             placeholder="Select Your Desired Package  ( see the service page for more details)"
                             required

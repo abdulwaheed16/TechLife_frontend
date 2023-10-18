@@ -74,7 +74,7 @@ export const email_template = ({ data }) => {
           }</p>
           <p style="color: #666; font-size: 16px;">Email: ${data.email}</p>
           <h3 style="color: #333; font-style: italic;  margin-bottom:10px;">Referral Code: <code>${
-            data.referral_code ? data?.referral_code : ` - - -  `
+            data.referral_code ? data?.referral_code : ` ---  `
           }</code></h3>
           <h2 style="color: #333; ">Packages</h2>
           ${servicesCount} Services

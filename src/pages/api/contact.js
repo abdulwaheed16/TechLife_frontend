@@ -41,8 +41,9 @@ export default async function handler(req, res) {
 
     const mailOptions = {
       from: data.email,
-      to: "abwaheed.ahmad@gmail.com",
-      subject: "Client@TheTechLife",
+      // to: "sikandarhashmi96@gmail.com",
+      to: "awaheed.ahmad@gmail.com",
+      subject: "Client@TheTechLife-testing",
       text: "This is testing text",
       html: email_template({ data }),
       // attachments: [

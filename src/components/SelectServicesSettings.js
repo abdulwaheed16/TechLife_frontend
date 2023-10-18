@@ -42,6 +42,7 @@ export const colorStyles = {
       background: "linear-gradient(90.21deg, #971864 -5.91%, #2f1797 111.58%)",
       color: "#fff",
       padding: "5px",
+      paddingRight: "10px",
       borderRadius: "7px",
       borderLeft: "2px solid #eee",
     };
@@ -57,6 +58,7 @@ export const colorStyles = {
   multiValueRemove: (styles, { data }) => {
     return {
       ...styles,
+      display: data.isFixed ? "none" : styles.display,
       color: "#fff",
       ":hover": {
         color: "#fff",
