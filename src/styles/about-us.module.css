@@ -1,0 +1,197 @@
+.about_us {
+  margin-top: 10px;
+  padding: 30px 10px 50px;
+  background: linear-gradient(
+    90deg,
+    rgba(170, 54, 124, 0.5),
+    rgba(74, 47, 189, 0.5)
+  );
+  /* background-color: rgb(82, 82, 82); */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about_us h2 {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.our_company {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.our_company p {
+  width: 80%;
+  text-align: center;
+  letter-spacing: 1.2px;
+  line-height: 22px;
+}
+.our_company p span {
+  color: yellow;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.our_team {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin-top: 30px;
+  /* background-color: #4a2fbd; */
+  text-align: center;
+}
+.our_team h2 {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin: 10px 0;
+}
+.team_card_wrapper {
+  display: flex;
+  justify-content: center;
+}
+.team_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: start;
+  width: 100%;
+  background: linear-gradient(90.21deg, #8d2664 -5.91%, #4a2fbd 111.58%);
+  border-bottom: 1px solid white;
+  position: relative;
+  margin: 20px 10px;
+  padding: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all ease-in-out 0.3s;
+  /* box-shadow: 5px 5xp 5px white; */
+}
+.blob {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  height: 160px;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 2000" fill="rgba(255, 255, 255, 0.3)"><path d="M1731 616c-471.92-255.03-702.26-729.2-1003-394-311.73 347.45-801.43 446.16-598 857 222.34 449.04 63.69 865.99 531 809 517.42-63.1 1054.46 163.31 1095-261 42.27-442.37 351.61-807.48-25-1011Z"></path></svg>');
+
+  background-repeat: no-repeat;
+}
+.team_member_img_wrapper {
+  display: flex;
+  justify-content: center;
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+}
+
+.team_member_img {
+  /* margin: 10px 0; */
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
+.member_name {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.member_role {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  letter-spacing: 1px;
+  /* margin: 10px 0; */
+  font-weight: 400;
+  font-style: italic;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+.meet_button,
+.profile_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin: 5px 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid white;
+  color: white;
+  font-weight: 600;
+  transition: all ease-in-out 0.2s;
+}
+.profile_button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.meet_button:hover,
+.profile_button:hover {
+  background-color: white;
+  color: #4a2fbd;
+  border: 1px solid #4a2fbd;
+  cursor: pointer;
+}
+
+.social_link {
+  position: absolute;
+  top: 10%;
+  left: -18%;
+  /* background-color: #05c5ffbe; */
+  opacity: 0.8;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid white;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  border-radius: 5px;
+  background-color: #00000069;
+  /* padding: 3px 6px; */
+  transition: all ease-in-out 0.3s;
+}
+
+.team_card:hover .social_link {
+  left: 0;
+  opacity: 1;
+}
+.social_link .link {
+  margin: 5px;
+  padding: 1px 5px 4px;
+  cursor: pointer;
+  border-radius: 5px;
+  /* border-bottom: 10px solid black; */
+}
+
+@media (width<=768px) {
+  .our_company p {
+    width: 90%;
+    text-align: center;
+  }
+}
+@media (width<576px) {
+  .our_company p {
+    width: 95%;
+    text-align: start;
+  }
+}
+@media (width<=425px) {
+  .team_card {
+    margin: 10px 0;
+  }
+}

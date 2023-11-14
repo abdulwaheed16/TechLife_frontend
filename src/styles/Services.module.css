@@ -1,0 +1,110 @@
+/* ServicesMenu.module.css */
+
+/* --------- Navbar dropdown --------- */
+
+.dropdownMenu {
+  background-color: #121212;
+  padding: 10px 10px 20px !important;
+  margin: -10px 0 !important;
+  border-bottom: 3px solid white;
+  border-radius: 5px;
+}
+
+.nav_link {
+  white-space: nowrap;
+  text-decoration: none;
+  text-align: start;
+  padding: 7px 10px;
+  color: rgb(190, 190, 190);
+  font-size: 18px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: inline-block;
+  transition: 0.2s ease-in-out;
+}
+.nav_link:last-child {
+  margin-bottom: 20px;
+}
+.nav_link:hover {
+  color: #fff;
+  background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+  border-radius: 5px;
+}
+
+/* ------ Our Services -----*/
+
+/* .service_section {
+  padding: 30px 0 50px;
+  position: relative;
+  background: linear-gradient(
+    90deg,
+    rgba(170, 54, 124, 0.5),
+    rgba(74, 47, 189, 0.5)
+  );
+} */
+
+/* add ons section */
+
+.add_ons {
+  margin: 20px 10px 50px;
+}
+.add_ons h3 {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.add_ons ul {
+  list-style-type: none;
+}
+.add_ons ul li {
+  padding: 5px;
+  font-size: 18px;
+  margin-left: 5px;
+}
+.add_ons .title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.add_ons .desc {
+  font-size: 18px;
+  font-weight: 300;
+  color: #eee;
+}
+.list_item {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+@media (width<=768px) {
+  .add_ons h3 {
+    font-size: 24px;
+  }
+  .add_ons .title {
+    font-size: 18px;
+  }
+  .add_ons .desc {
+    font-size: 16px;
+  }
+  .list_item {
+    align-items: center;
+  }
+  .list_item_icon {
+    /* margin-right: 10px; */
+    font-size: 20px;
+  }
+}
+
+@media (width<=425px) {
+  .list_item {
+    align-items: start;
+  }
+  .list_item_icon {
+    /* margin-right: 10px; */
+    font-size: 40px;
+  }
+}

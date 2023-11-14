@@ -1,0 +1,89 @@
+/*---------- Banner -------------*/
+/* All Home module styling is in Global css file */
+/*---------- Banner -------------*/
+/*---------- Banner -------------*/
+/*---------- Banner -------------*/
+/*---------- Refer -------------*/
+.refer_section {
+  background: linear-gradient(
+    90deg,
+    rgba(170, 54, 124, 0.5),
+    rgba(74, 47, 189, 0.5)
+  );
+  margin: 10px 0;
+  padding: 30px 0 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.refer {
+  width: 80%;
+  /* margin: auto; */
+}
+.refer h2 {
+  text-align: center;
+  font-size: 32px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding: 0 10px 20px;
+  color: yellow;
+}
+.refer .referal_bonus {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  color: #eee;
+}
+.discount_offers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.discount_offer {
+  background: linear-gradient(
+    90deg,
+    rgba(170, 54, 124, 0.5),
+    rgba(74, 47, 189, 0.5)
+  );
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+  width: 250px;
+  text-align: center;
+}
+.off_percent {
+  font-size: 24px;
+  font-weight: 500;
+  /* margin: 10px 0; */
+  /* padding: 20px 0; */
+}
+.refer_count {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+}
+.refer button {
+  margin: 10px 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 18px;
+  color: #eee;
+  border: 1px solid white;
+}
+.referal_form {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+@media (width<=425px) {
+  .refer_section .referal_bonus {
+    text-align: start;
+  }
+}
+/*---------- Banner -------------*/
