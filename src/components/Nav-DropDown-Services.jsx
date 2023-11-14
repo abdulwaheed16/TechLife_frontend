@@ -20,7 +20,7 @@ const NavDropDownServices = ({ activeLink, onUpdateActiveLink }) => {
       onClick={() => setShowDropdown(!showDropdown)}
       className={`${
         showDropdown ? styles.dropdownOpen : styles.dropdownClosed
-      }`}
+      } ${styles.dropdown_services}`}
       style={{ fontSize: "18px" }}
     >
       <div className={styles.dropdownMenu}>

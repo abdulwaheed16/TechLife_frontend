@@ -28,8 +28,12 @@
   display: flex;
   flex-direction: column;
 }
-.form_body form input {
+.inputs_wrapper{
   width: 80%;
+  margin: 10px auto;
+}
+.form_body form input {
+  width: 100%;
   margin: 10px auto;
   padding: 6px;
   border: 1px solid white;
@@ -43,13 +47,41 @@
   outline: 2px solid rgba(32, 14, 112);
   outline-offset: 2px;
 }
-
-.generate_button {
+.generate_button_wrapper{
   width: 40%;
   margin-left: auto;
-  margin-top: 15px;
 }
-
+.generate_button {
+  width: 80%;
+  margin-left: auto;
+  margin-top: 15px;
+  white-space: nowrap;
+  transition: all ease-in-out .3s;
+}
+.generate_button:hover{
+  transform: scale(1.1);
+}
+.generate_button span{
+  padding-left: 10px;
+}
 .error {
   color: red;
 }
+/* ----------------------- */
+
+.sparkle svg {
+  margin-right: 10px;
+  animation: rotationBack 1s ease-in-out infinite reverse;
+}
+
+
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+

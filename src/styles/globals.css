@@ -208,6 +208,7 @@ nav.navbar .navbar-nav a.nav-link.navbar-link.active {
 .dropdown-toggle {
   color: white !important;
   border: none;
+  background-color: #aa367c;
 }
 
 .dropdown-toggle.active {
@@ -1507,6 +1508,9 @@ nav.navbar.scrolled {
   font-weight: 600;
   line-height: 15px;
   /* color: #f0f0f0; */
+  /* background-color: whitesmoke;
+  color: #121212;
+  width: 100%; */
   letter-spacing: 1.2px;
   line-height: 35px;
 }

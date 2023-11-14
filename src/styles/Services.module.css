@@ -9,6 +9,9 @@
   border-bottom: 3px solid white;
   border-radius: 5px;
 }
+.dropdown_services{
+  padding: 5px;
+}
 
 .nav_link {
   white-space: nowrap;
